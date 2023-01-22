@@ -12,7 +12,7 @@ function golfScore(par, strokes) {
     } else if (strokes == par + 2) {
       return "Double Bogey";
     } else if (strokes >= par + 3) {
-      return "Go Home!";
+      return "Practice, practice practice... bye";
     }
     }
     console.log (golfScore(7, 80));
