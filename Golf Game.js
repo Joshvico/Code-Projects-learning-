@@ -1,7 +1,7 @@
 function golfScore(par, strokes) {
-    if (strokes == 1) {
-      return "Hole-in-one!";
-    } else if (strokes <= par - 2) {
+  if (strokes == 1) {
+    return "Hole-in-one!";
+  } else if (strokes <= par - 2) {
       return "Eagle";
     } else if (strokes == par - 1) {
       return "Birdie";
