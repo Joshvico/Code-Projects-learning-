@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="styles.css">
 <head>    
 </head>
 <body>  
-  <h1 id="title">Hello there</h1>
-  <p id="description">Description</p>
+  <h1 id="tittle">Josep Vidal Magic Show Experience</h1>
+  <p>Thank you so much for attending Josep's Vidal show. We would love to know you experience and comments about it. Please fill the form and send it to us!</p> 
   <form id="survey-form">
-    <div id="name-label">
-    <label>
+    <fieldset>
+    <div>
+    <label id="name-label">
     Your Name
     </label>
     <input required id="name" type="text" placeholder="your name">
-    </div cl>
-    <div id="email-label">
-    <label>
+    </div>
+    <div>
+    <label id="email-label">
     Your Email
     </label>
-    <input  id="email" type="text"placeholder="your email" required>
+    <input  id="email" type="email" placeholder="your email" required>
     </div>
     <div id="number-label">
     <label>
     Your Age
     </label>
-    <input required id="age" type="number" min=18 max=99 placeholder="your age">
-    </div>
     <label>
-    <select id="dropdown"> 
-        <option></option>
-        <option></option>
-    </select>
+    <input required id="number" type="number" min=16 max=99 placeholder="your age">
+    </fieldset>
     </label>
-  <input type="radio" value="A" <button type="A">h</button>
-  <input type="radio" value="B" <button type="B"></button>
-
-    <input type="checkbox" value="x">
-    <input type="checkbox" value="y">
-    <textarea>
-
-    </textarea>
-    <input id="submit" type="submit" value="submit">
+    </div>
+    <div>
+    <label>How did you hear from us?</label>
+    <select id="dropdown"> 
+        <option>facebook</option>
+        <option>instagram</option>
+        <option>word to mouth</option>
+        <option>none of the above</option>
+    </select>
+    </div>
+    <div>
+    <label>Are you a magician?</label>
+    </div>
+    <div>
+    <label><input type="radio" name="magician" value="less val feedback" checked="checked">Yes</label>
+    </div>
+    </div>
+    <label><input type="radio" name="magician" value="more val feedback" >No</label>
+    </div>
+    <div>
+    <label>Would you recomend Josep's Magic Show?</label>
+    </div>
+    <div>
+    <label><input type="checkbox" name="recomendation" value="good"checked="checked">Yes</label>
+    </div>
+    <div>
+    <label><input type="checkbox" name="recomendation" value="bad">No</label>
+    </div>
+      <div>
+    <label><input type="checkbox" name="recomendation" value="neutral">Don't know</label>
+    </div>
+  <div>
+    <label>Additional opinion</label>
+    </div>
+    <div>
+<textarea placeholder="Please, enter you personal opinion">
+</textarea>
+    </div>
+    <div>
+    <input id="submit" type="submit" value="Submit">
+    </div>
 </form>
 <footer>
 </footer>
