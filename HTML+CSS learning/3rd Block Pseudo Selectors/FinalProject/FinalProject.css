@@ -75,6 +75,8 @@ body {
   width:300px;
   position: fixed;
   height: 100%;
+  resize:horizontal;
+  overflow-x: scroll;
 }
 #main-doc {
   margin: 0 20px;
