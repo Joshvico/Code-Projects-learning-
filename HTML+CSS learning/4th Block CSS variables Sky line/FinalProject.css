@@ -1,1 +1,43 @@
-*
+
+#about{
+background-color:black;
+width: auto;
+margin-right: auto;
+margin-bottom: auto;
+display: flex;
+flex-direction:row;
+}
+.description{
+  font-family: sans-serif, verdana;
+  text-align: justify;
+  font-size: 0.54rem;
+  margin: 23px;
+  width: 50%;
+  display: flex;
+  flex-direction:row;
+  color: white;
+}
+.video-presentation{
+  width: 50%;
+  background-color: grey;
+
+}
+
+#nav-bar{
+  font-family: verdana, sans-serif;
+  background-color: black;
+  width: auto;
+  text-align: end;
+
+  
+}
+.nav-link{
+  color:white;
+  margin-right: 3%;
+}
+
+.cover{
+  width:100%;
+  height: 400px;
+  object-fit:cover;  
+}
