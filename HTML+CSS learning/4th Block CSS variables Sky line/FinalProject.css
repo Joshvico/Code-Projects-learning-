@@ -6,6 +6,7 @@ margin-right: auto;
 margin-bottom: auto;
 display: flex;
 flex-direction:row;
+flex-wrap: nowrap;
 }
 .description{
   font-family: sans-serif, verdana;
