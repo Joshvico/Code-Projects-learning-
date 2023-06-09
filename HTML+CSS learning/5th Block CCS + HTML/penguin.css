@@ -55,8 +55,10 @@ body {
     gray,
     rgb(239, 240, 228)
   );
-  
+  border-radius: 70% 70% 65% 65%;
 }
+
+
 
 .ground {
   width: 100vw;
@@ -65,4 +67,22 @@ body {
   z-index: 3;
   position: absolute;
   margin-top: -58px;
+}
+
+.penguin-body{
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(45deg, rgb(134, 133, 133), 0%, rgb(182, 255, 255));
+
+}
+
+.face{
+  width: 60%;
+  height: 70%;
+  background-color: white;
+}
+.eye{
+  width: 15%;
+  height: 17%;
+  background-color: black;
 }
