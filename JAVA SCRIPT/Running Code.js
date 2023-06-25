@@ -1,14 +1,14 @@
 
 
-var myTest = NaN ;
-const someRandomNumber = NaN ;
-let Adding = NaN;
 
+/* KATERINA PROFILE INFO */
 
-OurResults = myTest*someRandomNumber;
-Adding ++;
+const FISRTNAME = "Katerina";
+const LASTNAME = "Turkova";
+const NATIONALITY = "Czech";
+var age = 28;
+var allInfo = [FISRTNAME, LASTNAME, NATIONALITY, age];
 
-
-console.log(Adding * OurResults);
+console.log (allInfo);
 
 
