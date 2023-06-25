@@ -54,15 +54,27 @@ console.log(FCC, fact);
 const sum = 10 + 10;
 const difference = 45 - 33;
 const product = 8 * 10;
-const quotient = 66 / 33;
+const quotient1 = 66 / 33;
 
 /* INCREMENTING VALUES +1 with ++ // -- an others  */
 let myVar = 87;
 
 myVar++; /* this is equal 88 is the same as the line below */
                                           myVar = myVar + 1;
-let myVar = 11;
-myVar--;
+let myVar1 = 11;
+myVar--; /* this is equal 10 */
+
+/* STORING DECIMALS (FLOATING CONCEPT)  & CALCULATING */
+const ourDecimal = 5.7;
+
+var myDecimal = ourDecimal; // myDecimal has stored value of 5.7 //
+
+const product2 = 2.0 * 2.5; // =5 //
+const quotient = 4.4 / 2.0; //=2.2//
+
+/* REMINDER OPERATOR % */
+
+const remainder = 11 % 3; // this is reaminader of 2 //
 
 
 
