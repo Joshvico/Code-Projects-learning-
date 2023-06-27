@@ -76,5 +76,14 @@ const quotient = 4.4 / 2.0; //=2.2//
 
 const remainder = 11 % 3; // this is reaminader of 2 //
 
+/* += CALCULATING DECLARED VARIANLES WITH NUMBER*/
+
+let a = 3;
+let b = 17;
+let c = 12;
+
+a += 12;
+b += 9;
+c += 7;
 
 
