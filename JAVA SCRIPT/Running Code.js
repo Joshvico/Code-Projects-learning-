@@ -21,3 +21,8 @@ c += 7;
 
 console.log (a +c);
 
+/*  ****************************** */
+
+const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+
+console.log (myStr);

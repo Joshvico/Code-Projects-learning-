@@ -105,3 +105,15 @@ a /= 5;
 b /= 3;
 c /= 12;
 
+/* USING SINGLE QUTATIO ' and "" to remove BACKSLAGES */
+
+/* const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>"  ///// This is the initial line with \ from exercices without ' */
+const myStr = '<a href= "http://www.example.com" target="_blank">Link</a>'; /* when using ' all \ can be deleted as they are not scaping */
+
+/* INSERTING SPECIAL CHARACTERS CORRECTLY  \n \t \r .... */
+
+const myStr1 = "FirstLine\n\t\\SecondLine\nThirdLine";
+
+/* CONCATENATING STRING WITH + OPERATOR */
+
+const myStr2 = "This is the start." + " This is the end." /* my teh separattion in between strings */
