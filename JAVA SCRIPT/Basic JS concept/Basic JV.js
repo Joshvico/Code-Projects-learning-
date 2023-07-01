@@ -117,3 +117,31 @@ const myStr1 = "FirstLine\n\t\\SecondLine\nThirdLine";
 /* CONCATENATING STRING WITH + OPERATOR */
 
 const myStr2 = "This is the start." + " This is the end." /* my teh separattion in between strings */
+
+/* CONCATENATING STRING WITH += OPERATOR */
+
+let myStr3 = "This is the first sentence."; /* This helps to separate a string that is toolong */
+myStr3 += " This is the second sentence.";
+
+/* BULDING STRING WITH DECLARED VARIABLES */
+
+const myName = "Josep Vidal";
+const myStr4 = "My name is " + myName + " and I am well!";
+
+/* APPENDING VARIABLES to STRINGS */
+
+const someAdjective = "great";
+let myStr6 = "Learning to code is ";
+
+myStr += someAdjective; /* This will unify the two variable values and print Learning to code is great. */
+
+/* FIND THE LENGHT OF THE STRING WITH .LENGTH */
+
+let lastNameLength = 0;
+const lastName = "Lovelace";
+
+lastNameLength = lastName.length; /* You can apply console.log values by typping = and the info you try to print */
+console.log (lastName.length);/* 8 is the value that will print */
+
+/* USGIN  [] to FINDING SPECIFIC VALUE OF ESTRING */
+

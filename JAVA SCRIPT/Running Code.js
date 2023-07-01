@@ -26,3 +26,10 @@ console.log (a +c);
 const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
 
 console.log (myStr);
+
+/* TEST CONCATENATING STRINGS with + */
+
+const myStr2 = "This is the start." + " This is the end."
+
+console.log (myStr2);
+
