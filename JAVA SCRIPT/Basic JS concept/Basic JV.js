@@ -175,3 +175,11 @@ const myArray = [myName, myAge, myNationality, myGender]; /* when console it pri
 /* JS ARRAYS WITHIN OTHER ARRAYS --> MULTIDIMENSIONAL ARRAYS */
 
 const myArray2 = [["t-shirt, 30"], ["pants", 80], ["shoes, 40"], ["glasses", 20]]; /* List of items bought mind the gap between [] and values stored after, */
+
+/* ACCESSING ARRAY DATA WITH INDEXES */
+
+const array = [50, 60, 70];
+console.log(array[0]);
+const data = array[1]; /* The console.log(array[0]) prints 50, and data has the value 60.*/
+
+/* EX */
