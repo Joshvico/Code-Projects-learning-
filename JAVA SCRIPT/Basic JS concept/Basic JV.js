@@ -143,16 +143,35 @@ const lastName = "Lovelace";
 lastNameLength = lastName.length; /* You can apply console.log values by typping = and the info you try to print */
 console.log (lastName.length);/* 8 is the value that will print */
 
-/* USGIN  [] to FINDING SPECIFIC VALUE OF STRING */
+/* USGIN  [] to FINDING SPECIFIC VALUE OF STRING  ININTAL + ANY + LAST (-1)*/
 
 let firstLetterOfLastName = "";
 const lastName1 = "Lovelace";
 
 firstLetterOfLastName = lastName[0] /* JS is refferred as Zero-based indexing */
 
+
 const lastName2 = "Lovelace";
 
-// Only change code below this line
 const thirdLetterOfLastName = lastName[2]; /* V will be the value pint We can extract the same info from different positions // mind zero indexing */
-/*  */
 
+
+
+const lastName3 = "Lovelace";
+
+const lastLetterOfLastName = lastName[lastName.length-1] /* in case of going backwards the Zero index does not apply + you should use .lengt and specify name of the variable */
+
+/* JS ARRAYS */
+
+const sandwich = ["peanut butter", "jelly", "bread"];
+
+const myNamex= "Josep Vidal";
+let myAge = 30;
+const myNationality = "Spanish";
+const myGender = "Men";
+
+const myArray = [myName, myAge, myNationality, myGender]; /* when console it prints values correctly but with  [] pending research */
+
+/* JS ARRAYS WITHIN OTHER ARRAYS --> MULTIDIMENSIONAL ARRAYS */
+
+const myArray2 = [["t-shirt, 30"], ["pants", 80], ["shoes, 40"], ["glasses", 20]]; /* List of items bought mind the gap between [] and values stored after, */
