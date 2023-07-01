@@ -143,5 +143,16 @@ const lastName = "Lovelace";
 lastNameLength = lastName.length; /* You can apply console.log values by typping = and the info you try to print */
 console.log (lastName.length);/* 8 is the value that will print */
 
-/* USGIN  [] to FINDING SPECIFIC VALUE OF ESTRING */
+/* USGIN  [] to FINDING SPECIFIC VALUE OF STRING */
+
+let firstLetterOfLastName = "";
+const lastName1 = "Lovelace";
+
+firstLetterOfLastName = lastName[0] /* JS is refferred as Zero-based indexing */
+
+const lastName2 = "Lovelace";
+
+// Only change code below this line
+const thirdLetterOfLastName = lastName[2]; /* V will be the value pint We can extract the same info from different positions // mind zero indexing */
+/*  */
 

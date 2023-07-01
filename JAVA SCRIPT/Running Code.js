@@ -1,6 +1,5 @@
 
 
-
 /* KATERINA PROFILE INFO*/ 
 
 const FISRTNAME = "Katerina";
@@ -33,3 +32,9 @@ const myStr2 = "This is the start." + " This is the end."
 
 console.log (myStr2);
 
+/* [] SPECIFIC VALUE FROM STRING  */
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
+
+firstLetterOfLastName = lastName[5]
+console.log (firstLetterOfLastName);
