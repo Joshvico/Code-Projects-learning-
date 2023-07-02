@@ -96,4 +96,26 @@ const element = arr[3][0][1];
 
 console.log (element); /* this is the exrcice */
 
+/* PUSHING DATA INTO ARRAYS .push */
+
+const myArray5 = [["John", 23], ["cat", 2]];
+
+myArray5.push(["dog",3]);
+
+console.log(myArray5);
+
+/* POPPING OUT VALUES with .pop FUNCTION */
+
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop(); /* it pops from last by default only */
+console.log(oneDown);
+console.log(threeArr);
+
+const myArray6 = [["John", 23], ["cat", 2]];
+
+const removedFromMyArray = myArray6.pop(); /* remove lement like array in blocsk always and only the last one */
+console.log(myArray6);
+console.log(removedFromMyArray);
+
+/*  */
 

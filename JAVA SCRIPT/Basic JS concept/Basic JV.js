@@ -161,6 +161,8 @@ const lastName3 = "Lovelace";
 
 const lastLetterOfLastName = lastName[lastName.length-1] /* in case of going backwards the Zero index does not apply + you should use .lengt and specify name of the variable */
 
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 /* JS ARRAYS */
 
 const sandwich = ["peanut butter", "jelly", "bread"];
@@ -197,3 +199,17 @@ const myArray4 = [
 ];
 
 const myData = myArray[2][1];  /* First [] is the 0 level selecting the sub-array [] indicates de value inseide sub-array if more[] selecting the nested sub-array */
+
+/* PUSHING DATA INTO ARRAYS with .push FUNCITON */
+
+const myArray5 = [["John", 23], ["cat", 2]];
+
+myArray5.push(["dog",3]); /*  */
+
+/* POPPING OUT VALUES with .pop FUNCTION */
+const threeArr = [1, 4, 6];
+const oneDown = threeArr.pop(); /* it pops from last by default */
+console.log(oneDown);
+console.log(threeArr);
+
+/* REMOVING FIRST VALUE with .shift FUNCTION */
