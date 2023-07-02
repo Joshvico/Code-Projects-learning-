@@ -213,3 +213,13 @@ console.log(oneDown);
 console.log(threeArr);
 
 /* REMOVING FIRST VALUE with .shift FUNCTION */
+
+const myArray7 = [["John", 23], ["dog", 3]];
+
+const removedFromMyArray = myArray7.shift(); /* this will pop out in block the first array */
+
+/* ADDING A VALULE AT THE BEGINING OF THE ARRAY with .unshift */
+
+const ourArray = ["Stimpson", "J", "cat"];
+ourArray.shift();
+ourArray.unshift("Happy"); /* the main difference with .push is that it adds a element or value at the beginning// push does but last part */ 

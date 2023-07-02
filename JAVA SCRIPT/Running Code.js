@@ -117,5 +117,19 @@ const removedFromMyArray = myArray6.pop(); /* remove lement like array in blocsk
 console.log(myArray6);
 console.log(removedFromMyArray);
 
-/*  */
+/* .SHIFT and .UNSHIFT ADD and REMOVE THE FIRST ELEMENT OF AN ARRAY */
+
+const ourArray3 = ["Stimpson", "J", "cat"];
+ourArray.shift();
+ourArray.unshift("Happy");
+
+/* TESTING SHOPPING LIST */
+
+const myList = [["tomatoes", 3], ["mozzarella", 2], ["milk", 4], ["bananas", 6], ["bread", 1]]; 
+
+myList.shift();
+myList.unshift(["rucula", 2]);
+let myVegetable = myList[0]; /* There is HIRACHRY of functions if I declare avraible the the shift and unshift won´t be printed by the console */
+
+console.log(myVegetable);
 
