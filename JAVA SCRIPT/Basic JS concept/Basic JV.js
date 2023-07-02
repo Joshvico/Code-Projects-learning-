@@ -182,4 +182,18 @@ const array = [50, 60, 70];
 console.log(array[0]);
 const data = array[1]; /* The console.log(array[0]) prints 50, and data has the value 60.*/
 
-/* EX */
+/* MODIFYING ARRAYS WITH INDEXING VALUES */
+
+const ourArray = [50, 40, 30];
+ourArray[0] = 15; /* Now the value 0 will be 15 // even if Array is declared as const it can be changed with index */
+
+/* ACCESING MULTIDIEMSNIONAL ARRAYS */
+
+const myArray4 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14],
+];
+
+const myData = myArray[2][1];  /* First [] is the 0 level selecting the sub-array [] indicates de value inseide sub-array if more[] selecting the nested sub-array */

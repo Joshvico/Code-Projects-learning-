@@ -63,3 +63,37 @@ console.log(myArray);
 
 const myArray2 = [["t-shirt", 30], ["pants", 80], ["shoes", 40], ["glasses", 20]];
 console.log (myArray2);
+
+/* CHANGING ARRAY WITH INDEX */
+
+const ourArray = [50, 40, 30];
+ourArray[0] = 15;
+console.log (ourArray);
+
+/* ACCESING MULTIDIEMSNIONAL ARRAYS */
+
+const myArray4 = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14],
+];
+
+const myData = myArray4[3][0][2]; 
+
+console.log (myData);
+
+const arr = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [[10, 11, 12], 13, 14]
+];
+
+const subarray = arr[3];
+const nestedSubarray = arr[3][0];
+const element = arr[3][0][1];
+
+console.log (element); /* this is the exrcice */
+
+
