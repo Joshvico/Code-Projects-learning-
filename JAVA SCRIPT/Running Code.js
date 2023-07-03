@@ -133,3 +133,28 @@ let myVegetable = myList[0]; /* There is HIRACHRY of functions if I declare avra
 
 console.log(myVegetable);
 
+/* FUNCITONS IN JS */
+
+function kindAnswer() { /* This is the way to define them */
+  console.log("Tu puta madre!");
+}
+
+kindAnswer(); /* every time we invoke this funciton by its name console.log will print the value added on the previous definition */
+
+/* PASSING VALUES to FUNCTIONS WITH ARGUMENTS */
+
+function functionWithArgs(a, b) {
+  console.log(a+b);
+}
+
+functionWithArgs(1,2);
+
+functionWithArgs(34,9);
+
+
+/* USING RETURN in FUNCTIONS  */
+
+function timesFive(a) {
+  return a + 7;
+}
+console.log (timesFive(56));/* Return funtion needs the console.log to returna a value */

@@ -223,3 +223,32 @@ const removedFromMyArray = myArray7.shift(); /* this will pop out in block the f
 const ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy"); /* the main difference with .push is that it adds a element or value at the beginning// push does but last part */ 
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* DEFINING FUNCITONS AND INVOKE THEM IN JS */
+
+function reusableFunction() { /* This is the way to define them */
+  console.log("Hi World");
+}
+
+reusableFunction(); /* every time we invoke this funciton by its name console.log will print the value added on the previous definition */
+
+/* PASSING VALUES to FUNCTIONS WITH ARGUMENTS */
+
+function functionWithArgs(a, b) { /* Argument can only be letters that represents Names */
+  console.log(a + b);
+}
+
+functionWithArgs(1,2); /* console.lo will print 3 */
+functionWithArgs(7,9);
+
+/* USING RETURN in FUNCTIONS  */
+
+function timesFive (num) {
+  return num * 5;
+
+}
+
+const answer = timesFive(5); /* Aquesta variables retornara el value definit per el nom num () tinguent en compte la funció definifa amb RETURN */
+
