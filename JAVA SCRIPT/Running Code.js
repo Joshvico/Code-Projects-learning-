@@ -158,3 +158,33 @@ function timesFive(a) {
   return a + 7;
 }
 console.log (timesFive(56));/* Return funtion needs the console.log to returna a value */
+
+/* GLOBAL SCOPE and DEFINING NONE GLOBAL VARIABLES INSED FUCNTION */
+
+let myGlobal = 10
+
+function fun1() {
+  oopsGlobal = 5;
+}
+
+console.log(myGlobal,oopsGlobal); /* it dos not print 5 as is not inglobal check video from lesson if */
+let myGlobal1 = 10
+
+
+/* LOCAL SCOPE  */
+function fun1() {
+  var oopsGlobal1 = 5;
+  console.log(oopsGlobal1);
+}
+
+fun1(); /* Since the var is declared insed the fucntino */
+
+
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+const outerWear = "sweater";
+  return outerWear;
+}
+
+myOutfit();

@@ -252,3 +252,31 @@ function timesFive (num) {
 
 const answer = timesFive(5); /* Aquesta variables retornara el value definit per el nom num () tinguent en compte la funció definifa amb RETURN */
 
+
+/* GLOBAL SCOPE and DEFINING NONE GLOBAL VARIABLES INSED FUCNTION */
+
+let myGlobal = 10 /* since is defined with let , var or cons it will be visible and is inglobal scope */
+
+function fun1() {
+  
+  oopsGlobal = 5; /* since it is inside the function it is not GLobal scoep and is not visible even if it has been defined */
+}
+
+/* LOCAL SCOPE  */
+function fun1() {
+  var oopsGlobal1 = 5;
+  console.log(oopsGlobal1);
+}
+
+fun1(); /* Since the var is declared insed the fucntin once fucntion is executed it will pinrt the value defined inside the function 5 */
+
+/* GLOBAL VS LOCAL */
+
+const someVar = "Hat"; /* this variables has been over ride by  */
+
+function myFun() {
+  const someVar = "Head";
+  return someVar;
+}
+
+myFun(); /* the function will return HEad as local scope goes over globa scope */
