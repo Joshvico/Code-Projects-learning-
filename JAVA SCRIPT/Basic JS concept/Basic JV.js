@@ -280,3 +280,15 @@ function myFun() {
 }
 
 myFun(); /* the function will return HEad as local scope goes over globa scope */
+
+/* ASSIGNING RETURN VALUE TO A VARIABLE */
+
+let processed = 0; /* firs we initilize the variable */
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7); /* we assign the value of returned to variable processed  */
+
+

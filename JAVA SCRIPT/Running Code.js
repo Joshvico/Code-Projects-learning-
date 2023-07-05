@@ -170,7 +170,6 @@ function fun1() {
 console.log(myGlobal,oopsGlobal); /* it dos not print 5 as is not inglobal check video from lesson if */
 let myGlobal1 = 10
 
-
 /* LOCAL SCOPE  */
 function fun1() {
   var oopsGlobal1 = 5;
@@ -187,4 +186,16 @@ const outerWear = "sweater";
   return outerWear;
 }
 
-myOutfit();
+myOutfit(); 
+ 
+/* ASSIGNING RETURN VALUE TO A VARIABLE */
+
+let processed = 0; /* firs we initilize the variable */
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7); /* we assign the value of returned to variable processed  */
+console.log (processArg(7)); /* Keep in mind when pinritng fucntion expresseed with () */
+
