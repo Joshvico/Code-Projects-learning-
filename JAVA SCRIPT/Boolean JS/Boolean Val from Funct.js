@@ -17,6 +17,18 @@ function test (myCondition) {
 test(true);
 test(false);
 
+/* == OPERATOR  */
+
+function testEqual(val) {
+  if (val == 12) { 
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+console.log(testEqual(16)); 
+
+/* === STRICT EQUALITY OPERATOR */
 
 
 
