@@ -51,3 +51,14 @@ console.log(testEqual(16));
   }
   compareEquality (10,"10");
   console.log (compareEquality (10,"10")); /* The console log will print not equal */
+
+
+  /* ANEQUALITY OPERATOR != */
+  function testNotEqual(val) {
+    if (val != 99) {
+      return "Not Equal";
+    }
+    return "Equal";
+  }
+  
+  testNotEqual(10);

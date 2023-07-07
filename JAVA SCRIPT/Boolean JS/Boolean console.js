@@ -51,3 +51,15 @@ function compareEquality(a, b) {
 }
 compareEquality (10,"10");
 console.log (compareEquality (10,"10")); /* The console log will print not equal */
+
+/* != ANEQUAL COMPARISON */
+
+function testNotEqual(val) {
+  if (val != 99) {
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
+console.log (testNotEqual(99));
