@@ -26,16 +26,28 @@ function testEqual(val) {
   return "Not Equal";
 }
 
+function isLess(a, b) {
+  return (a < b);
+}
+console.log (isLess(20, 70));
 console.log(testEqual(16)); 
 
-/* === STRICT EQUALITY OPERATOR */
+  /* STRIC EQUALITY OPERATOR === */
 
-
-
-
-
-
-function isLess(a, b) {
-    return (a < b);
+  function testStrict(val) {
+    if (val === 7) { 
+      return "Equal";
+    }
+    return "Not Equal";
   }
-  console.log (isLess(20, 70));
+  
+  testStrict(10);
+/* EX practical */
+  function compareEquality(a, b) {
+    if (a === b) { 
+      return "Equal"; /* Statement when creteria are met / TRUE */
+    }
+    return "Not Equal"; /* statement when criteria are not met / FLASE */
+  }
+  compareEquality (10,"10");
+  console.log (compareEquality (10,"10")); /* The console log will print not equal */

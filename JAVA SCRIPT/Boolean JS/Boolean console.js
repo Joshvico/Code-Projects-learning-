@@ -30,3 +30,24 @@ function testEqual(val) {
 
 console.log(testEqual(16)); 
 
+/* === STRICT EQUALITY OEPRATOR */
+
+function compareEquality(a, b) {
+  if (a === b) { 
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+compareEquality(10, "10");
+
+/* STRICT EQUALITY OPERATOR */
+
+function compareEquality(a, b) {
+  if (a === b) { 
+    return "Equal"; /* Statement when creteria are met / TRUE */
+  }
+  return "Not Equal"; /* statement when criteria are not met / FLASE */
+}
+compareEquality (10,"10");
+console.log (compareEquality (10,"10")); /* The console log will print not equal */
