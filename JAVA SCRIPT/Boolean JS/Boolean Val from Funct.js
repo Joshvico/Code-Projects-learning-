@@ -62,3 +62,45 @@ console.log(testEqual(16));
   }
   
   testNotEqual(10);
+
+  /* STRICT INEQUALITY OEPRATOR !==  */
+
+  function testStrictNotEqual(val) {
+    if (val !== 17) { 
+      return "Not Equal";
+    }
+    return "Equal";
+  }
+  
+  testStrictNotEqual(10);
+
+  /* GREATER THAN COMPARISON > */
+
+  function testGreaterThan(val) { /* In this funciton we are adding a range with 2 TRU critirias that will return Over / TRUE  and the a last critiria that wehn not met returns 10 or Under */
+    if (val > 100) { 
+      return "Over 100";
+    }
+    if (val > 10) {  
+      return "Over 10";
+    }
+    return "10 or Under";
+  }
+  
+  testGreaterThan(10);
+
+  /* >= GREATER or EQUAL */
+
+  function testGreaterOrEqual(val) {
+    if (val >= 20) { 
+      return "20 or Over";
+    }
+  
+    if (val >= 10) {  
+      return "10 or Over";
+    }
+  
+    return "Less than 10";
+  }
+  
+  testGreaterOrEqual(10);
+
