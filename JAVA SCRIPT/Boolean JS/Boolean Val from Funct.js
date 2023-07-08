@@ -104,3 +104,46 @@ console.log(testEqual(16));
   
   testGreaterOrEqual(10);
 
+  /* < LESS THAN */
+
+  function testLessThan(val) {
+    if (val < "25") {  
+      return "Under 25";
+    }
+  
+    if (val <"55") { /* keep in mind that it converts data types so it will intiate as if it was a number or same data type */
+      return "Under 55";
+    }
+  
+    return "55 or Over";
+  }
+  
+  testLessThan(10);
+  
+  /* <= LESS OR EQUAL */
+
+  function testLessOrEqual(val) {
+    if (val <= 12) {  
+      return "Smaller Than or Equal to 12";
+    }
+  
+    if (val <= 24) {  
+      return "Smaller Than or Equal to 24";
+    }
+  
+    return "More Than 24";
+  }
+  
+  testLessOrEqual(10);
+
+  /* MAKE RANGE STATEMENT WITH LOGICAL OPERATOR && */
+
+  function testLogicalAnd(val) {
+
+    if (val >= 25 && val <= 50) { /* THE && make a more efficient statment critiria because you add a range in this case from 25 to 50  */
+        return "Yes";
+    }
+      return "No";
+  }
+  
+  testLogicalAnd(10);

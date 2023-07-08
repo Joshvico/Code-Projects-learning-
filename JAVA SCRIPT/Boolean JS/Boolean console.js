@@ -78,3 +78,34 @@ return "10 or Under";
 
 testGreaterThan(10);
 console.log(testGreaterThan(10));
+
+/* && LOGICAL OPERATOR */
+
+function testLogicalAnd(val) {
+
+  if (val <= 83 && val >= 83 ) { /* THE && make a more efficient statment criteria because you add a range in this case from 25 to 50  */
+      return "You are in your ideal weight,  but keep and eye if it is less than 77";
+  }
+    return "Your are over your weight";
+}
+
+testLogicalAnd(10);
+
+/* TESTING SOME IF CONDITIONS TO ADD 3rd CRITERIA (WEIGHT CONTROL) */
+
+function yourIdealWeight (val) {
+
+  if (val <= 83 && val >= 77) {
+   return "You are in your ideal weigth"; 
+  }
+  if (val <= 77) {
+    return " keep and eye and eat a bit more"; 
+   }
+
+  if (val >= 83) {
+    return "You start to get fat";  
+  }
+  
+}
+
+console.log (yourIdealWeight());
