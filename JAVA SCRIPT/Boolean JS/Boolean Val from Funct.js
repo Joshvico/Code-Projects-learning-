@@ -147,3 +147,15 @@ console.log(testEqual(16));
   }
   
   testLogicalAnd(10);
+  
+  /*INCLUDING RANGE WITH SAME OUTCOME with ||  */
+
+  function testLogicalOr(val) {
+  
+    if (val < 10 || val > 20) { /* This criteria will include 10 and 20 no need for = // still not sure what is the difference with && **** TIP <inside the range> >Outside range< */
+      return "Outside";
+    }
+    return "Inside";
+  }
+  
+  testLogicalOr(15);

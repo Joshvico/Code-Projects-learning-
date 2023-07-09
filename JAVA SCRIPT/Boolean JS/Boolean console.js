@@ -95,17 +95,28 @@ testLogicalAnd(10);
 
 function yourIdealWeight (val) {
 
-  if (val <= 83 && val >= 77) {
+  if (val >= 77 && val <= 83) {
    return "You are in your ideal weigth"; 
   }
-  if (val <= 77) {
-    return " keep and eye and eat a bit more"; 
-   }
-
-  if (val >= 83) {
     return "You start to get fat";  
-  }
-  
 }
 
-console.log (yourIdealWeight());
+console.log (yourIdealWeight(77));
+
+function testWeightRange (num){
+
+  if (num > 83 || num < 77) {
+    return "keep an eye";
+  }
+    return "all good";
+}
+
+console.log(testWeightRange(84));
+
+function testOrOperator (val){
+if (val > 83 || val < 77) {
+  return "out of weight";
+}
+return "in weigth";
+}
+console.log(testOrOperator(82));
