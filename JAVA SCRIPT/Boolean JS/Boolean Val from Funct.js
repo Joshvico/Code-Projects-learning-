@@ -184,4 +184,69 @@ console.log(testEqual(16));
     return "Between 5 and 10";
     }
   }
+
+  /* CHAINING ELSE IF  */
+
+  function testSize(num) { /* chaning sveral renages  */
+    if (num < 5) {
+       return "Tiny";
+    } else if (num < 10) {
+      return "Small";
+    } else if (num < 15) {
+      return "Medium";
+    } else if (num < 20) {
+      return "Large";
+    } else if (num >= 20) {
+      return "Huge";
+    } else {
+      return "Change Me";
+    }
+      
+    }
     
+    testSize(7);
+    console.log(testSize(5));
+
+  function myWeight(val) {
+
+    if (val <= 83 && val >= 77) { /* is = not added consol.log undefined */
+      return "Your are on ideal weight";
+    } else if (val < 77) {
+      return "You are losing to much weight";
+    } else if (val > 83) {
+    return "You are getting fat";
+    } else {
+      return "Enter the weihgt, please"
+    }
+  }
+
+  console.log(myWeight(84)); /* this works */
+
+     /* GOLF !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+     const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+     function golfScore(par, strokes) {
+       if (strokes == 1) {
+            return names[0]; /* In order for the fucntion to know wich Array to index we should give the name of the array we want to index */
+         } else if (strokes <= par-2) {
+           return names[1];
+         } else if (strokes == par-1) {
+           return names[2];
+         } else if (strokes == par) {
+           return names[3];
+         } else if (strokes == par+1) {
+           return names[4];
+         } else if (strokes == par+2) {
+           return names[5];
+         } else if (strokes >= par+3) {
+           return names[6];
+         } else {
+           return "Change Me";
+     
+         }
+     }
+     
+     golfScore(5, 4);
+     console.log(golfScore(5, 9));
+  
