@@ -91,6 +91,7 @@ function testLogicalAnd(val) {
 
 testLogicalAnd(10);
 
+/* **************************************************************************** */
 /* TESTING SOME IF CONDITIONS TO ADD 3rd CRITERIA (WEIGHT CONTROL) */
 
 function yourIdealWeight (val) {
@@ -120,3 +121,39 @@ if (val > 83 || val < 77) {
 return "in weigth";
 }
 console.log(testOrOperator(82));
+
+/* ********************************************************************* */
+  /* ELSE STATEMENT */
+
+  function testElse(val) {
+    let result = "";  
+    if (val > 5) { 
+      result = "Bigger than 5";
+    } else {
+      result = "5 or Smaller";
+    }
+    return result;
+  }
+  console.log(testElse(2));
+
+  /* ELSE IF */
+
+  function testElseIf(val) {
+    if (val <= 83 && val >= 77) { /* is = not added consol.log undefined */
+      return "Your are on ideal wieght";
+    } else if (val < 77) {
+      return "You are losing to much weight";
+    } else if (val > 83) {
+    return "You are getting fat";
+    } else {
+      return "enter the wiehgt, please"
+    }
+  }
+
+  console.log(testElseIf()); /* this works */
+
+  
+
+  
+    
+    

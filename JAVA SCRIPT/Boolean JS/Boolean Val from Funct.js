@@ -159,3 +159,29 @@ console.log(testEqual(16));
   }
   
   testLogicalOr(15);
+
+  /* ELSE STATEMENT */
+
+  function testElse(val) {
+    let result = "";  
+    if (val > 5) { /* IF + ELSE have its own block/ part then the return of the function goes in the end */
+      result = "Bigger than 5";
+    } else {
+      result = "5 or Smaller";
+    }
+    return result;
+  }
+  testElse(4);
+
+  /* ELSE IF STATMENT FOR MULTPLI CONDITIIONS */
+
+  function testElseIf(val) {
+    if (val > 10) {
+      return "Greater than 10";
+    } else if (val < 5) {
+      return "Smaller than 5";
+    } else {
+    return "Between 5 and 10";
+    }
+  }
+    
