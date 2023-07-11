@@ -200,6 +200,30 @@ function golfScore(par, strokes) {
 
 golfScore(5, 4);
 
+/* SWITCH STATEMENT AS aLTERNATIVE TO ELSE IF */
+
+function caseInSwitch(val) {
+  let answer = ""; /* we define answer variable to at the define not only the return but also the action and the string after aevry case */
+switch (val) {
+  case 1:
+  answer = "alpha";
+  break; /* it separates evry case */
+  case 2:
+  answer = "beta";
+  break;
+  case 3:
+  answer = "gamma";
+  break;
+  case 4:
+  answer = "delta";
+  break;
+}
+  return answer; 
+}
+
+caseInSwitch(1);
+console.log(caseInSwitch(5));
+
 
   
 
