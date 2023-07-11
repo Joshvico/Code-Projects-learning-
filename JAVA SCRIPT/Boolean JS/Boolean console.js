@@ -217,6 +217,9 @@ switch (val) {
   case 4:
   answer = "delta";
   break;
+  default:
+    answer = "enter data";
+    break;
 }
   return answer; 
 }

@@ -267,8 +267,9 @@ switch (val) {
   case 4:
   answer = "delta";
   break;
+  
 }
-  return answer; 
+  return answer; /* missing default  */
 }
 
 caseInSwitch(1);
