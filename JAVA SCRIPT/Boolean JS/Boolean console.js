@@ -217,17 +217,39 @@ switch (val) {
   case 4:
   answer = "delta";
   break;
-  default:
-    answer = "enter data";
+  default: /* Here is to none matching case == enter valid data*/
+    answer = "enter valid data";
     break;
 }
   return answer; 
 }
 
 caseInSwitch(1);
-console.log(caseInSwitch(5));
+console.log(caseInSwitch(8));
 
 
+/* DEFAULT in SWITCH STATEMENT FOR NONE MATICHING CASE */
+function switchOfStuff(val) {
+  let answer = "";
+switch (val) {
+  case "a": /* importante treating non numeric values as string, if not error "not defined" */
+  answer = "apple";
+  break;
+  case "b":
+  answer = "bird";
+  break;
+  case "c":
+  answer = "cat";
+  break;
+default:
+answer = "stuff";
+break;
+}
+  return answer;
+}
+
+switchOfStuff(1);
+console.log(switchOfStuff(""));
   
 
   

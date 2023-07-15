@@ -273,3 +273,25 @@ switch (val) {
 }
 
 caseInSwitch(1);
+
+/* ADDING DEFAULT + ANOTHER EXAMPLE of switch statement */
+function switchOfStuff(val) {
+  let answer = "";
+switch (val) {
+  case "a": /* importante treating non numeric values as string, if not error "not defined" */
+  answer = "apple";
+  break;
+  case "b":
+  answer = "bird";
+  break;
+  case "c":
+  answer = "cat";
+  break;
+default:
+answer = "stuff";
+break;
+}
+  return answer;
+}
+
+switchOfStuff(1);
