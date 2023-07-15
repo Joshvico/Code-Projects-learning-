@@ -278,6 +278,34 @@ switch(val){
 sequentialSizes(1);
 console.log (sequentialSizes(6));
 
+/* CHAGING IL ELSE STATMENT IN SWITHC STATMENTS // WEIGTH CONTROL VERSION  */
+function chainToSwitch(val) {
+  let answer = "";
+  switch (val) {
+    case "bob":
+    answer = "Marley";
+    break;
+    case 42:
+    answer = "The Answer";
+    break;
+    case 1:
+    answer = "There is no #1";
+    break;
+    case 99:
+    answer = "Missed me by this much!";
+    break;
+    case "tu puta madre":
+    answer = "comeme el zipote";
+    break;
+     default: 
+     answer =""
+     break;
+  }
+  return answer;
+}
+
+chainToSwitch(7);
+console.log(chainToSwitch("tu puta madre"))
   
     
     
