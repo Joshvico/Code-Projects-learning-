@@ -40,6 +40,15 @@ console.log(testEqual(16));
     }
     return "Not Equal";
   }
+
+  /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! BETTER WAY TO EXPRESS BOOLEAN .... take a look on Returning Boolean Values from Functions*/
+
+  function isLess(a, b) {
+    return (a === b);
+  }
+  isLess(10, 15);
+
+
   
   testStrict(10);
 /* EX practical */

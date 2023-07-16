@@ -41,6 +41,8 @@ function compareEquality(a, b) {
 
 compareEquality(10, "10");
 
+
+
 /* STRICT EQUALITY OPERATOR */
 
 function compareEquality(a, b) {
@@ -51,6 +53,14 @@ function compareEquality(a, b) {
 }
 compareEquality (10,"10");
 console.log (compareEquality (10,"10")); /* The console log will print not equal */
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!! a more efficient way to express this Boolean from a function */
+function isLess(a, b) {
+  return (a < b);
+}
+isLess(10, 15);
+console.log(isLess(12,22));
+  
 
 /* != ANEQUAL COMPARISON */
 
@@ -305,7 +315,8 @@ function chainToSwitch(val) {
 }
 
 chainToSwitch(7);
-console.log(chainToSwitch("tu puta madre"))
-  
+console.log(chainToSwitch("tu puta madre"));
+
+
     
     
