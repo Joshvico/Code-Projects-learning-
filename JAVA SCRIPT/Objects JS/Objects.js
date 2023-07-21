@@ -15,9 +15,51 @@ const testObj = {
 };
 
 const hatValue = testObj.hat; /* . is used when knowing the name of the property even if it is a string you can call it like if not */
-const shirtValue = testObj.shirt; 
-
+const shirtValue = testObj.shirt;
 
 // ACCESING OBJECTS  PROPERTIES with [] 
+const testObj1 = {
+  "an entree": "hamburger", /* As you can see this property has a space so to access it we need[] */
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+const entreeValue = testObj["an entree"]; /* when accessing since it has space we have to quoted with one or doble */   
+const drinkValue = testObj["the drink"]; 
+
+/* ACCESING PROPERTIES with VARIABLE [] */
+
+const testObj2 = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+const playerNumber = 16;
+const player = testObj2[playerNumber]; /* You created varaible player that will be equal to playerNumber / no "" need becaus taht is the name of the variable */
+
+/*CHAIGIN PROPERTIES WITH VARIABLES ursing  . or []  */
+
+const ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+
+console.log (ourDog);
+
+/* ADDING NEW PROPERTIES --> same as accesing them but new property */
 
 
+/* DELETING PRoPERTIES WITH DELETE */
+
+const myDog3 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+delete myDog3.tails; /* IT will print the info without tails */
