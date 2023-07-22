@@ -63,3 +63,20 @@ const myDog3 = {
 };
 
 delete myDog3.tails; /* IT will print the info without tails */
+
+/* USING OBJECTS FOR LOOK UPS --> LIKE DICTIONARIES and SUBSTITUTE SWITCH STATEMENT */
+
+function phoneticLookup(val) {
+  let result = "";
+
+    var lookup = { /* the objects and the assoacited data starts here */
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank"
+};
+result = lookup[val]; /* results equals the data that val that is entered in the function phoneticlookup */
+return result;
+}
