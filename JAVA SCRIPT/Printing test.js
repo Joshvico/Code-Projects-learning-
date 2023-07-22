@@ -9,7 +9,7 @@ insult("Juan", " tio!");
 insult ("Maria");
 
 
-function dayMessahe(hour) {
+function dayMessage(hour) {
 
   if (hour >= 6 &&  hour <= 12) {
     return "good Morning";
@@ -26,4 +26,6 @@ function dayMessahe(hour) {
   }
 }
 
-console.log(dayMessahe());
+console.log(dayMessage());
+
+
