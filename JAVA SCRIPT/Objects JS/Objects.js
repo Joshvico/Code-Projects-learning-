@@ -75,7 +75,7 @@ function phoneticLookup(val) {
     "charlie": "Chicago",
     "delta": "Denver",
     "echo": "Easy",
-    "foxtrot": "Frank"
+    "foxtrot": "Frank" /* last object property does not fennish with  "","" */
 };
 result = lookup[val]; /* results equals the data that val that is entered in the function phoneticlookup */
 return result;
