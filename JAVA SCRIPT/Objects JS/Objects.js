@@ -105,3 +105,28 @@ if (obj.hasOwnProperty(checkProp)){ /* when asking for return one option or not 
   return "Not Found";
 }
 }
+
+/* ADDING NEW OBJECTS in COMPLEX OBJECTS ARRAYS with OBJ IN  */
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },/* MIND THE COMA as if it is not the last array or object it need , to continue the data ddition */      
+  { /* THIS is the NEW object */
+    "artist": "The WeekEnd",
+    "title": "Flahs light",
+    "release_year": 2019,
+    "formats": [
+      "CD",
+      "8T",
+      "LP" ]
+    }
+];

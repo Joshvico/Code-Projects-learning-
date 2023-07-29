@@ -100,3 +100,29 @@ function checkObj1(checkProp) {
 }
 checkObj ("bed"); /* not sure why is it here.... it does not affect the console.log */
 console.log(checkObj1("bed"));
+
+/* ADDING NEW OBJECTS in COMPLEX OBJECTS ARRAYS with OBJ IN ---> PENGIN HOW TO ACCESS IT AN INTERACT */
+
+const myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  },/* MIND THE COMA as if it is not the last array or object it need , to continue the data ddition */      
+  { /* THIS is the NEW object */
+    "artist": "The WeekEnd",
+    "title": "Flahs light",
+    "release_year": 2019,
+    "formats": [
+      "CD",
+      "8T",
+      "LP" ]
+    }
+];
+
