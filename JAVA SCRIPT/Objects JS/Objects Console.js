@@ -44,7 +44,7 @@ const ourDog1 = {
 };
 
 ourDog1.bark = "bow-wow";
-ourDog1.race = "nigga";
+ourDog1["race"] = "perro mamao";
  
 console.log (ourDog1);
 
@@ -59,3 +59,4 @@ const myDog3 = {
 };
 
 delete myDog3.tails; 
+console.log(myDog3);

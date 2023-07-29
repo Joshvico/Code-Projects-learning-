@@ -50,6 +50,14 @@ const ourDog = {
 console.log (ourDog);
 
 /* ADDING NEW PROPERTIES --> same as accesing them but new property */
+const myDog1 = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+myDog1["bark"] = "woof"; /* this is one of the ways */
+myDog1.race = "woof"; /* No need for " " when added like this */
 
 
 /* DELETING PRoPERTIES WITH DELETE */
@@ -67,7 +75,7 @@ delete myDog3.tails; /* IT will print the info without tails */
 /* USING OBJECTS FOR LOOK UPS --> LIKE DICTIONARIES and SUBSTITUTE SWITCH STATEMENT */
 
 function phoneticLookup(val) {
-  let result = "";
+  let result = ""; 
 
     var lookup = { /* the objects and the assoacited data starts here */
     "alpha": "Adams",
@@ -77,6 +85,6 @@ function phoneticLookup(val) {
     "echo": "Easy",
     "foxtrot": "Frank" /* last object property does not fennish with  "","" */
 };
-result = lookup[val]; /* results equals the data that val that is entered in the function phoneticlookup */
+result = lookup[val]; /* results equals the data that val that is entered in the function phoneticlookup 77 MIND THE BRAKET NOTION for VAL*/
 return result;
 }
