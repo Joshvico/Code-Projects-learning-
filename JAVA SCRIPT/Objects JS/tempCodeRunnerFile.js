@@ -1,1 +1,1 @@
-legs all mine
+bed

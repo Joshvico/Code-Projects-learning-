@@ -60,3 +60,43 @@ const myDog3 = {
 
 delete myDog3.tails; 
 console.log(myDog3);
+
+/* HASOWNPROPERTY() TO CHEK if PROPERTY or OBJ FOUND */
+var myObj = {   
+  gift:"pony",
+  pet:"kitten",
+  bed:"sleigh"
+};
+
+function checkObj(checkProp) {
+ 
+  var answer = "blank answer";
+  
+ if (myObj.hasOwnProperty(checkProp)) { /* when asking for return one option or not keep in mind Bolean If/else statement// check consolo to see other way */
+  answer = myObj[checkProp];
+  } else {
+    answer = "Not Found";
+  }
+  return answer;
+}
+checkObj ("bed"); /* not sure why is it here.... it does not affect the console.log */
+console.log(checkObj("zapatero"));
+
+/* ---> ANOTHER WAY TO OPTIMIZE the PREVIOUS CODE */
+var myObj1 = {   
+  gift:"pony",
+  pet:"kitten",
+  bed:"sleigh"
+};
+
+function checkObj1(checkProp) {
+ 
+  var answer = "Not found"; /* by declaring not found var here the return could just be this answer if False */
+  
+ if (myObj1.hasOwnProperty(checkProp)) { /* when asking for return one option or not keep in mind Bolean If/else statement// check consolo to see other way */
+  answer = myObj1[checkProp];
+  }
+  return answer;
+}
+checkObj ("bed"); /* not sure why is it here.... it does not affect the console.log */
+console.log(checkObj1("bed"));

@@ -88,3 +88,20 @@ function phoneticLookup(val) {
 result = lookup[val]; /* results equals the data that val that is entered in the function phoneticlookup 77 MIND THE BRAKET NOTION for VAL*/
 return result;
 }
+
+/* HASOWNPROPERTY() TO CHEK if PROPERTY or OBJ FOUND */
+var myObj = {   
+  gift:"pony",
+  pet:"kitten",
+  bed:"sleigh"
+}
+
+function checkObj(obj, checkProp) {
+
+if (obj.hasOwnProperty(checkProp)){ /* when asking for return one option or not keep in mind Bolean If/else statement// check consolo to see other way */
+
+  return obj [checkProp];
+} else {
+  return "Not Found";
+}
+}
