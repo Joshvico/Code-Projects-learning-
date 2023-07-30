@@ -126,3 +126,44 @@ const myMusic = [
     }
 ];
 
+/* ACCESING NESTED OBJECTS */
+const myStorage = {
+  "car": { /* car key has 2 nested objects inside and outside */
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     }, /* this coma is linking the two sub-objects */
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+console.log(myStorage.car.inside["passenger seat"]); /* console.log will print crumbs no need to apply value to a variable */
+
+/* ACCESING NESTED ARRAYS */
+
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list; /* This will print the whole Array */ 
+const thirdTree = myPlants[1].list[0]; /* This will print the first value of the arrays nested in object myplays (trees, "fir") */
+
+console.log(secondTree);
