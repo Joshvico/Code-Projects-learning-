@@ -7,26 +7,57 @@
 </head>
 <body>
   <h1 id="title">
-    How Can the NBA can Improve their ENtertaiment?
+    How Can the NBA can Improve their Entertaiment?
   </h1>
   <p id="description"> Thank you for taking the time to help the NBA to improve</p>
-  <form id="form" action="">
+  <form id="form">
     <div class="input-element">
-      <label for="">Name</label>
-      <input title="name" id="name" type="text" required/>
+      <label id="name-label">
+        Name
+      </label>
+      <input placeholder="name" title="name" id="name" type="text" required/>
+    </div>
+    <div class="email-element">
+      <label id="name-label">
+        Email
+      </label>
+      <input placeholder="email" title="email" id="email" type="email" required/>
     </div>
     <div class="input-element">
-      <label for="">Email</label>
-      <input title="email" id="email" type="email" required/>
+      <label id="agen-label">
+        Age
+      </label>
+      <input placeholder="name" title="name" id="age" type="number" min="8" max="100" required/>
     </div>
     <div class="input-element">
-      <label for="">Age</label>
-      <input title="name" id="age" type="number" required min="8" maz="100"/>
+      <div>
+        <label>Which suggestions are good idea to implemenet in the NBA?</label>
+      </div>
+      <label id="select-label">
+        <select id="dropdown">
+          <option>Bucks</option>
+          <option>Timewolves</option>
+          <option>Lakers</option>
+          <option>Raptors</option>
+        </select>
+      </label>
     </div>
-    <div class="input-element">
-      <label for=""></label>
-      <input title="name" id="tumadre" type="text" required/>
-    </div>
+    <div>
+      <div>
+        <label><input type="checkbox" name="ideas">Cheaper tickets</label>
+      </div>
+      <div>  
+        <label><input type="checkbox" name="ideas">Get to meet players personally during trainings</label>
+      </div>
+      <div>
+        <label><input type="checkbox" name="ideas">More engaging dynamics during the breaks</label>
+      </div>
+  </div>
+  <div>
+    <label>Additional comments</label>
+    <textarea type="text"></textarea>
+  </div>
+  <button type="submit" id="submit">Submit</button>
   </form>
 </body>
 </html>
