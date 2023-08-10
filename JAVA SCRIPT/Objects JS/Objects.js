@@ -171,3 +171,43 @@ const myPlants = [
 
 const secondTree = myPlants[1].list;
 console.log(secondTree);
+
+/* RECORD COLLECTION PENDING Redo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  */
+
+// Chek in Java S document for Ex info
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(records, id, prop, value) {
+  if (value === "") {
+    delete records[id][prop];
+  } 
+  if (prop !== "tracks" && value !== "") { /* adding if statment por tos laos consultar chat GPT */
+     records[id][prop] = value;
+  } 
+  else if (prop === "tracks" && value !== "") /* investigate nestig else if statmenet */
+    if(records[id].hasOwnProperty("tracks") === false){
+      records[id][prop] = [];
+    }
+    records[id][prop].push(value);
+  }
+  return records;
+}
+
