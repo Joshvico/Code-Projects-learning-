@@ -60,7 +60,8 @@ const quotient1 = 66 / 33;
 let myVar = 87;
 
 myVar++; /* this is equal 88 is the same as the line below */
-                                          myVar = myVar + 1;
+myVar = myVar + 1;
+
 let myVar1 = 11;
 myVar--; /* this is equal 10 */
 
@@ -76,7 +77,7 @@ const quotient = 4.4 / 2.0; //=2.2//
 
 const remainder = 11 % 3; // this is reaminader of 2 //
 
-/* += CALCULATING DECLARED VARIANLES WITH NUMBER*/
+/* += CALCULATING DECLARED VARIABLES WITH NUMBER*/
 
 let a = 3;
 let b = 17;
