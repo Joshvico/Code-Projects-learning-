@@ -35,7 +35,7 @@ function missionApollo11 (status) {
     return " Hueston we have a problem! ";
   }else if (status == "explosion"){
     return "mission aboerted";
-  }else if (status == "waiting") {
+  }else if (status == "Any News?") {
     return "waiting for data to reach operation control" + "try again later";
   }else {
     return "format not accepted" + " try again";
@@ -43,7 +43,22 @@ function missionApollo11 (status) {
   
 }
 
-console.log (rocketLaunch, missionApollo11("waiting"));
 
 
+
+
+
+
+
+
+
+
+console.log (missionApollo11("34"));
+
+"landed"
+"issues"
+"anomaly"
+"explosion"
+"Any news?"
+""
 
