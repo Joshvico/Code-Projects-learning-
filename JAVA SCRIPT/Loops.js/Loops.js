@@ -16,6 +16,6 @@ while(i >= 0) { /* mind >= to include 0 */
   myArray.unshift(i); /* every action is delimited with ; */
   i++;/* this action delimitates the count */
 }
-console.log(i);
+console.log(myArray1);
 
 /* FOR LOOP */
