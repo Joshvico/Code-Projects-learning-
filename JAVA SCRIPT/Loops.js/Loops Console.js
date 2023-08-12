@@ -17,5 +17,13 @@ while (x >= 0){
   countDown.push(x);
   x--;
 }
+console.log(countDown);
 
 /* FOR LOOP */
+
+const myArray2 = [];
+ 
+for(let xi =1; xi <= 5; xi++){ /* Declaring X could be done inside the FOR loop no need to declare in or outside the fucntion */
+  myArray2.push(xi);
+}
+console.log(myArray2); /* this will loop code until reachin 0 [5,4,3,2,1,00] */

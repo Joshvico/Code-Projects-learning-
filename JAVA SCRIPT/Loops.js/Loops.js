@@ -28,3 +28,13 @@ while (x >= 0){
 }
 
 /* FOR LOOP */
+const myArray2 = [];
+
+/* let xi =1; --> Declaring it in Global scope will not affect the loop but it can be already declared insed it*/
+
+for(let xi =1; xi <= 5; xi++){ /* Declaring X could be done inside the FOR loop no need to declare in or outside the fucntion */
+  myArray.push(xi);
+}
+ console.log(myArray);
+
+ /* ITERATING ODS NUMBERS with FOR LOOP  */
