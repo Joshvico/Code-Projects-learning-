@@ -15,6 +15,7 @@ if(num <= 3 && num >= 1){
 
 console.log(mySume(7));
 
+/* TESTING WHILE LOOP and IF statments for Fun */
 let countDown = ["Hueston ready..."];
 let x = 10
 
@@ -23,7 +24,7 @@ while (x >= 0){
   x--;
 }
 
-let rocketLaunch = countDown + " and Ignition!";
+let rocketLaunch = countDown + " all engines running, and... LIFT OFF!";
 console.log(rocketLaunch);
 
 

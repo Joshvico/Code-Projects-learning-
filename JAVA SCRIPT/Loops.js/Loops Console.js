@@ -9,4 +9,12 @@ while(i >= 0) { /* mind >= to include 0 */
 }
 console.log(myArray); /* this will loop code until reachin 0 [5,4,3,2,1,00] */
 
+/* * WHILE For FUN APOLLO COUNT DOWN*/
+let countDown = ["Hueston ready..."];
+let x = 10
+
+while (x >= 0){
+  countDown.push(x);
+  x--;
+
   /* FOR LOOP */
