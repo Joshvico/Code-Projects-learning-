@@ -16,5 +16,6 @@ let x = 10
 while (x >= 0){
   countDown.push(x);
   x--;
+}
 
-  /* FOR LOOP */
+/* FOR LOOP */
