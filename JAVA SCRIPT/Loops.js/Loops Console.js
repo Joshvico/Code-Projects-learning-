@@ -47,3 +47,13 @@ for(var b = 9; b > 0; b -= 2){
 }
 
 console.log(myArray4);
+  
+/* ITARATING TRHOUGH ARRAY FOR LOOP */
+const myArr5 = [2, 3, 4, 5, 6];
+var total = 0; /* the variable out of the loop must be declkared */
+for(let d = 0 ; d < myArr5.length; d ++){
+ total += myArr5[d];
+}
+
+console.log(total); /* It will show 20  */
+

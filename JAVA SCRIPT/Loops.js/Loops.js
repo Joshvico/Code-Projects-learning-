@@ -52,4 +52,13 @@ const myArray4 = [];
 
 for(var b = 9; b > 0; b -= 2){
   myArray4.push(b);
+
+  /* ITARATING TRHOUGH ARRAY FOR LOOP */
+  const myArr = [2, 3, 4, 5, 6];
+var total = 0;
+for(let d = 0 ; d < myArr.length; d ++){ /* This loop will add every number inside the array until length condition is false no more numbers  */
+ total += myArr[d];
+}
+
+console.log(total); /* It will show 20  */
 }
