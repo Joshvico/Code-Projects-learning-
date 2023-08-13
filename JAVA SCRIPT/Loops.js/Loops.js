@@ -1,4 +1,4 @@
-/* WHILE LOOP */
+/* WHILE LOOP || USED WEHN UNDER CERTAIN CODITIONS YOU WANT LOOP TO BE EXECUTED */
 
 const myArray = [];
 
@@ -7,7 +7,7 @@ while(i >= 0) { /* mind >= to include 0 */
   myArray.push(i); /* every action is delimited with ; */
   i--;/* this action delimitates the count */
 }
-console.log(myArray); /* this will loop code until reachin 0 [5,4,3,2,1,00] */
+console.log(myArray); /* this will loop code until reachin 0 [5,4,3,2,1,0] */
 
 const myArray1 = [1,2,3,4,5,6,7,8,9,10];
 
@@ -27,7 +27,7 @@ while (x >= 0){
   x--;
 }
 
-/* FOR LOOP */
+/* FOR LOOP  || USED WHEN KNOWN HOW MANY TIMES YOU WANT LOOP TO BE DONE */
 const myArray2 = [];
 
 /* let xi =1; --> Declaring it in Global scope will not affect the loop but it can be already declared insed it*/
@@ -37,4 +37,19 @@ for(let xi =1; xi <= 5; xi++){ /* Declaring X could be done inside the FOR loop 
 }
  console.log(myArray);
 
- /* ITERATING ODS NUMBERS with FOR LOOP  */
+ /* ITERATING ODS NUMBERS with FOR LOOP*/
+
+ const myArray3 = [];
+
+for(var a = 1; a <= 9; a += 2){
+  myArray3.push(a);
+}
+
+console.log(myArray3);
+
+/* COUNTING BACKWARDS WITH FOR LOOP */
+const myArray4 = [];
+
+for(var b = 9; b > 0; b -= 2){
+  myArray4.push(b);
+}

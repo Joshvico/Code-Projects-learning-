@@ -27,3 +27,23 @@ for(let xi =1; xi <= 5; xi++){ /* Declaring X could be done inside the FOR loop 
   myArray2.push(xi);
 }
 console.log(myArray2); /* this will loop code until reachin 0 [5,4,3,2,1,00] */
+
+/* ITERATING FOR LOOP */
+
+const myArray3 = [];
+
+for(var a = 1; a <= 9; a += 2){
+  myArray3.push(a);
+}
+
+console.log(myArray3);
+
+/* COUTNIN BACKWARD WITH FOR LOOP */
+
+const myArray4 = [];
+
+for(var b = 9; b > 0; b -= 2){
+  myArray4.push(b);
+}
+
+console.log(myArray4);
