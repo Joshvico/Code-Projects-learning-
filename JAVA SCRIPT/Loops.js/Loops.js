@@ -62,3 +62,19 @@ for(let d = 0 ; d < myArr.length; d ++){ /* This loop will add every number insi
 
 console.log(total); /* It will show 20  */
 }
+
+/* ITERATING NESTED ARRAYS */
+function multiplyAll(arr) {
+  let product = 1;
+
+for (let a = 0; a < arr.length; a ++){ /* The plus plus is used to mark the position pushed through the loop, in this case is one after previous positon */
+ for(let b = 0; b < arr[a].length; b ++){ /* here is you stablishing loop inside each subarray */
+   product *= arr[a][b] ; /* Remmeber we are working with a function so we have to define consider de parameter we delcaring in the fucntion */
+ } 
+}
+  return product;
+}
+
+var product = multiplyAll([[1, 2], [3, 4], [5, 6, 7 ]]); /* important declare product as it was not able to console.log as it is only global scope */
+
+console.log(product);
