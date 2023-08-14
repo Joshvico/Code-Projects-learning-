@@ -78,3 +78,15 @@ for (let a = 0; a < arr.length; a ++){ /* The plus plus is used to mark the posi
 var product = multiplyAll([[1, 2], [3, 4], [5, 6, 7 ]]); /* important declare product as it was not able to console.log as it is only global scope */
 
 console.log(product);
+
+/* DO.... WHILE */
+
+const myArray5 = [];
+let w = 10;
+
+do {  
+  myArray5.push(w);
+  w ++;
+} while (w < 10);
+
+console.log(myArray5);/* IT pints value 10 as condition is not met but the Do while still runs even if conditions fails */
