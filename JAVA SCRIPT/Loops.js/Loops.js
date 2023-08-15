@@ -90,3 +90,5 @@ do {
 } while (w < 10);
 
 console.log(myArray5);/* IT pints value 10 as condition is not met but the Do while still runs even if conditions fails */
+
+/* RECURASION */
