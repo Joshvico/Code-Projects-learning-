@@ -92,3 +92,13 @@ do {
 console.log(myArray5);/* IT pints value 10 as condition is not met but the Do while still runs even if conditions fails */
 
 /* RECURASION */
+function sum(arr, n) {
+
+  if(n <= 0) { /* This is the Base case of our Russinan Doll the last contains what we need */
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n -1];
+  }
+  
+  }
+  console.log (sum([1,2,3,4],3,"hello"));/* the N representa les posicions que seran sumades es per això que 4 no esta inclos en la suma */

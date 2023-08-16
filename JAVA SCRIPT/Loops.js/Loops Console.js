@@ -85,3 +85,24 @@ do {
 
 console.log(myArray5);
 
+/* RECURSION */
+
+function multiply(arr, n) {
+  let product = 1;
+  for (let i = 0; i < n; i++) {
+    product *= arr[i];
+  }
+  return product;
+}
+
+/* RECURASION */
+function sum(arr, n) {
+
+  if(n <= 0) { /* This is the Base case of our Russinan Doll the last contains what we need */
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n -1];
+  }
+  
+  }
+  console.log (sum([1,2,3,4],3,"hello"));/* the N representa les posicions que seran sumades es per això que 4 no esta inclos en la suma */
