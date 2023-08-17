@@ -10,10 +10,10 @@
   <header>
     <nav>
       <ul>
-        <il><a href="#about">About me</a></il>
-        <il><a href="#social">Social media</a></il>
-        <il><a href="#offer"></a>Services</il>
-        <il><a href="#contact"></a>Contact</il>
+        <li><a href="#about" accesskey="a">About me</a></li>
+        <li><a href="#social"accesskey="s">Social media</a></li>
+        <li><a href="#offer" accesskey="o">Services</a></li>
+        <li><a href="#contact"accesskey="c">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -27,7 +27,19 @@
       </div>
       <div>
         <h2 id="about">ABOUT ME</h2>
-        <p>Insert text</p>
+        <p>Born in Catalonia in April 1993, Josep Vidal kindled his fascination with illusion at 16, unwrapping his first magic box. This ignited a journey to master concepts, theories, and ideas, propelling him across the globe in pursuit of his dream.
+
+          His ambition expanded artistic and personal horizons, crafting a multilingual, entertaining persona. He has graced stages worldwide, leaving his mark in Europe and beyond. Yet, his quest continues as he strives for recognition among the global magic community.
+          
+          Having launched his magic career in Mexico, he soared to the United States, clinching prestigious awards from the International Brotherhood of Magicians (IBM). Today, he proudly holds the title of IBM's international champion. He secured second place in Spain's national magic competition and even challenged the World Championship of Magic FISM in Canada.
+          
+          If you crave enchantment and seek the thrill of live magic, you're invited to experience Josep Vidal's captivating performances and engaging content. Join him on this extraordinary journey, where wonder and imagination converge, creating magical memories that linger forever.</p>
+        <div><a href="" target="_blank">Press</a></div>
+        <div class="social-icons">
+          <div class="logo-box facebook">F</div>
+          <div class="logo-box Youtube">Y</div>
+          <div class="logo-box Instagram">I</div>
+        </div>
       </div>
     </section>
     <section id="merits" class="merits">
@@ -41,22 +53,32 @@
       <img id="img-2" src="" alt="">
     </section>
     <section id="offer" class="">
-      <div></div>
+      <div><a href="" target="_blank">Magic Sessions</a></div>
       <div><img src="" alt="closeup-shows"></div>
-      <div></div>
+      <div><a href="" target="_blank">Cocktail Magic</a></div>
       <div><img src="" alt="cocktail-magic"></div>
-      <div></div>
+      <div><a href="" target="_blank">Workshop</a></div>
       <div><img src="" alt="workshop"></div>
     </section>
-    <form action="" class="contact">
-      <input type="name">
-      <input type="email">
-      <input type="text" placeholder="insert-text">
-      <input type="submit">
+    <fieldset>
+      <div>
+    <form action="" class="contact" title="contact-form">
+      <label for="name-label">Contact name</label>
+      <input required type="text" placeholder="Insert your name">
+    </div>
+    <div>
+      <label id="email-label" for="">Your e-mail</label>
+      <input id="email" required type="email" placeholder="your email">
+    </div>
+    <div>
+      <label for="message"></label>
+      <textarea name="message" id="message" cols="30" rows="10" placeholder="How Can I help you?"></textarea>
+    </div>
+      <input id="submit" type="submit" value="contact">
     </form>
+  </fieldset>
 </main>
 <footer>
-
 </footer>
 </body>
 </html>
