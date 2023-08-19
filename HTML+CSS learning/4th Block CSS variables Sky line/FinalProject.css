@@ -50,7 +50,7 @@ flex-wrap: nowrap;
 font-size: 4.5rem;
   }
 }
-}
+
 
 @media only screen and (max-width: 550px) {
   .hero-title {
@@ -70,4 +70,5 @@ font-size: 4.5rem;
 
   .text {
     font-size: 1.6rem;
-  } 
+  }
+}
