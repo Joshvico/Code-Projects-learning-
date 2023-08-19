@@ -1,10 +1,15 @@
+
 *{
   background-color: bisque;
 }
-
-nav {
-  background-color: black;
+:root {
+--background: blue; /* with back color applies easier */
+}
+header { /* Header englobes de whole element structure */
+  background:var(--background);
   border: 1px solid red;
-  display: flex;
-  flex-direction: row;
+  text-align: end;
+  position: fixed;
+  width:100%
+  z
 }
