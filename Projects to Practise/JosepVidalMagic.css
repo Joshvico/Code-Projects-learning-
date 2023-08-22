@@ -64,9 +64,9 @@ a{
 
 
 .profile{
-  background-color: blue;
   width: 50%;
-  margin: 0;
+  margin: 0px;
+  margin-bottom: 0px;
 }
 .opti{
   width: 100%;
@@ -82,16 +82,20 @@ a{
 }
 .about-text{
   width: 50%;
-  margin: 0;
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
 }
 
 .text-title{
-  margin: 20px;
+  margin: 30px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .text {
   margin: 20px;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   font-size: 20px;
   text-align: justify; /* Jutifica el text */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
