@@ -4,7 +4,8 @@
   
 }
 :root {
---background:rgb(37, 35, 35); /* with back color applies easier */
+--background:rgb(0, 0, 0);
+--color-font:white; /* with back color applies easier */
 }
 header { /* Header englobes de whole element structure */
   background:transparent;
@@ -43,18 +44,21 @@ a{
 
 .cover {
   width:100%;
-  height: 600px;
+  height: 700px;
   object-fit:cover;
+  object-position:center initial;
   margin:0px;
   padding:0px;
-  background-color: blueviolet;
+  opacity:0.99; /* aplica transparencia */  
+  background: var(--background);
 }
 .about-me {
   display: flex;
   flex-direction: row;
   margin: 0;
   padding: 0;
-  background-color: grey;
+  background-color: rgb(31, 31, 31);
+  color: var(--color-font);
 
 }
 
@@ -68,6 +72,8 @@ a{
   width: 100%;
   height: 600px;
   object-fit: cover;
+  object-position:center top;
+
 }
 
 .intro-text{
@@ -87,6 +93,6 @@ a{
   margin: 20px;
   margin-left: 20px;
   font-size: 20px;
-  text-align: justify;
+  text-align: justify; /* Jutifica el text */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
