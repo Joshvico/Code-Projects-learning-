@@ -98,3 +98,10 @@ a{
   text-align: justify; /* Jutifica el text */
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.merits {
+  display: grid;          
+  grid-template-columns: repeat(4,1fr);/* fr is a only-grid metric 1 fraction spread equaly the columns created */
+  /* Repeat function helsp to don´t repeat same metrics as before repeat(n of columns, unit of metric) */
+
+}
