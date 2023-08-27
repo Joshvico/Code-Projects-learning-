@@ -105,3 +105,37 @@ a{
   /* Repeat function helsp to don´t repeat same metrics as before repeat(n of columns, unit of metric) */
 
 }
+
+.social-media{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-media{
+  background-color: grey;
+}
+.title-services{
+  width: max-content;
+  height: 30px;
+  justify-content: center;
+}
+.offer {
+  width: 50%;
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+}
+
+.offer-image{
+  width: 50%;
+  height: 1fr;
+}
+
+.offer-option{
+  width: 50%;
+  margin: 0px;
+  object-fit: cover;
+  object-position:center top;
+}
