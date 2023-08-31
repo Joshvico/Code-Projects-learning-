@@ -103,9 +103,8 @@ a{
 
 .merits {
   display: grid;          
-  grid-template-columns: repeat(4,1fr);/* fr is a only-grid metric 1 fraction spread equaly the columns created */
+  grid-template-columns: repeat(3,1fr);/* fr is a only-grid metric 1 fraction spread equaly the columns created */
   /* Repeat function helsp to don´t repeat same metrics as before repeat(n of columns, unit of metric) */
-
 }
 
 .social-media{
@@ -123,8 +122,10 @@ a{
   justify-content: center;
 }
 .offer {
-  width: 50%;
-  background-color: grey;
+  width:100%;
+  padding: 0px;
+  border: none;
+  background-color: bluegrey;
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-template-rows: repeat(3,1fr);
@@ -155,7 +156,7 @@ a{
   
 }
 .offer-image{
-  width: auto;
+  width:;
   margin: 0;
   width: 300px;
   height: 100px;
