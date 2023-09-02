@@ -107,6 +107,19 @@ a{
   /* Repeat function helsp to don´t repeat same metrics as before repeat(n of columns, unit of metric) */
 }
 
+.IBM-logo{
+grid-column:2;
+}
+.prize {
+  width: 1fr;
+  height: 200px;
+  
+}
+
+.prize, .three{
+  grid-column:3;
+  width: 1fr;
+}
 .social-media{
   display: flex;
   flex-direction: column;
