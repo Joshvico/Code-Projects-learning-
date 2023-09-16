@@ -21,7 +21,7 @@ const shirtValue = testObj.shirt;
 const testObj1 = {
   "an entree": "hamburger", /* As you can see this property has a space so to access it we need[] */
   "my side": "veggies",
-  "the drink": "water"
+  "the drink": "water",
 };
 
 const entreeValue = testObj["an entree"]; /* when accessing since it has space we have to quoted with one or doble */   
