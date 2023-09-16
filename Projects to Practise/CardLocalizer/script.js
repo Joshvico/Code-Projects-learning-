@@ -1,4 +1,4 @@
-const cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
+const cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 const cardSuits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
 
 const pokerCards = [];
@@ -9,6 +9,8 @@ for (const value of cardValues) {
     pokerCards.push(card);
   }
 }
+
+let stopShuffling = false; // Initialize the stop flag
 
 function getRandomCard() {
   const randomIndex = Math.floor(Math.random() * pokerCards.length);
@@ -26,6 +28,10 @@ function readCard(card) {
   speechSynthesis.speak(utterance);
 }
 
+function stopShuffle() {
+  stopShuffling = true; // Set the stop flag to stop shuffling
+}
+
 function shufflePokerCards() {
   const cardDisplay = document.getElementById('cardDisplay');
   cardDisplay.innerHTML = '';
@@ -34,16 +40,19 @@ function shufflePokerCards() {
   const interval = 5000;
 
   const showNextCard = () => {
-    if (currentIndex < pokerCards.length) {
-      const card = getRandomCard();
-      displayCard(card);
-      readCard(card);
-      currentIndex++;
-      setTimeout(showNextCard, interval);
-    } else {
-      cardDisplay.innerHTML = 'All cards shown!';
+    if (stopShuffling || currentIndex >= pokerCards.length) {
+      cardDisplay.innerHTML = 'Shuffling stopped.';
+      stopShuffling = false; // Reset the stop flag
+      return;
     }
+
+    const card = getRandomCard();
+    displayCard(card);
+    readCard(card);
+    currentIndex++;
+    setTimeout(showNextCard, interval);
   };
 
+  stopShuffling = false; // Reset the stop flag before starting
   showNextCard();
 }
