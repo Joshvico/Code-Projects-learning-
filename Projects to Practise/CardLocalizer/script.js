@@ -41,7 +41,7 @@ function shufflePokerCards() {
 
   const showNextCard = () => {
     if (stopShuffling || currentIndex >= pokerCards.length) {
-      cardDisplay.innerHTML = 'Shuffling stopped.';
+      cardDisplay.innerHTML = 'You are Done!';
       stopShuffling = false; // Reset the stop flag
       return;
     }
