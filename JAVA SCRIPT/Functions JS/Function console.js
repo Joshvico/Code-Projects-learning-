@@ -72,3 +72,9 @@ function randomFraction() {
 }
 
 console.log (randomFraction()) /* it will return a random decimal number */
+
+function randomWholeNum() {
+  return Math.floor(Math.random()*10); /* math.floor will round numbers and neverereturn on 1 in this case it will return a number from 0 to 9 // check concept in notes */
+}
+
+console.log (randomWholeNum());
