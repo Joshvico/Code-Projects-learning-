@@ -77,3 +77,20 @@ let testArr = [1, 2, 3, 4, 5];
 console.log("Before: " + JSON.stringify(testArr));
 console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
+
+/* MATH RANDOM */
+function randomFraction() {
+
+  return Math.random ();
+}
+
+console.log (randomFraction()) /* it will return a decimal random number */
+
+/* MATH FLOOR */
+
+function randomWholeNum() {
+  return Math.floor(Math.random()*10); /* math.floor will round numbers and neverereturn on 1 in this case it will return a number from 0 to 9 // check concept in notes */
+}
+
+console.log (randomWholeNum());
+

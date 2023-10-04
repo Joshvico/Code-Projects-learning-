@@ -64,3 +64,11 @@ function processArg(num) {
 processed = processArg(7); /* we assign the value of returned to variable processed  */
 console.log (processArg(7)); /* Keep in mind when pinritng fucntion expresseed with () */
 
+/* MATH RANDOM */
+
+function randomFraction() {
+
+  return Math.random ();
+}
+
+console.log (randomFraction()) /* it will return a random decimal number */
