@@ -94,3 +94,11 @@ function randomWholeNum() {
 
 console.log (randomWholeNum());
 
+/* RANDOM NUMBER IN RANGE */
+
+function randomRange(myMin, myMax) {
+ 
+  return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin; /* This equation takes a random number * the result of max numbe - myMin + 1 round the number with floor and then sum to my Min */
+}
+
+console.log (randomRange(2, 20)); /* This is the range that the equation will be using to det the number */
