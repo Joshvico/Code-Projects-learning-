@@ -286,3 +286,23 @@ console.log(recordCollection[1245].artist);
   }
   
   console.log (lookUpProfile("Akira", "address"));
+
+  /* PARSEINT () */
+
+function convertToInteger(str) { /* this function uses paseInt to turn string into numbers that then can be used for calculation */
+return parseInt (str); /* this fucniton will stop converting until there is a character non number and then will retunr NaN */
+}
+
+console.log (convertToInteger("a56"));
+console.log (convertToInteger("5627a373829"));
+
+  /* PARSEINT ()  with RADIX */
+  function convertToInteger1(str) {
+    return parseInt(str, 2);
+   }
+   
+   console.log (convertToInteger1("10011"));
+
+
+
+

@@ -102,3 +102,19 @@ function randomRange(myMin, myMax) {
 }
 
 console.log (randomRange(2, 20)); /* This is the range that the equation will be using to det the number */
+
+/* PARSEINT () */
+
+function convertToInteger(str) { /* this function uses paseInt to turn string into numbers that then can be used for calculation */
+  return parseInt (str); /* this fucniton will stop converting until there is a character non number and then will retunr NaN */
+  }
+  
+  convertToInteger("56");
+
+  /* PARSEINT ()  with RADIX */
+
+  function convertToInteger(str) {
+    return parseInt(str, 2); /* radix is the part that defines the mathematic bas of the str number put */
+   }
+   
+   convertToInteger("10011");
