@@ -86,3 +86,12 @@ function randomRange(myMin, myMax) {
 }
 
 console.log (randomRange(2, 20));
+
+/* CONDITIONAL OPERATOR */
+
+function checkEqual(a, b) { /* this is a way to use conditional operator to wirht if else statmenet   */
+  return a == b ? "Equal" : "Not Equal";   /* first part is condition finnished wiht ? and the the rest is the return if true and the return if false */
+  }
+  
+  checkEqual(1, 2);
+  console.log (checkEqual(1, 2));
