@@ -95,3 +95,40 @@ function checkEqual(a, b) { /* this is a way to use conditional operator to wirh
   
   checkEqual(1, 2);
   console.log (checkEqual(1, 2));
+
+  /* MUTLIPLE CONDITONAL OPERATOR */
+
+  function checkSign(num) {
+    return (num > 0) ? "positive" /* separating statmenet is best practice for reaidng porposes */
+    : (num < 0) ? "negative"
+    : "zero"; /* this will execute when above conditions is false */
+   }
+   console.log (checkSign());
+  
+
+   /* RECURSION COUNT DOWN */
+function countdown(n){
+  if (n < 1) {
+      return [];
+    } else {
+      const countArray = countdown(n - 1); 
+      countArray.unshift(n); /* unshift is to remove so countdown will start from bigger to minor */
+      return countArray;
+    }
+  }
+  
+  console.log (countdown(10)); /* ^[10......1] */
+
+    /* RECURSIVE COUNTDOWN WITH 2 PARAMETERS */
+
+  function rangeOfNumbers(startNum, endNum) {
+    if (startNum > endNum) {
+        return [];
+      } else {
+        const rangeArray = rangeOfNumbers(startNum,endNum - 1); 
+        rangeArray.push(endNum); 
+        return rangeArray;
+      }
+  }  
+  
+  console.log (rangeOfNumbers(1,5));
