@@ -184,4 +184,15 @@ function countdown(n){
     return i; /* the firs let i will be printed in the end as the boolen statement is what runs first and the retunr from function prints */
   }
 
-  console.log ( checkScope()); 
+  console.log ( checkScope());
+
+  /* MUTING CONST WITHN CONST (ARRAYS) */
+
+  const s = [5, 7, 2];
+function editInPlace() {
+s[0] = 2; /* const is mutable only when the declaration of the Array value points to himself like here
+*/
+s[1] = 5;
+s[2] = 7;
+}
+editInPlace();
