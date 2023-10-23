@@ -193,3 +193,20 @@ var magic = function() {
 }; 
 */
 const magic = () => new Date; /* the variable should be const in order to create arrow functions */ 
+
+
+/* PASSING PARAMETERS TO ARROW FUCNTIONS */
+
+const myConcat = (arr1, arr2) => arr1.concat(arr2); /* important to not forget that var is not accepted as variavle is should be const / local scope */
+
+console.log(myConcat([1, 2], [3, 4, 5])); /* as per above the contact fucntion will concatenate the arr1 or arr 2 with the values you enters as one big ARRAY */
+
+/* SETTING DEFAULT PARAMENTERS IN CASE NOT DEFINED */
+const greeting = (name = "Anonymous") => "Hello " + name;
+
+console.log(greeting("John"));
+console.log(greeting()); /* 1st it will print John and second will print anonymous as default since is not defined  */
+
+const increment = (number, value = 1) => number + value; /* in case value is not defined with put the parameter 1 that will ve added as default */
+
+
