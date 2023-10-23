@@ -190,9 +190,41 @@ function countdown(n){
 
   const s = [5, 7, 2];
 function editInPlace() {
-s[0] = 2; /* const is mutable only when the declaration of the Array value points to himself like here
-*/
+s[0] = 2; /* const is mutable only when the declaration of the Array value points to himself like here*/
 s[1] = 5;
 s[2] = 7;
 }
 editInPlace();
+
+/* PREVENTING OBJ  MUTATION by FREEZING VALUES WITH Objct.freeze TO PREVENT OBJ MUTAITON */
+
+let obj = { /* Explanation example */
+name:"FreeCodeCamp",
+review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad";
+obj.newProp = "Test";
+console.log(obj); 
+
+function freezeObj() {
+const MATH_CONSTANTS = {
+  PI: 3.14
+};
+  Object.freeze(MATH_CONSTANTS); /* This funciton prevenet PI to be assigned for 99 as you can see below, so it will always print PI= 3.14 */
+try {
+  MATH_CONSTANTS.PI = 99;
+} catch(ex) {
+  console.log(ex);
+}
+return MATH_CONSTANTS.PI;
+}
+const PI = freezeObj();
+
+/* ARROW FUNCITONS */
+ /*
+var magic = function() {
+  return new Date();
+}; 
+*/
+const magic = () => new Date; /* the variable should be const in order to create arrow functions */ 

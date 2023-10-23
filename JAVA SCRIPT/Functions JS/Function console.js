@@ -1,4 +1,5 @@
 
+/* 
 /* FUNCITONS IN JS */
 
 function kindAnswer() { /* This is the way to define them */
@@ -164,3 +165,31 @@ function countdown(n){
     return s;
     }
     console.log (editInPlace()); /* it will return 2,5,7 as the new assignation could done by potinting him self*/
+    
+    
+/* FREEZING VALUES WITH Objct.freeze TO PREVENT OBJ MUTAITON */
+
+    function freezeObj() {
+      const MATH_CONSTANTS = {
+        PI: 3.14
+      };
+        Object.freeze(MATH_CONSTANTS); /* This funciton prevenet PI to be assigned for 99 as you can see below, so it will always print PI= 3.14 */
+      try {
+        MATH_CONSTANTS.PI = 99;
+      } catch(ex) {
+        console.log(ex);
+      }
+      return MATH_CONSTANTS.PI;
+      }
+      const PI = freezeObj();
+
+      
+    console.log (freezeObj(PI)); /* it will always print 3.14 */
+
+/* ARROW FUNCTIONS */
+ /*
+var magic = function() {
+  return new Date();
+}; 
+*/
+const magic = () => new Date; /* the variable should be const in order to create arrow functions */ 
