@@ -278,3 +278,11 @@ const highToday2 = LOCAL_FORECAST.today.high;/*Assignació  classica  */
 
 /* VS */  
 const { today: {low: lowToday1, high: highToday3}}  = LOCAL_FORECAST; /*You are accesing object, value today and reassigning low to lowtaday1 and high to highToday3  */
+
+/* DESTRUCTURING ARRAYS  */
+
+let a = 8, b = 6;
+[a, b] = [b, a];
+
+console.log ([a,b]);
+
