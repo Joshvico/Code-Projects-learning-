@@ -237,3 +237,44 @@ arr2 = [...arr1];  /* Spread operator unpacks the arrays indidivally ad assignes
 
 console.log(arr2,);
 
+/* DESTRUCTURING TO EXTARCT VALULES FORM OBEJECTS */
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const today1 = HIGH_TEMPERATURES.today; /* Extració classica  */ 
+const tomorrow1 = HIGH_TEMPERATURES.tomorrow;/* Extració classica  */ 
+
+/* VS */
+
+const {today, tomorrow} = HIGH_TEMPERATURES; /* Extarción de valors del objects moderna ES6 */
+
+/* DESTRUCTURING TO ASSING VARIABLES FORM OBJECTS */
+
+const HIGH_TEMPERATURES2 = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const highToday1 = HIGH_TEMPERATURES.today;/*Assignació  classica  */
+const highTomorrow1 = HIGH_TEMPERATURES.tomorrow; /*Assignació  classica  */
+
+/* VS */  
+const {today:highToday , tomorrow:highTomorrow} = HIGH_TEMPERATURES;/*Assignació de valors del objects moderna ES6  */
+
+/* DESTRCUTURING TO EXTRAT AND REASSIGNE VARIABLES IN A NESTED OBJECT */
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+const lowToday = LOCAL_FORECAST.today.low;/*Assignació  classica  */
+const highToday2 = LOCAL_FORECAST.today.high;/*Assignació  classica  */
+
+/* VS */  
+const { today: {low: lowToday1, high: highToday3}}  = LOCAL_FORECAST; /*You are accesing object, value today and reassigning low to lowtaday1 and high to highToday3  */
