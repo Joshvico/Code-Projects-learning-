@@ -245,3 +245,32 @@ console.log(myConcat([1, 2], [3, 4, 5])); /* as per above the contact fucntion w
 /* SETTING DEFAULT PARAMENTERS IN CASE NOT DEFINED */
 
 const increment = (number, value = 1) => number + value; /* in case value is not defined with put the parameter 1 that will ve added as default */
+
+/* REST PARAMETERS THAT TAKE A VARIABLE NUM OF ARGUMENTS  ...ARGS */
+
+/* EX FROM CHALLENGE 
+function howMany(...args) {
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2));
+console.log(howMany("string", null, [1, 2, 3], { }));
+ */
+
+const sum = (...args) => { /* The args fucntion will allow to put any amount of arguments */
+  let total = 0;
+  for (let i = 0; i < args.length; i++) {
+    total += args[i];
+  }
+  return total;
+}
+console.log (sum(1,1,1,1,1,1)); /* This will print 6 as per loop is sumuning evry argument we enter */
+
+/* SPREAD OPERATOR ...ARG */
+
+
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY',];
+let arr2;
+
+arr2 = [...arr1];  /* Spread operator unpacks the arrays indidivally ad assignes a copy in another context, in this case to arr2 as defined in this line  */
+
+console.log(arr2,);
