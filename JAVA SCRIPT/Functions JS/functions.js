@@ -333,3 +333,24 @@ const { today: {low: lowToday1, high: highToday3}}  = LOCAL_FORECAST; /*You are 
 
 let a = 8, b = 6;
 [a, b] = [b, a];
+
+/* DESTRUCTURING WITH REST ELEMENTS */ /* Check in JS notes to understand */
+
+
+function removeFirstTwo([, , ...rest]) { /* entering an Array as argument ,, empty slots + "..."rest (varaible clalled rest) */
+  return rest;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; /* defines content array */
+const sourceWithoutFirstTwo = removeFirstTwo(source); /* we make new const ) to funciton that enters const source as argument and since ... rest is present and the 2 ,, it will remove the  number 1,2 */
+
+console.log(sourceWithoutFirstTwo); // [3, 4, 5, 6, 7, 8, 9, 10]
+
+function removeFirstTwo2([, , , , ...list]) {/* ... define DESTRUCTURING ACTION the more comas the more num it will rmeove */
+  return list;
+}
+
+const source1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo2 = removeFirstTwo2(source1);
+
+console.log(sourceWithoutFirstTwo2); 

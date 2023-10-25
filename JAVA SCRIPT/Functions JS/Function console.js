@@ -286,3 +286,23 @@ let a = 8, b = 6;
 
 console.log ([a,b]);
 
+/* DESTRUCTURING WITH REST ELEMENTS */ /* check break down in Funciton theory*/
+
+function removeFirstTwo([, , ...rest]) {
+  return rest;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+console.log(sourceWithoutFirstTwo); // [3, 4, 5, 6, 7, 8, 9, 10]
+
+
+function removeFirstTwo2([, , , , ...list]) {/* ... define DESTRUCTURING ACTION the more comas the more num it will rmeove */
+  return list;
+}
+
+const source1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo2 = removeFirstTwo2(source1);
+
+console.log(sourceWithoutFirstTwo2); 
