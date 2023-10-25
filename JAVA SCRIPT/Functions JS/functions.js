@@ -354,3 +354,17 @@ const source1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sourceWithoutFirstTwo2 = removeFirstTwo2(source1);
 
 console.log(sourceWithoutFirstTwo2); 
+
+/* DESTRCUCTURING TO PASS OBJ AS FUNTION PARAMETER */
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+const half = ({ max, min }) => (max + min) / 2.0; /* {} defines the parts of the object your are intesrested in */
+const result = half(stats); /* 28.015 */
