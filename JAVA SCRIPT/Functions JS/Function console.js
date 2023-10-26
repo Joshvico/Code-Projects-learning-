@@ -323,3 +323,26 @@ const result = half(stats); /* 28.015 */
 
 console.log (result);/* 28.015 */
 console.log (half(stats));/* 28.015 */
+
+/* TEMPALTE LITERAL ${} to CREAT COMPLEX STRINGS */
+
+const result1 = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+
+function makeList(arr) {
+  const failureItems = [];
+  for (const item of arr) {
+    failureItems.push(`<li class="text-warning">${item}</li>`);
+  }
+  return failureItems;
+}
+
+const failuresList = makeList(result1.failure);
+console.log(failuresList);
+
+[ '<li class="text-warning">no-var</li>',
+  '<li class="text-warning">var-on-top</li>',
+  '<li class="text-warning">linebreak</li>' ]

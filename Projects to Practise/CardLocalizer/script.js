@@ -56,3 +56,4 @@ function shufflePokerCards() {
   stopShuffling = false; // Reset the stop flag before starting
   showNextCard();
 }
+

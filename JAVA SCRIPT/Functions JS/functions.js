@@ -368,3 +368,22 @@ const stats = {
 
 const half = ({ max, min }) => (max + min) / 2.0; /* {} defines the parts of the object your are intesrested in */
 const result = half(stats); /* 28.015 */
+
+/* TEMPALTE LITERAL ${} to CREAT COMPLEX STRINGS */
+
+const result1 = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+
+function makeList(arr) {
+  const failureItems = [];
+  for (const item of arr) {
+    failureItems.push(`<li class="text-warning">${item}</li>`);
+  }
+  return failureItems;
+}
+
+const failuresList = makeList(result1.failure);
+console.log(failuresList);
