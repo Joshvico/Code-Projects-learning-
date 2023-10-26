@@ -387,3 +387,57 @@ function makeList(arr) {
 
 const failuresList = makeList(result1.failure);
 console.log(failuresList);
+
+/* AVOIDING REDUDANCY IN OBJECT WITH EQUIVALENT KEY PAIRS WITH SHORTHAND */
+
+/* This will be without Shorthand
+const examplecreatePerson = (name, age, gender) => ({
+  name:name,
+  age: age,
+  gender: gender
+}); 
+
+*/
+
+const createPerson = (name, age, gender) => {
+  return ({ name, age, gender});
+ 
+};
+
+console.log(failuresList); /* This will print and obeject with equivalent key values */
+
+/* SKIPING FUCNTION KEWYORD WITH FUCNITONS INSIDE OBJECTS */
+
+/* this is how a fucniton in object looks in ES5 JS
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+}; 
+*/
+const bicycle = {
+  gear: 2,
+  setGear (newGear) { /* "funciton" keyword to define funciton is remove as also the ":" */
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+/* CLASS SYNTAXT + CONSTRUCTOR FUNTION */
+
+class Vegetable {/* class start t */ 
+  constructor(vegetableName){
+    this.name = "carrot";
+    this.color = "orange";
+    this.family = "carotides";
+  }
+  Vegetables () {
+    conosle.log ('${this.name}');
+  }
+}
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); 

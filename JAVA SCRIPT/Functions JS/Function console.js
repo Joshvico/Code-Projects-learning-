@@ -346,3 +346,40 @@ console.log(failuresList);
 [ '<li class="text-warning">no-var</li>',
   '<li class="text-warning">var-on-top</li>',
   '<li class="text-warning">linebreak</li>' ]
+
+  /* AVOIDING REDUDANCY IN OBJECT WITH EQUIVALENT KEY PAIRS WITH SHORTHAND */
+
+  const createPerson = (name, age, gender) => {
+    return ({ name, age, gender});
+   
+  };
+  
+  console.log(failuresList); /* This will print and obeject with equivalent key values */
+  
+  /* SKIPING FUCNTION KEWYORD WITH FUCNITONS INSIDE OBJECTS */
+
+const bicycle = {
+  gear: 2,
+  setGear (newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+/* CLASS SYNTAXT + CONSTRUCTOR FUNTION */
+
+class Vegetable {/* class start t */ 
+  constructor(vegetableName){
+    this.name = "carrot";
+    this.color = "orange";
+    this.family = "carotides";
+  }
+  Vegetables () {
+    conosle.log ('${this.name}');
+  }
+}
+// Only change code above this line
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); 
