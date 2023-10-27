@@ -369,17 +369,23 @@ console.log(bicycle.gear);
 
 /* CLASS SYNTAXT + CONSTRUCTOR FUNTION */
 
-class Vegetable {/* class start t */ 
+class Vegetable {
   constructor(vegetableName){
     this.name = "carrot";
-    this.color = "orange";
-    this.family = "carotides";
-  }
-  Vegetables () {
-    conosle.log ('${this.name}');
   }
 }
-// Only change code above this line
 
-const carrot = new Vegetable('carrot');
-console.log(carrot.name); 
+const carrot = new Vegetable('carrot'); 
+console.log(carrot.name); /* it will print carrot */
+
+/* EXPORT FUCNTION TO SHARE CODE */
+
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+export {uppercaseString, lowercaseString}; /* with this expression your are exporting both fucntions */

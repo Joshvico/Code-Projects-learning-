@@ -425,9 +425,10 @@ const bicycle = {
 bicycle.setGear(3);
 console.log(bicycle.gear);
 
-/* CLASS SYNTAXT + CONSTRUCTOR FUNTION */
-
-class Vegetable {/* class start t */ 
+/* CLASS SYNTAXT + CONSTRUCTOR FUNCTION */
+/*
+Respota proposada  following Chat GPT Correction
+class Vegetable {
   constructor(vegetableName){
     this.name = "carrot";
     this.color = "orange";
@@ -437,7 +438,79 @@ class Vegetable {/* class start t */
     conosle.log ('${this.name}');
   }
 }
-// Only change code above this line
 
 const carrot = new Vegetable('carrot');
+console.log(carrot.name);  */
+
+class Vegetable {
+  constructor(vegetableName){
+    this.name = "carrot";
+  }
+}
+
+const carrot = new Vegetable('carrot');/* the new Keyword creates a new instance for the object just created */
 console.log(carrot.name); 
+
+
+/* THERMOS STATE FARHENHEIT AND CELSIUS CONVERTOR */
+
+
+/* MODULE SCRIPT */
+
+<script type="module" src="index.js"></script> /* convention to make JS merging with other files and code to export or important parts of it in a clean way */
+/* this is How it would be integrated.....
+
+<html>
+  <body>
+    <script type="module" src="index.js"></script>
+    <!-- Only change code below this line -->
+
+    <!-- Only change code above this line -->
+  </body>
+</html> */
+
+/* EXPORT FUCNTION TO SHARE CODE */
+
+const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+export {uppercaseString, lowercaseString}; /* with this expression your are exporting both fucntions */
+
+/* IMPORT  */
+
+/* this is importing only one funciton...
+ 
+import { uppercaseString1 } from './math_functions.js'; 
+ 
+ */
+import { uppercaseString, lowercaseString } from './string_functions.js';
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+/* USING "* AS" TO IMPORT EVERYTHING FORM A FILE */
+
+import * as myMathModule from "./math_functions.js"; /* try this to console.log */
+
+myMathModule.add(2,3);
+myMathModule.subtract(5,3);
+
+/* imports the whole funciton to another file */
+import * as stringFunctions from './string_functions.js'
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+/* EXPORT FALLBACK FUNCTION --> EXPORT DEFAULT  */
+
+function subtract(x, y) {
+  return x - y;
+}
+
+export default function (x, y) {
+  return x - y;
+}
