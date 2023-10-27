@@ -453,7 +453,21 @@ console.log(carrot.name);
 
 
 /* THERMOS STATE FARHENHEIT AND CELSIUS CONVERTOR */
+class Thermostat {
+  constructor(fahrenheit) {
+    this._fahrenheit = fahrenheit; // Initialize the temperature in Fahrenheit
+  }
 
+  // Create a getter method to obtain the temperature in Celsius
+  get temperature() {
+    return (5 / 9) * (this._fahrenheit - 32);
+  }
+
+  // Create a setter method to set the temperature in Celsius
+  set temperature(celsius) {
+    this._fahrenheit = (celsius * 9) / 5 + 32;
+  }
+}
 
 /* MODULE SCRIPT */
 
