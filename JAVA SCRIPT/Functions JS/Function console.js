@@ -406,3 +406,55 @@ class Thermostat {
     this._fahrenheit = (celsius * 9) / 5 + 32;
   }
 }
+
+/* PROMISES */
+
+const makeServerRequest = new Promise((resolve, reject) => { 
+
+});
+
+
+/* COMPLET PROMISE THAT RESOLVES OR REJECTS DEPENDING CONDITIONS ENTERED */
+
+const makeServerRequest1 = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    resolve ("We got the data"); /* if condition set here is true it will resolve by printin the string */
+  } else {  
+    reject ("Data not received");  /* else rejects by printing the string here */
+  }
+}); 
+
+/* THEN** TO EXECUTE ACITON AFTER PROMISE IS COMPLETE*/
+
+const makeServerRequest2 = new Promise((resolve, reject) => {
+  // responseFromServer is set to true to represent a successful response from a server
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  } makeServerRequest.then(result => { /* This then async action executed after running the promise that When TRUE is allows execution of action defined in THEN */
+    console.log (result);
+  }); 
+});
+
+/* CATCH FOR REJECTED PROMISES */
+
+const makeServerRequest3 = new Promise((resolve, reject) => {
+  // responseFromServer is set to false to represent an unsuccessful response from a server
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.catch(error => { /* catch willl execute right after the promises has been rejected */
+  console.log(error);
+});
