@@ -1,5 +1,5 @@
 
-/* LITERALT TEMPLAES $ */
+/* LITERALT TEMPLAES $ + ARROW FUNCTIONS */
 
 /* Exercise 1:*/
 const name = "John";
@@ -19,7 +19,7 @@ const greeting2 = (personName) => {
 
 /* with an Array (which is a lot easier) + with swithc boolena  */
 
-const greeting2 = (personName) => {
+const greeting3 = (personName) => {
   const specialPeople = ["Edu", "Pol", "Enric", "Joan", "Joan"];
 
   if (specialPeople.includes(personName)) {
@@ -29,7 +29,7 @@ const greeting2 = (personName) => {
 }
 
 
-function greeting2(personName) {
+function greeting4(personName) {
   switch (personName) {
     case "Edu":
     case "Pol":
@@ -43,7 +43,7 @@ function greeting2(personName) {
 }
 
 
-console.log(greeting2 ("Edu"));
+console.log(greeting4 ("Edu"));
 /* Exercise 2:*/
 
 const width = 20;
@@ -117,8 +117,7 @@ const recomendation = `If you want to improve your magic, I recommend reading "$
  It's a great ${genre} book.`; /* in ES6 when doing  this strins no need to use skipper like \n to create a line*/
 console.log(recomendation);
 
-const bookRecomendation = (bookTitle2,author2,genre2) => {
-
+const bookRecomendation = (bookTitle2,author2,genre2) => { 
   return `If you want to improve your magic, I recommend reading "${bookTitle2}" by ${author2}
   It's a great ${genre2} book.`;
 
@@ -144,5 +143,6 @@ const url2 = (user) => {
 }
 
 console.log (url2("pepillo"));
+
 
 
