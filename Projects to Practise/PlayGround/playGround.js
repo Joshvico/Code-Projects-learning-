@@ -22,7 +22,7 @@ const greeting2 = (personName) => {
 const greeting3 = (personName) => {
   const specialPeople = ["Edu", "Pol", "Enric", "Joan", "Joan"];
 
-  if (specialPeople.includes(personName)) {
+  if (specialPeople.includes(personName)) { /* includes is a KW fucniton to  */
     return `Que pasa ${personName}, estic molt content de veure't!`;
   } 
   return `Hola ${personName}, tot bé?`;
@@ -144,5 +144,85 @@ const url2 = (user) => {
 
 console.log (url2("pepillo"));
 
+/* BOOLEANS AND COMPARISON OPERATORS */
 
+/* EX 1 */
+const number = (num) => {
+  if (num % 2 === 0 ) { /* % is the modulo operator, which calculates the remainder when number is divided by 2. */
+    return `The number ${num}, is even`
+  } 
+
+  return `The number ${num}, is even`;
+}
+
+console.log (number (3));
+
+/* EX 2 */
+const LEGALAGETOVOTE = 18;
+
+const votingPermission = (name, age) => {
+  if (age < 18) {
+    return `${name} is minor as his/her ${age}, less than legal age`;
+  } else if (age >= 18  && age <= 100) {
+    return `${name}'s age is ${age}, is over ${LEGALAGETOVOTE}, he/she can vote`;
+  } else if (age >= 100) {
+    return `${name} is provably a dead person, please double check the system`;
+  }
+}
+
+console.log (votingPermission("Pearson",130));
+
+/* EX 3 */
+
+/* EX 4 */
+/* const chekingGrade = (grade) => {
+  let answer = "";
+  switch (grade) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      answer = `With a ${grade}, you failed the exam`;
+      break;
+    case 4.9:
+      answer = "almost there, but failed";
+      break;
+    case 5:
+    case 6:
+      answer = `With a ${grade}, you passed the exam, but keep working hard!`;
+      break;
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+      answer = `With a ${grade}, you passed the exam, very good!`;
+      break;
+    default:
+      answer = "No grade? You probably forgot to put your name.";
+  }
+  return answer;
+}
+
+console.log(chekingGrade(4.9)); */
+
+/* IMRPOVIEMENT VERSION OF SWITCH ESTAMENT WITH INTERVALS */
+const chekingGrade2 = (grade) => {
+  let answer = "";
+
+  switch (true) {
+    case grade >= 1 && grade <= 4:
+      answer = `With a ${grade}, you failed the exam`;
+      break;
+    case grade >= 5 && grade <= 6:
+      answer = `With a ${grade}, you passed the exam, but keep working hard!`;
+      break;
+    case grade >= 7 && grade <= 10:
+      answer = `With a ${grade}, you passed the exam, very good!`;
+      break;
+    default:
+      answer = "No grade? You probably forgot to put your name.";
+  }
+
+  return answer;
+}
 
