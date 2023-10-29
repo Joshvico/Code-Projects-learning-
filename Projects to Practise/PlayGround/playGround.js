@@ -213,6 +213,9 @@ const chekingGrade2 = (grade) => {
     case grade >= 1 && grade <= 4:
       answer = `With a ${grade}, you failed the exam`;
       break;
+      case grade >= 4.5 && grade <= 4.9:
+        answer = `With a ${grade} is almost there but you failed`;
+        break;
     case grade >= 5 && grade <= 6:
       answer = `With a ${grade}, you passed the exam, but keep working hard!`;
       break;
@@ -226,3 +229,4 @@ const chekingGrade2 = (grade) => {
   return answer;
 }
 
+console.log(chekingGrade2(4.7));
