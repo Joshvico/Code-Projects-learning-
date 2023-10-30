@@ -230,3 +230,98 @@ const chekingGrade2 = (grade) => {
 }
 
 console.log(chekingGrade2(4.7));
+
+/* EX 5 */
+
+/* const chekingNum = (numero) => {
+  if (numero >= 1) {
+    return `${numero} is a positive number`;
+  } else if (numero === 0) {
+    return `The number entered is ${numero} `;
+  } else {
+    return `${numero} is negative`;
+  }
+
+}
+
+console.log (chekingNum(-5)); */
+
+const chekingNum = (numero) => {
+  if (numero >= 1) {
+    return `${numero} is a positive number`;
+  } else if (numero === 0) {
+    return `The number entered is ${numero} `;
+  } else { /* El else va sense conditions as is the remaining posibility */
+    return `${numero} is negative`; /* For negative there is no need to cover it a condition as is already the last posibility */
+  }
+
+}
+
+console.log (chekingNum(-5));
+
+/* EX 6 */
+/* 
+function dayOfTheWeek (day) {
+
+  let weekDay = "";
+
+  switch (true){
+  case day == 1:
+    weekDay = "Monday";
+    break;
+    case day == 2:
+    weekDay = "Tuesday";
+    break;
+    case day == 3:
+    weekDay = "Wednesday";
+    break;
+    case day == 4:
+    weekDay = "Thursday";
+    break;
+    case day == 5:
+    weekDay = "Friday";
+    break;
+    case day == 6:
+    weekDay = "Saturday";
+    break;
+    case day == 7:
+    weekDay = "Sunday";
+    break;
+    default:
+    weekDay = "enter a valid day"
+  
+}
+ return weekDay;
+}
+
+console.log (dayOfTheWeek(3)); */
+
+/* simplified version */
+function dayOfTheWeek(day) {
+  const days = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ];
+
+  if (day >= 1 && day <= 7) {
+    return days[day - 1]; // Subtract 1 to match the array index
+  } else {
+    return "Enter a valid day";
+  }
+}
+
+console.log(dayOfTheWeek(3)); // Outputs "Wednesday"
+
+/* EX7 */
+
+
+const palindrome = (word) => {
+
+  if (word)
+
+}
