@@ -320,8 +320,37 @@ console.log(dayOfTheWeek(3)); // Outputs "Wednesday"
 /* EX7 */
 
 
-const palindrome = (word) => {
+/* const palindrome = (word) => {
 
   if (word)
 
 }
+ */
+
+/* EX 8 */
+
+/* const centruyornot = (year) => {
+
+  if (year >= 0 && year <= 1999) {
+    return `The ${year} has a century`;
+  } else if (year >= 2000){
+    return `The ${year} does not has a century yet`
+  }
+
+}
+
+console.log (centruyornot(2003)); */
+
+const isCentury = (year) => {
+  // Calculate the start and end years of the century
+  const startYear = Math.floor(year / 100) * 100;
+  const endYear = startYear + 99;
+
+  if (year >= startYear && year <= endYear) {
+    return `The year ${year} is in a century (${startYear}-${endYear})`;
+  } else {
+    return `The year ${year} is not in a century`;
+  }
+}
+
+console.log(isCentury(2003));
