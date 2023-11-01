@@ -46,6 +46,20 @@ let quoteSample = "Beware of bugs in the above code; I have only proved it corre
 let vowelRegex = /[aeiou]/ig; /* it willl seach all vowels ignoring case and globally  */
 let result7 = quoteSample.match(vowelRegex); /* mind the format of match or test as is confusin match (/regex/) test ("strich") */
 
+/* MATCH ALL LETTERS IN THE ALPHABET WITH "-" */
 
+let quoteSample2 = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig; /* This will check all characters from a to z in aplhabetic order and with flags for the whole string and ignoring case */
+let result8 = quoteSample.match(alphabetRegex); /* sting.match(regex) */
 
+/* MATCH NUMBERS with "-" */
 
+let quoteSample3 = "Blueberry 3.141592653s are delicious.";
+let myRegex3 = /[h-s2-6]/ig; 
+let result9 = quoteSample.match(myRegex3); 
+
+/* IGNORING CHRACTAES with "^" */
+
+let quoteSample4 = "3 blind mice.";
+let myRegex4 = /[^3ie]/ig;  /* you ignore the vowels "ie" found in the string and number 3, you can set sets with - */
+let result10 = quoteSample4.match(myRegex4); /* If you add space in the regular exp it will also ignore spaces as seen in the console */

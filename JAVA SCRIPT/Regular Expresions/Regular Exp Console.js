@@ -50,5 +50,27 @@ let result7 = quoteSample.match(vowelRegex);
 
 console.log (result7);
 
+/* MATCH ALL LETTERS IN THE ALPHABET WITH "-" */
 
+let quoteSample2 = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/ig; /* This will check all characters from a to z in aplhabetic order and with flags for the whole string and ignoring case */
+let result8 = quoteSample2.match(alphabetRegex); /* sting.match(regex) */
+
+console.log (result8);
+
+/* MATCH NUMBERS with "-" */
+
+let quoteSample3 = "Blueberry 3.141592653s are delicious.";
+let myRegex3 = /[h-s2-6]/ig; 
+let result9 = quoteSample3.match(myRegex3); 
+
+console.log (result9);
+
+/* IGNORING CHRACTAES with "^" */
+
+let quoteSample4 = "3 blind mice.";
+let myRegex4 = /[^3ie ]/ig; 
+let result10 = quoteSample4.match(myRegex4); // Change this line
+
+console.log (result10);
 
