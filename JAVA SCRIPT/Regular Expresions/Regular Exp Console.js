@@ -74,3 +74,27 @@ let result10 = quoteSample4.match(myRegex4); // Change this line
 
 console.log (result10);
 
+/* MATCHING ONE OR  MULTPLE CONSECUTIVE CASES  with + */
+let difficultSpelling = "Mississippi";
+let myRegex5 = /s+/ig; 
+let result11 = difficultSpelling.match(myRegex5);
+
+console.log (result11);
+
+/* MATCHING 0 MORE TIMES WITH "*" */
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; /* it will check for 0 or more cases that start with Aa */
+
+let result12 = chewieQuote.match(chewieRegex);
+
+console.log (result12);
+
+/* LAZY MATCHING with ?*/
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex8 = /<.*?>/; /* it will look for shortes pattern that contains <> inlduing what ever is inside in this case h1  */
+let result13 = text.match(myRegex8);
+
+console.log(result13);
+
+

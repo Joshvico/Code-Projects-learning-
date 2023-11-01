@@ -63,3 +63,22 @@ let result9 = quoteSample.match(myRegex3);
 let quoteSample4 = "3 blind mice.";
 let myRegex4 = /[^3ie]/ig;  /* you ignore the vowels "ie" found in the string and number 3, you can set sets with - */
 let result10 = quoteSample4.match(myRegex4); /* If you add space in the regular exp it will also ignore spaces as seen in the console */
+
+/* MATCHING ONE OR  MULTPLE CONSECUTIVE CASES  with + */
+let difficultSpelling = "Mississippi";
+let myRegex5 = /s+/ig; 
+let result11 = difficultSpelling.match(myRegex5);
+
+/* MATCHING 0 MORE TIMES WITH "*" */
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/; /* it will check for 0 or more cases that start with Aa */
+
+let result12 = chewieQuote.match(chewieRegex);
+
+/* LAZY MATCHING with ?*/
+
+let text = "<h1>Winter is coming</h1>";
+let myRegex8 = /<.*?>/; /* it will look for shortes pattern that contains <> inlduing what ever is inside in this case h1  */
+let result13 = text.match(myRegex8);
+
+console.log(result13);
