@@ -122,6 +122,33 @@ let result16 = quoteSample5.match(alphabetRegexV2).length;
 console.log(result16); /*31*/
 
 
+/* MATCHING NON ALPAH NUMERIC with \W (capital) */
+
+let quoteSample6 = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; 
+let result17 = quoteSample.match(nonAlphabetRegex).length;
+
+console.log(result17);
+
+/* SHORTHAND TO FIND NUMBER \d */
+
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; /* non capital */
+let result18 = movieName.match(numRegex).length;
+
+console.log(result18);
+
+/* MATCHING ALL NON-NUMBERS */
+
+let movieName2 = "2001: A Space Odyssey";
+let noNumRegex = /\D/g;
+let result19 = movieName2.match(noNumRegex).length;
+
+console.log(result19); 
+
+
+
+
 
 
 

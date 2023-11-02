@@ -102,6 +102,27 @@ console.log(result15);
 
 /* MATCHING NUMBERS 0-9, "_" , LETTERS FROM A-Z with \W */
 let quoteSample5 = "The five boxing wizards jump quickly.";
-let alphabetRegexV2 = /\w/g; /* it will match all apalah numerical characters */
+let alphabetRegexV2 = /\w/g; /* it will match all apalah numerical characters  + mind the w non capital*/ 
 let result16 = quoteSample5.match(alphabetRegexV2).length;/* .lenght will provide the number of the characters that\W icnludes as reviewing the sting = 31 in this case*/
+
+/* MATCHING NON ALPAH NUMERIC with \W (capital) */
+
+let quoteSample6 = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; /* this will find evrything that is non alpha numerical*/
+let result17 = quoteSample.match(nonAlphabetRegex).length;
+
+
+
+/* SHORTHAND TO FIND NUMBER \d */
+
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; /* non capital */
+let result18 = movieName.match(numRegex).length; /* lenght KW funciton provides number of numbers found in the string */
+
+/* MATCHING ALL NON-NUMBERS */
+
+let movieName2 = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; /* CAPITAL is = negative [^] in this case exclude all charcaters non numbers*/
+let result19 = movieName2.match(noNumRegex).length;
+
 
