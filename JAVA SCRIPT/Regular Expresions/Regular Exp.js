@@ -82,3 +82,26 @@ let myRegex8 = /<.*?>/; /* it will look for shortes pattern that contains <> inl
 let result13 = text.match(myRegex8);
 
 console.log(result13);
+
+/* USING ^ at THE BEGINNING OF THE STRING ^ with no [] */
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/ /* this will find the first pattern of letters Carl in the beginning of the string */
+let result14 = calRegex.test(rickyAndCal);
+/* 
+^Cal = beggining [^Cal]= Negation 
+*/
+
+/* SERCHING BY THE END WITH $ */
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result15 = lastRegex.test(caboose);
+
+console.log(result15);
+
+/* MATCHING NUMBERS 0-9, "_" , LETTERS FROM A-Z with \W */
+let quoteSample5 = "The five boxing wizards jump quickly.";
+let alphabetRegexV2 = /\w/g; /* it will match all apalah numerical characters */
+let result16 = quoteSample5.match(alphabetRegexV2).length;/* .lenght will provide the number of the characters that\W icnludes as reviewing the sting = 31 in this case*/
+
