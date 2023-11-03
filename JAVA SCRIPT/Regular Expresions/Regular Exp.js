@@ -131,9 +131,56 @@ let username = "JackOfAllTrades";
 let userCheck = /^[a-z][A-Z]+\d*$|^[a-z]\d\d+$/i;/* check resticitions of notes as is breakdown and expalanined found wiht titel of section*/
 let result20 = userCheck.test(username);
 
-/* MATCHING WHITE SPACES *********************************************** "\s" (space)*/
+/* MATCHING WHITE SPACES *********************************************** "\s" (no capital)*/
 
 let sample = "Whitespace is important in separating words";
-let countWhiteSpace = /\s/g; // Change this line
+let countWhiteSpace = /\s/g; 
 let result21 = sample.match(countWhiteSpace);
+/* MATCHING WHITE SPACES *********************************************** "\S" (capital)*/
+
+let sample2 = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; 
+let result22 = sample.match(countNonWhiteSpace);
+
+/* QUANTITY SPECIFIERS ******************************************************** {X,X} (only one letter setting num range) */
+
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; /* Quanty specificiations only applies for  the letter that is at the left of the specifier and the times range is create with "," */ 
+result23 = ohRegex.test(ohStr);
+
+/* exmpale on how to appply more quantity specifier */
+let ohStr3 = "OOOOOOhhh no";
+let ohRegex3 = /O{4,7}h{3,6} no/; /*  in this case since bot ranges are met and the expression on the string also it willl return ture */
+result24 = ohRegex.test(ohStr);
+
+/* QUANTITY SPECIFIERS ******************************************************** {X, } (setting no max range) */
+
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; /* pattern from 4 to infinit amount of z */
+let result25 = haRegex.test(haStr);
+
+/* SPECIIC QUATITY SPEICIFER *************************************************** {X} (exatc number of times)  */
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; /*  It will only return true when the string meets 4 m in arrow */
+let result26 = timRegex.test(timStr);
+
+/* ALL OF NONE / OPTIONAL *************************************************** / xxxxy?xxx or (xxxx)?/ (OPTINAL CHARACTER)  */
+
+let favWord = "favorite";
+let favRegex = /favou?rite/; /* this is very useful for American english and english words */
+let result27 = favRegex.test(favWord);
+
+/* LOOKAHEAD good for PASSWROD CONDIGITONS ***************************************** (?=xxxxx // positive (!= XXXXX)) */
+
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\D*\d{2})/; /* passwrod that is more than 5 and 2 consecutive digits the lookahead conditions are separated */
+let result28 = pwRegex.test(sampleWord);
+
+/* GROUPING CHARACTERS with ***************************************************** ( ) or (xxx|xxxxx) /P(engu|umpk)in/g */
+
+let myString3 = "Eleanor Roosevelt";
+let myRegex6 = /(Franklin|Eleanor)(\s[A-Za-z]+.)?\sRoosevelt/; /* check if both names and looahed for middfle name (initial capital or non capital) with . and mind separation with \s */
+let result29 = myRegex6.test(myString);
+
 

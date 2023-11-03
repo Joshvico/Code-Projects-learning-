@@ -154,6 +154,77 @@ let result20 = userCheck.test(username);
 
 console.log(result20);
 
+/* MATCHING WHITE SPACES *********************************************** "\s" (space)*/
+
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result21 = sample.match(countWhiteSpace);
+
+console.log(result21);
+
+/* MATCHING WHITE SPACES *********************************************** "\S" (capital)*/
+
+let sample2 = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; 
+let result22 = sample.match(countNonWhiteSpace);
+
+console.log(result22);
+
+/* QUANTITY SPECIFIERS ******************************************************** { } (only one letter) */
+
+let ohStr = "OOOOOOhhh no";
+let ohRegex = /O{4,7}h{3,6} no/; /* Quanty specificiations only applies for  the letter that is at the left of the specifier and the times range is create with "," */ 
+result23 = ohRegex.test(ohStr);
+
+console.log(result23);
+
+/* QUANTITY SPECIFIERS ******************************************************** {X, } (setting no max range) */
+
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/; /* pattern from 4 to infinit amount of z */
+let result25 = haRegex.test(haStr);
+
+console.log(result25);
+
+/* SPECIIC QUATITY SPEICIFER *************************************************** {X} (exatc number of times)  */
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; 
+let result26 = timRegex.test(timStr);
+
+console.log(result26);
+
+/* ALL OF NONE / OPTIONAL *************************************************** / xxxxy?xxx/ (OPTINAL CHARACTER)  */
+
+let favWord = "favorite";
+let favRegex = /favou?rite/; /* this is very useful for American english and english words */
+let result27 = favRegex.test(favWord);
+
+console.log(result27);
+
+/* LOOKAHEAD good for PASSWROD CONDIGITONS ***************************************** (?=xxxxx // positive (!= XXXXX)) */
+
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\D*\d{2})/;
+let result28 = pwRegex.test(sampleWord);
+
+console.log(result28);
+
+/* GROUPING CHARACTERS with ***************************************************** ( ) or (xxx|xxxxx) /P(engu|umpk)in/g */
+
+let myString3 = "Eleanor Roosevelt";
+let myRegex6 = /(Franklin|Eleanor)(\s[A-Za-z]+.)?\sRoosevelt/;
+let result29 = myRegex6.test(myString);
+
+console.log(result29);
+
+
+
+
+
+
+
+
 
 
 
