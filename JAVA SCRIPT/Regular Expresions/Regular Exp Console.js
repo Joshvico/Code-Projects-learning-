@@ -144,7 +144,15 @@ let movieName2 = "2001: A Space Odyssey";
 let noNumRegex = /\D/g;
 let result19 = movieName2.match(noNumRegex).length;
 
-console.log(result19); 
+console.log(result19);
+
+/* RESTRICTING POSSIBLE USERNAME */
+
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][A-Z]+\d*$|^[a-z]\d\d+$/i; // Updated regular expression
+let result20 = userCheck.test(username);
+
+console.log(result20);
 
 
 
