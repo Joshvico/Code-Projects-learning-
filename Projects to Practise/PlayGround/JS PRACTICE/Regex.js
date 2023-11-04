@@ -25,7 +25,11 @@ let dateregex = /^\d{2}\/\d{2}\/\d{4}$/;
 
 /* Exercise 5: Match Palindromes*/
 
+let text = "level deed radar hello world civic kayak";
+let palindromeRegex = /\b(\w+)\b(?=\s\1\s|\s\1$|$)/g;
 
+let palindromes = text.match(palindromeRegex);
+/* ***************************************************** */
 
 let test = theregex.test(myemail); /* regex .test string */
 let match = myemail.match(theregex);/* string .match regex */
