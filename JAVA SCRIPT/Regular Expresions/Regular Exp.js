@@ -142,7 +142,7 @@ let sample2 = "Whitespace is important in separating words";
 let countNonWhiteSpace = /\S/g; 
 let result22 = sample.match(countNonWhiteSpace);
 
-/* QUANTITY SPECIFIERS ******************************************************** {X,X} (only one letter setting num range) */
+/* QUANTITY SPECIFIERS ******************************************************** "{X,X}" (only one letter setting num range) */
 
 let ohStr = "Ohhh no";
 let ohRegex = /Oh{3,6} no/; /* Quanty specificiations only applies for  the letter that is at the left of the specifier and the times range is create with "," */ 
@@ -153,34 +153,51 @@ let ohStr3 = "OOOOOOhhh no";
 let ohRegex3 = /O{4,7}h{3,6} no/; /*  in this case since bot ranges are met and the expression on the string also it willl return ture */
 result24 = ohRegex.test(ohStr);
 
-/* QUANTITY SPECIFIERS ******************************************************** {X, } (setting no max range) */
+/* QUANTITY SPECIFIERS ******************************************************** "{X, }" (setting no max range) */
 
 let haStr = "Hazzzzah";
 let haRegex = /Haz{4,}ah/; /* pattern from 4 to infinit amount of z */
 let result25 = haRegex.test(haStr);
 
-/* SPECIIC QUATITY SPEICIFER *************************************************** {X} (exatc number of times)  */
+/* SPECIIC QUATITY SPEICIFER *************************************************** "{X}" (exatc number of times)  */
 
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/; /*  It will only return true when the string meets 4 m in arrow */
 let result26 = timRegex.test(timStr);
 
-/* ALL OF NONE / OPTIONAL *************************************************** / xxxxy?xxx or (xxxx)?/ (OPTINAL CHARACTER)  */
+/* ALL OF NONE / OPTIONAL *************************************************** / "xxxxy?xxx or (xxxx)?" / (OPTINAL CHARACTER)  */
 
 let favWord = "favorite";
 let favRegex = /favou?rite/; /* this is very useful for American english and english words */
 let result27 = favRegex.test(favWord);
 
-/* LOOKAHEAD good for PASSWROD CONDIGITONS ***************************************** (?=xxxxx // positive (!= XXXXX)) */
+/* LOOKAHEAD good for PASSWROD CONDIGITONS ***************************************** "(?=xxxxx // positive (!= XXXXX))" */
 
 let sampleWord = "astronaut";
 let pwRegex = /(?=\w{6,})(?=\D*\d{2})/; /* passwrod that is more than 5 and 2 consecutive digits the lookahead conditions are separated */
 let result28 = pwRegex.test(sampleWord);
 
-/* GROUPING CHARACTERS with ***************************************************** ( ) or (xxx|xxxxx) /P(engu|umpk)in/g */
+/* GROUPING CHARACTERS with ***************************************************** "( ) or (xxx|xxxxx)" /P(engu|umpk)in/g */
 
 let myString3 = "Eleanor Roosevelt";
 let myRegex6 = /(Franklin|Eleanor)(\s[A-Za-z]+.)?\sRoosevelt/; /* check if both names and looahed for middfle name (initial capital or non capital) with . and mind separation with \s */
 let result29 = myRegex6.test(myString);
 
+/* CAPTURING GROUPS with *************************************************************************************** "( ) \1"  */
 
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/;/* ^the strat of the string (\d+) capture groups of more digits " space" \1 to match the 1st caputre group and $ until the end of the string */
+let result30 = reRegex.test(repeatNum);
+
+/* REPLACING WITH ******************************************************************************************** ".replace" function KW  */
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; /* it captures 3 diferent groups with aphanumeric content and the spaces */
+let replaceText = "$3 $2 $1"; /* $ is used to represent the captured groups thta are different and their positions */
+let result31 = str.replace(fixRegex, replaceText); /* keep in mind that in order to replace you need to put the let that you want to replace with */
+
+/* REMOVING WHITESPACES (start til end) **************************************************************************  */
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; /* it matches spaces by the beggining an the en and separted in two options that are searched globally */
+let result32 = hello.replace(wsRegex, '');

@@ -218,6 +218,30 @@ let result29 = myRegex6.test(myString);
 
 console.log(result29);
 
+/* CAPTURING GROUPS with *************************************************************************************** ( ) \1  */
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/;
+let result30 = reRegex.test(repeatNum);
+
+console.log(result30); 
+
+/* REPLACING WITH ******************************************************************************************** ".REPLACE "fucntion KW  */
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; 
+let replaceText = "$3 $2 $1";
+let result31 = str.replace(fixRegex, replaceText);
+
+console.log (result31);
+
+/* REMOVING WHITESPACES (start til end) **************************************************************************  */
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g;
+let result32 = hello.replace(wsRegex, '');
+
+console.log(result32);
 
 
 
