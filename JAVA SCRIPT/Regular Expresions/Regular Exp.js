@@ -200,4 +200,4 @@ let result31 = str.replace(fixRegex, replaceText); /* keep in mind that in order
 
 let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g; /* it matches spaces by the beggining an the en and separted in two options that are searched globally */
-let result32 = hello.replace(wsRegex, '');
+let result32 = hello.replace(wsRegex, ''); /* keep in mind the string replacement to asssigen the actual replacement if not it won't repalce to anaything*/
