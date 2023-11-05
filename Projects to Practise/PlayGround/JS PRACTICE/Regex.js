@@ -36,4 +36,16 @@ let match = myemail.match(theregex);/* string .match regex */
 
 console.log(test);
 
+/* REGEX APPLIED TO FUCNTION */
 
+let passwordconditions= /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!])(?!.*\s).{8,20}$/;
+
+ function chekingPassword(password) {
+  if (passwordconditions.test(password)){
+    return  "password accepted";
+  }
+
+  return "enter a valid password";
+ }
+
+ console.log (chekingPassword("@bLJV0404199345678"));
