@@ -1,4 +1,4 @@
-const cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+const cardValues = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 const cardSuits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
 
 const pokerCards = [];
