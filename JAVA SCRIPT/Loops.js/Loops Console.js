@@ -106,3 +106,34 @@ function sum(arr, n) {
   
   }
   console.log (sum([1,2,3,4],3,"hello"));/* the N representa les posicions que seran sumades es per això que 4 no esta inclos en la suma */
+
+  /* DEBUGGING SECTIION INTERESTING TO HAVE IN MIND **************************************************************************** */
+
+  /* INITIALITING NEW VARIABLES INISDE A LOOP */
+
+function zeroArray(m, n) {
+  // Creates a 2-D array with m rows and n columns of zeroes
+  let newArray = [];
+  for (let i = 0; i < m; i++) {
+    let row = [];// Initialize a new row for each iteration of the outer loop
+
+    for (let j = 0; j < n; j++) {
+      // Pushes n zeroes into the current row to create the columns
+      row.push(0);
+    }
+    // Pushes the current row, which now has n zeroes in it, to the array
+    newArray.push(row,);
+  }
+  return newArray;
+}
+
+let matrix = zeroArray(3, 2);
+console.log(matrix);
+
+/* BREAKING INFITE LOOPS BY ASSINING CORRECT CONDITION WITH OEPRATORS */
+
+function myFunc() {
+  for (let i = 1; i != 4; i += 2) { /* since we strat per one and until index does not reach 4 it will keep adding +2 so it will jump over 4 and never stop */
+    console.log("Still going!");
+  }
+}
