@@ -22,3 +22,29 @@ function mixedNumbers(arr) {
 console.log (mixedNumbers(['IV', 5, 'six']));
 console.log(mixingnumbers);
 
+/* POP() and SHIFT () */
+function popShift(arr) {
+  let popped = arr.pop(); /* reomves the last one  */ 
+  let shifted = arr.shift(); /* removes the first */
+  return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete'])); /* [ 'challenge', 'complete' ] */
+
+/* 
+UNSHIFT**************************************************** add 1st  
+PUSH******************************************************* add last
+UNSHIFT**************************************************** removes 1st
+POP******************************************************** removes last
+
+/* REMOVE FROM THE MIDDLE with SPLICE() */
+
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+// Only change code below this line
+arr.splice(0,1)
+arr.splice(3,4)
+// Only change code above this line
+console.log(arr); /* The goal is to remove to make an array that sums 10 */
+ 
+
+*/
