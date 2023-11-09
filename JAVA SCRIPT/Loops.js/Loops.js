@@ -134,7 +134,7 @@ function myFunc() {
   }
 }
 
-/* COPIY ARRAY WITH SPREAD AOPERATOR "..." from DATA ESTRUC AND ALGO MODULE////////*/
+/* COPIY ARRAY WITH SPREAD AOPERATOR "..." ///////////////////// from DATAALGO MODULE*/
 
 function copyMachine(arr, num) {
   let newArr = [];
@@ -146,3 +146,17 @@ function copyMachine(arr, num) {
 }
 
 console.log(copyMachine([true, false, true], 2));
+
+/* ITERATE TRHOGH ARRAYS THROUGH ALL ARRAYS ITEMS TO FILTER ///////////////////// from DATAALGO MODULE  */
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+  for(let i= 0; i < arr.length; i++) {
+    if(arr[i].indexOf(elem) == -1 ){ /* if current index of array (number in this case) is not matching element / element does not exist (-1) psuh this arrays element ito the newArr variable defined above    */
+      newArr.push(arr[i])
+    } 
+  }
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [2, 13, 26], [19, 3, 9]], 3));
