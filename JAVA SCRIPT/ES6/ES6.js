@@ -412,3 +412,26 @@ if(responseFromServer) {
 makeServerRequest.catch(error => { /* catch willl execute right after the promises has been rejected */
 console.log(error);
 });
+
+/* COPIY ARRAY WITH SPREAD AOPERATOR "..." from DATA ESTRUC AND ALGO MODULE////////*/
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr])
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+/* COMBINING ARRAYS WITH SPREAD OPERATOR ... ////// FROM DATAALGO */
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence =  ['learning',...fragment, 'is', 'fun']; /* ...fragment will include arrays values as part of the sentence array */
+  return sentence;
+}
+
+console.log(spreadOut());
+

@@ -57,3 +57,53 @@ function forecast(arr) { /* slice only take 2 paramenters that act like a select
 }
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms'])); /*  it will return "warm and sunny" nooooooot "cool" */
 
+/* COPIY ARRAY WITH SPREAD AOPERATOR "..." */
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr])
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+/* COMBINING ARRAYS WITH SPREAD OPERATOR ... */
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence =  ['learning',...fragment, 'is', 'fun']; /* ...fragment will include arrays values as part of the sentence array */
+  return sentence;
+}
+
+console.log(spreadOut());
+
+/* INDEX OF () to CHECK PRRSENCE OF ELEMENT -1 = NO EXIST  ANY NUM >=0 EXIST */
+
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) > -1; 
+ }
+
+ console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+ 
+ /* INDEX OF () to CHECK PRRSENCE OF ELEMENT -1 = NO EXIST  ANY NUM >=0 EXIST */
+ 
+ function quickCheck(arr, elem) {
+   return arr.indexOf(elem) > -1; 
+  }
+  console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+ 
+  /* ITERATE TRHOGH ARRAYS THROUGH ALL ARRAYS ITEMS TO FILTER  */
+ 
+  function filteredArray(arr, elem) {
+   let newArr = [];
+   for(let i= 0; i < arr.length; i++) {
+     if(arr[i].indexOf(elem) == -1 ){ 
+             newArr.push(arr[i])
+     } 
+   }
+   return newArr;
+ }
+ 
+ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [2, 13, 26], [19, 3, 9]], 3));

@@ -62,3 +62,53 @@ function forecast(arr) {
   return arr.slice(2, 4); 
 }
 console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+/* COPIY ARRAY WITH SPREAD AOPERATOR "..." */
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr])
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+/* COMBINING ARRAYS WITH SPREAD OPERATOR ... */
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence =  ['learning',...fragment, 'is', 'fun']; /* ...fragment will include arrays values as part of the sentence array */
+  return sentence;
+}
+
+console.log(spreadOut());
+
+/* INDEX OF () to CHECK PRRSENCE OF ELEMENT -1 = NO EXIST  ANY NUM >=0 EXIST */
+
+function quickCheck(arr, elem) {
+ return arr.indexOf(elem) > -1;  /* if indexof enetered "elem" insde "arr" is bigger that -1 it will return true means it exist inside the arr entered in the function  */
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+/* INDEX OF () to CHECK PRRSENCE OF ELEMENT -1 = NO EXIST  ANY NUM >=0 EXIST */
+
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) > -1;  /* if indexof enetered "elem" insde "arr" is bigger that -1 it will return true means it exist inside the arr entered in the function  */
+ }
+ console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+ /* ITERATE TRHOGH ARRAYS THROUGH ALL ARRAYS ITEMS TO FILTER  */
+
+ function filteredArray(arr, elem) {
+  let newArr = [];
+  for(let i= 0; i < arr.length; i++) {
+    if(arr[i].indexOf(elem) == -1 ){ /* if current index of array (number in this case) is not matching element / element does not exist (-1) psuh this arrays element ito the newArr variable defined above    */
+      newArr.push(arr[i])
+    } 
+  }
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [2, 13, 26], [19, 3, 9]], 3)); /*  since 3 is present in all there is nothing to push but if we change eleme value or any 3 the arrays element will get pushed into newArr var */

@@ -69,7 +69,7 @@ function multiplyAll(arr) {
 
 for (let a = 0; a < arr.length; a ++){ /* The plus plus is used to mark the position pushed through the loop, in this case is one after previous positon */
  for(let b = 0; b < arr[a].length; b ++){ /* here is you stablishing loop inside each subarray */
-   product *= arr[a][b] ; /* Remmeber we are working with a function so we have to define consider de parameter we delcaring in the fucntion */
+   product = arr[a][b] ; /* Remmeber we are working with a function so we have to define consider de parameter we delcaring in the fucntion */
  } 
 }
   return product;
@@ -133,3 +133,16 @@ function myFunc() {
     console.log("Still going!");
   }
 }
+
+/* COPIY ARRAY WITH SPREAD AOPERATOR "..." from DATA ESTRUC AND ALGO MODULE////////*/
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    newArr.push([...arr])
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));

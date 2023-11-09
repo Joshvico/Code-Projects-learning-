@@ -7,4 +7,3 @@ const LOCAL_FORECAST = {
 const { today: {low: lowToday1, high: highToday3}}  = LOCAL_FORECAST;
 
 console.log ();
-

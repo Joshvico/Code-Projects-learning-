@@ -358,3 +358,10 @@ function chainToSwitch(val) {
 }
 
 chainToSwitch(7);
+
+/* OTHER WAY TO EXPREES BOOLEANS  IF CONDITIONS /////// From DATAALGO */
+
+function quickCheck(arr, elem) {
+  return arr.indexOf(elem) > -1;  /* if indexof enetered "elem" insde "arr" is bigger that -1 it will return true means it exist inside the arr entered in the function  */
+ }
+ console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')); 
