@@ -107,3 +107,24 @@ function quickCheck(arr, elem) {
  }
  
  console.log(filteredArray([[3, 2, 3], [1, 6, 3], [2, 13, 26], [19, 3, 9]], 3));
+
+ /* MAKING 5 LEVELS ARRAY  */
+let myNestedArray = [
+  // Level 1
+  [
+    // Level 2
+    'unshift', false, 1, 2, 3, 'complex', 'nested', 
+    [
+      // Level 3
+      'loop', 'shift', 6, 7, 1000, 'method', "deep",
+      [
+        // Level 4
+        'concat', false, true, 'spread', 'array',"deeper",
+        [
+          // Level 5
+          'mutate', 1327.98, 'splice', 'slice', 'push',"deepest",
+        ]
+      ]
+    ]
+  ]
+];
