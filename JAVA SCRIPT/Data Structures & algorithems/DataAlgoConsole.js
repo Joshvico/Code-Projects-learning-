@@ -248,3 +248,5 @@ console.log(foods);
   delete foods.strawberries;
   
   console.log(foods);
+
+  
