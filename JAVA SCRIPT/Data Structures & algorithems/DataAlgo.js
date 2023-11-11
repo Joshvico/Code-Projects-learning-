@@ -217,11 +217,11 @@ let myNestedArray = [
     }
   }
   
-  console.log(checkInventory2("Bologna apples", 20));
+  console.log(checkInventory2("Bologna apples", 10));
 
   /* DELETING PROPERTIES with DELETE function */
 
-  let foods = {
+  let foods3 = {
     apples: 25,
     oranges: 32,
     plums: 28,
@@ -230,8 +230,8 @@ let myNestedArray = [
     strawberries: 27
   };
   
-  delete foods.oranges;  
-  delete foods.plums;
-  delete foods.strawberries;
+  delete foods3.oranges;  
+  delete foods3.plums;
+  delete foods3.strawberries;
   
   console.log(foods);
