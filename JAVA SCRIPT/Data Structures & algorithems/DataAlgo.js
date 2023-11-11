@@ -133,3 +133,105 @@ let myNestedArray = [
     ]
   ]
 ];
+
+/* ACCESIGN AND MODIFYIN OBJECTS with [] and ¨.¨¨and values initilized in a var */
+  /* PROPERTY (key): VALUE */
+
+    let foods = {
+      apples: 25,
+      oranges: 32,
+      plums: 28,
+      'other things': "cakes" /*speacila enfasis on values that that have space, you need to put them inside this ' ' (if not error)  */
+    };
+    /* "." when no spaces in value */
+    foods.bananas = 13;
+    foods.grapes = 35;
+    foods.strawberries = 27;
+   /* "[]"" when space in value and when assigning the value from a Var, let, const*/
+
+    let others = "pan de masa madre";
+    foods[others] = "spelta";
+
+    console.log(foods);
+
+    /* ACCESING + MODIFY NESTED OBJECTS with "." [] and NESTED ARRAYS */
+
+    let userActivity = {
+      id: 23894201352,
+      date: 'January 1, 2017',
+      data: { /* keep in mind nested objects do not need to be initialize with equality operator like userActivity */
+        totalUsers: 51,
+        online: 42,
+        'offline power':67,
+        'test Array': ["melocton", "pecador", 4]
+      }
+    };
+    
+    userActivity.data.online = 45;
+    userActivity.data['offline power'] = 75;
+    userActivity.data['test Array'][2] = 89; /* this is how to acces and modify this array */
+    userActivity.data['test Array'][0] = "topo";
+    
+    console.log(userActivity.data['test Array'][2]); /* accesing the nested obj and nested array to assignew value 89 */    
+    console.log(userActivity);
+
+    /* CHECK IF ITEM ON LIST WITH OWNPROPERTY AND RETURNING VALUE IF FOUND + SOME OTHER CODE TO MAKE IT MORE USEFUL */
+
+  let foodies = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+  };
+  
+  function checkInventory(scannedItem) {
+    if (foodies.hasOwnProperty(scannedItem)) { /* has own property maps the object lloking for property doesn't matter is property has space the hasownproperty will always be intilize with "." */
+      return foodies[scannedItem]; /* "[ ]" is used also to acces or retreive info from dynamic object or when accesing it insede a funciton */
+    }
+    return "not available";
+  }
+  
+  console.log(checkInventory("apples"));
+
+  /* **************************** LITTLE EXTRA CASHIER FUNCTION */
+  
+  let foods2 = {
+    'Bologna apples': 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+  };
+  
+  function checkInventory2(scannedItem, num) {/* this will decicrease the numeric value of the cheked item if found and available */
+    if (foods2.hasOwnProperty(scannedItem) && foods2[scannedItem] >= num) {
+      foods2[scannedItem] -= num;/* this will decicrease the numeric value of the cheked item if found and available */
+      return `the ${scannedItem} available, current quantity: ${foods2[scannedItem]} left`;/* accesing obj with string letireal to return current number */
+    } else if (foods2.hasOwnProperty(scannedItem) && foods2[scannedItem] > 0) { /* covers possiblity if found only if quantity stays bigger than 0 then returs the mes*/
+      return `not enough ${scannedItem} available, current quantity: ${foods2[scannedItem]}`;
+    } else {
+      return `Item not found or not available`;
+    }
+  }
+  
+  console.log(checkInventory2("Bologna apples", 20));
+
+  /* DELETING PROPERTIES with DELETE function */
+
+  let foods = {
+    apples: 25,
+    oranges: 32,
+    plums: 28,
+    bananas: 13,
+    grapes: 35,
+    strawberries: 27
+  };
+  
+  delete foods.oranges;  
+  delete foods.plums;
+  delete foods.strawberries;
+  
+  console.log(foods);
