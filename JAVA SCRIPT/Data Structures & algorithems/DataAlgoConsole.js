@@ -249,4 +249,41 @@ console.log(foods);
   
   console.log(foods);
 
+  /* HAS OWN PERPERTY or IN FUCNTION TO check if PROPERTY IS IN */
+
+  let users = {
+    Alan: {
+      age: 27,
+      online: true
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: true
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
   
+  function isEveryoneHere(userObj) {
+    // Only change code below this line
+      let namesToCheck = ['Alan', 'Jeff', 'Sarah', 'Ryan'];
+  
+    // Check if each name is a property of the userObj
+    for (let i = 0; i < namesToCheck.length; i++) {
+      if (!userObj.hasOwnProperty(namesToCheck[i])) {
+        return false;
+      }
+    }
+  
+    // If all names are present, return true
+    return true;
+    // Only change code above this line
+  }
+  
+  console.log(isEveryoneHere(users));
