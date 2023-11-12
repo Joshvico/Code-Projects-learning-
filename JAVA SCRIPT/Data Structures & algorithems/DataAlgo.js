@@ -213,11 +213,11 @@ let myNestedArray = [
     } else if (foods2.hasOwnProperty(scannedItem) && foods2[scannedItem] > 0) { /* covers possiblity if found only if quantity stays bigger than 0 then returs the mes*/
       return `not enough ${scannedItem} available, current quantity: ${foods2[scannedItem]}`;
     } else {
-      return `Item not found or not available`;
+      return `pardon missis KAterino we don't have ${scannedItem}`;
     }
   }
   
-  console.log(checkInventory2("Bologna apples", 10));
+  console.log(checkInventory2("pomoshky", 10));
 
   /* DELETING PROPERTIES with DELETE function */
 
@@ -235,3 +235,129 @@ let myNestedArray = [
   delete foods3.strawberries;
   
   console.log(foods);
+
+  /* CHECK WITH LOOP IF OBJECT HAS PROPERTY // CHECK BY GROUPS OF PROPERTIES*/
+
+  let users = {
+    Alan: {
+      age: 27,
+      online: true
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: true
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
+  
+  function isEveryoneHere(userObj) {
+      let namesToCheck = ['Alan', 'Jeff', 'Sarah', 'Ryan']; /* create an array with property names to run loop trhough it to check by groups of prperties */
+  
+      for (let i = 0; i < namesToCheck.length; i++) {
+      if (userObj.hasOwnProperty(namesToCheck[i])) { /* ! marks negativity--> STAMENT IS SET INNEGATIVE BEACUSE LOPPS AS SSOON AS THEY FIND FIRST COINCIDENCE IT RETURSN TRUE SO IT WILL NOT ACHIVE THE GOULDL TO FIND PROPERTIES ALL TOGETHER */
+        return true;
+      }
+    }
+  
+    return False;
+    
+  }
+  
+  console.log(isEveryoneHere(users));
+
+  /* ITERATING THOURGH AN OBJECT WITH FOR IN LOOP */
+
+  const users2 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+};
+
+function countOnline(allUsers) {
+  let onlineCount = 0;  // Step 1: Initialize a variable to keep track of the count of online users
+
+  for (let user in allUsers) {  // Step 2: Use a for...in loop to iterate through the properties of the allUsers object
+
+    if (allUsers[user].online === true) {     // Step 3: Check if the online property of the current user is set to true
+
+      onlineCount++;       // Step 4: If true, increment the onlineCount variable
+
+    }
+  }
+  return onlineCount;
+}
+
+
+console.log(countOnline(users2)); // Output: 1
+
+/* USIGN OBJECT.KEYS() ti RETUN OBJ PROPERTIES INTO AN ARRAY */
+
+let users4 = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+
+return Object.keys(obj); /* mind the mayus in the biginning */
+
+}
+
+console.log(getArrayOfUsers(users4)); /* [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ] */
+
+/* MODIFYING NESTED ARRAYS INSIDE AND OBJECTS */
+
+let user5 = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+ 
+ userObj.data.friends.push(friend); /* the parameter in this case does not need to be put (), since you are not accesing array no need for [] */
+ return userObj.data.friends; /* it returns the array with the pushed value that we entered as argument */
+}
+
+console.log(addFriend(user5, 'Pete')); /* [ 'Sam', 'Kira', 'Tomo', 'Pete' ] */

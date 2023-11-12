@@ -131,21 +131,21 @@ let myNestedArray = [
 
 /* ACCESIGN AND MODIFYIN OBJECTS with [] and ¨.¨¨and values initilized in a var */
 
-let foods = {
+let foods12 = {
   apples: 25,
   oranges: 32,
   plums: 28,
 'other things': "cakes" /*  */
 };
 
-foods.bananas = 13;
-foods.grapes = 35;
-foods.strawberries = 27;
+foods12.bananas = 13;
+foods12.grapes = 35;
+foods12.strawberries = 27;
 
 let others = "pan de masa madre";
-foods[others] = "spelta";
+foods12[others] = "spelta";
     
-console.log(foods);
+console.log(foods12);
 
   /* ACCESING + MODIFY NESTED OBJECTS with "." [] and NESTED ARRAYS */
 
@@ -169,7 +169,7 @@ console.log(foods);
 
   /* ACCESING + MODIFY NESTED OBJECTS with "." [] and NESTED ARRAYS */
 
-  let userActivity = {
+  let userActivity2 = {
     id: 23894201352,
     date: 'January 1, 2017',
     data: { /* keep in mind nested objects do not need to be initialize with equality operator like userActivity */
@@ -180,10 +180,10 @@ console.log(foods);
     }
   };
   
-  userActivity.data.online = 45;
-  userActivity.data['offline power'] = 75;
-  userActivity.data['test Array'][2] = 89; /* this is how to acces and modify this array */
-  userActivity.data['test Array'][0] = "topo";
+  userActivity2.data.online = 45;
+  userActivity2.data['offline power'] = 75;
+  userActivity2.data['test Array'][2] = 89; /* this is how to acces and modify this array */
+  userActivity2.data['test Array'][0] = "topo";
   
   console.log(userActivity.data['test Array'][2]); /* accesing the nested obj and nested array to assignew value 89 */    
   console.log(userActivity);
@@ -234,7 +234,7 @@ console.log(foods);
 
   /* DELETING PROPERTIES with DELETE function */
 
-  let foods = {
+  let foods3 = {
     apples: 25,
     oranges: 32,
     plums: 28,
@@ -243,11 +243,11 @@ console.log(foods);
     strawberries: 27
   };
   
-  delete foods.oranges; 
-  delete foods.plums;
-  delete foods.strawberries;
+  delete foods3.oranges; 
+  delete foods3.plums;
+  delete foods3.strawberries;
   
-  console.log(foods);
+  console.log(foods3);
 
   /* HAS OWN PERPERTY or IN FUCNTION TO check if PROPERTY IS IN */
 
@@ -271,19 +271,102 @@ console.log(foods);
   };
   
   function isEveryoneHere(userObj) {
-    // Only change code below this line
       let namesToCheck = ['Alan', 'Jeff', 'Sarah', 'Ryan'];
   
-    // Check if each name is a property of the userObj
     for (let i = 0; i < namesToCheck.length; i++) {
       if (!userObj.hasOwnProperty(namesToCheck[i])) {
         return false;
       }
     }
   
-    // If all names are present, return true
     return true;
-    // Only change code above this line
   }
   
   console.log(isEveryoneHere(users));
+
+  /* ITERATING THOURGH AN OBJECT WITH FOR IN LOOP */
+
+  const users2 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+};
+
+function countOnline(allUsers) {
+  let onlineCount = 0;
+  for (let user in allUsers) {
+    if (allUsers[user].online === true) {
+      onlineCount++; 
+    }
+  }
+  return onlineCount;
+}
+
+
+console.log(countOnline(users2)); // Output: 1
+
+/* USIGN OBJECT.KEYS() ti RETUN OBJ PROPERTIES INTO AN ARRAY */
+
+let users4 = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+
+return Object.keys(obj);
+
+}
+
+console.log(getArrayOfUsers(users4));
+
+
+/* MODIFYING NESTED ARRAYS INSIDE AND OBJECTS */
+
+let user5 = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+ 
+ userObj.data.friends.push(friend); 
+ return userObj.data.friends; 
+}
+
+console.log(addFriend(user5, 'Pete'));
