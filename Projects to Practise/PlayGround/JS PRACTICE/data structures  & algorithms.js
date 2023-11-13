@@ -89,5 +89,30 @@ const checkParameter = (param) => foodPreferences.hasOwnProperty(param); /* this
 
 console.log (checkParameter("dairyFree"));
 
+/* Exercise 4: Iterating through Objects */
 
+let userData = {
+  Alice: {
+    age: 25,
+    email: 'alice@email.com',
+    active: true
+  },
+  Bob: {
+    age: 32,
+    email: 'bob@email.com',
+    active: false
+  },
+  Charlie: {
+    age: 28,
+    email: 'charlie@email.com',
+    active: true
+  }
+};
 
+const fromObjToArray = (prop) => {
+ if (userData[prop].active === true) {
+  return [userData[prop]]; /*  this line will return the obj into in form of an array every time conditions is set to true */
+ }
+ return `${prop} not active`;
+}
+ console.log(fromObjToArray("Alice"));
