@@ -117,4 +117,28 @@ const oddNumbers = (arr) => {
 
 console.log(oddNumbers(mixedNumbers));
 
+/* EX 5 Modify Object Values: APPLAY DISCOUNT IN number PROPERTY OF AN OBJECT  */
+let product = {
+  name: 'Laptop',
+  price: 899.99,
+  specifications: { processor: 'Intel i7', RAM: '16GB', storage: '512GB SSD' }
+};
 
+const applyDiscount = (productObject) => {
+  for (let key in productObject) {
+    if (typeof productObject[key] === 'number') { /* to differentiate what is a number while running through the object */
+      productObject[key] *= 0.90; // Apply a 10% discount to numeric values
+    } else if (typeof productObject[key] === 'object') {  /* checking insed obj if any key is an obj */
+      for (let nestedKey in productObject[key]) {
+        if (typeof productObject[key][nestedKey] === 'number') { /* accesing object and going in loop to check for numbers */
+          productObject[key][nestedKey] *= 0.90; // Apply a 10% discount to numeric values in nested objects
+        }
+      }
+    }
+  }
+}
+
+// Apply the discount to the product
+applyDiscount(product); /* in order for it to apply discount we have to initilize the fucniton before printing product */
+// Log the updated product
+console.log(product); /*  we don't console.log it together because fucniton does not return a value perse */
