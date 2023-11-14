@@ -73,7 +73,7 @@ var myDecimal = ourDecimal; // myDecimal has stored value of 5.7 //
 const product2 = 2.0 * 2.5; // =5 //
 const quotient = 4.4 / 2.0; //=2.2//
 
-/* REMINDER OPERATOR % */
+/* REMAINDER OPERATOR % */
 
 const remainder = 11 % 3; // this is reaminader of 2 //
 
