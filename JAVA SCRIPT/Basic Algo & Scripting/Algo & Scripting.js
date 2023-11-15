@@ -35,4 +35,4 @@ const factorialize = (num) => {
     return result;
   }
 };
-console.log(factorialize(3)); // Output: 120
+console.log(factorialize(171)); // Output: 120
