@@ -82,3 +82,21 @@ function findLongestWord(string) {
 
 let result = findLongestWord("The quick brown fox jumped over the lazy dog");/* important define result for console.loging result with string literal */
 console.log(`The longest word is ${result.word} with a length of ${result.length} characters`);
+
+/* FINDING HIGHEST NUMBER IN MULTI LEVEL ARR  */
+
+function largestOfFour(arr) {
+  var resultArray = []; /* initilize a var to store highest values */
+  for (var i = 0; i < arr.length; i++) { /* iterate first level arr */
+        var max = arr[i][0]; /* Initialization of max with the first element of the current sub-array */
+    for (var j = 1; j < arr[i].length; j++) { /* run through 1st level arrays */
+          if (arr[i][j] > max) { /* if value of current value position in array is bigger than previous update max value */
+        max = arr[i][j]; /* acces the array value that meets this conditions */
+      }
+    }
+    resultArray.push(max); /* push it to the resultArray */
+  }
+
+  return resultArray;
+}
+console.log(largestOfFour([[4, 5, 1, 3],[13, 27, 18, 26],[32, 35, 37, 39],[1000, 1001, 857, 1]]));
