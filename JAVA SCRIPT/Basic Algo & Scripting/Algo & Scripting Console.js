@@ -116,4 +116,12 @@ function confirmEnding(str, target) {
   return ending === target; 
 }
 
-console.log (confirmEnding("Hello", "world"));
+console.log (confirmEnding("Hello,World", "world"));
+
+/* ************** PROPOSE but IWTH "endswith()" METHOD************************************ */
+
+
+function confirmEnding(str, target) {
+  return str.endsWith(target);
+}
+console.log(confirmEnding("Hello, World", "World")); 
