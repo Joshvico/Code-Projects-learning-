@@ -96,3 +96,24 @@ function largestOfFour(arr) {
   return resultArray;
 }
 console.log(largestOfFour([[4, 5, 1, 3],[13, 27, 18, 26],[32, 35, 37, 39],[1000, 1001, 857, 1]]));
+
+/* FIDING IF LETTER ENTERED MATCHES THE LAST LETTER of STRING ENTERED */
+function confirmEnding(str, target) {
+  var splitting = str.split("");
+  var letterPopped = splitting.pop();
+  if(target === letterPopped) {
+    return true;
+  } 
+  return false ;
+}
+
+console.log (confirmEnding("bastian", "n"));
+
+/* USING SUBSTRING TO EXTRACT PART OF ESTRING AND CHECK MATCHES LIKE PREVIOUS EXCERCISE */
+
+function confirmEnding(str, target) {
+  var ending = str.substring(str.length - target.length) 
+  return ending === target; 
+}
+
+console.log (confirmEnding("Hello", "world"));
