@@ -125,3 +125,46 @@ function confirmEnding(str, target) {
   return str.endsWith(target);
 }
 console.log(confirmEnding("Hello, World", "World")); 
+
+/* REPETING num AMOUNT OF TIMES STRING WITH LOOP  */
+function repeatStringNumTimes(str, num) {
+  // Check if num is not a positive number
+  if (num <= 0) { /* setting condition fo only positve numbers allowed */
+    return 'tu puta mdre en bicicleta, return a positive number';
+  }
+
+  // Repeat the string using a loop
+  let result ="" /* setting a varaible to store the printed  */
+  for (let i = 0; i < num; i++) {
+    result += str; /* as str is not an array we can concatenate both let and parmeter with += to rping  */
+  }
+
+  return result;
+}
+
+console.log(repeatStringNumTimes("abc", 3)); // Output: "abcabcabc"
+console.log(repeatStringNumTimes("abc", -2)); // Output: ""
+
+/* ******************** SAME BUT WITH REPEAT() FUCNTION */
+function repeatStringNumTimes(str, num) {
+  // Check if num is not a positive number
+  if (num <= 0) {
+    return '';
+  }
+  return str.repeat(num);
+}
+
+console.log(repeatStringNumTimes("abc", 3)); // Output: "abcabcabc"
+console.log(repeatStringNumTimes("abc", -2)); // Output: ""
+
+/* TUNCRATE A STRING WITH SLICE() METHOD */
+
+function truncateString(str, num) {
+  if (str.length <= num) {
+    return str;
+  } else {
+    return str.slice(0, num) + "...";
+  }
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
