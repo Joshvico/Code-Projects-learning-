@@ -183,3 +183,27 @@ function findElement(arr, func) {
 }
 
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+/* TURNING EACH 1st LETTER OF WORD CAPITAL with MAP charat ()+toLowerCase +toUpperCase +slice() +join */
+
+function titleCase(str) {
+  const lowerCaseStr = str.toLowerCase(); /* puts every letter into lowercase */
+  const wordsArray = lowerCaseStr.split(" "); /* splits the str separte words after each separation (" ")*/
+  const capitalizedWords = wordsArray.map(word => word.charAt(0).toUpperCase() + word.slice(1)); /* word is a local var to represent each word it every 0 positon word character and turn it to UpperCase and + adds the rest of characters from 1 positon until the end of the word */
+  const result5 = capitalizedWords.join(" "); /* join back from Array to String with a " " per word  */
+  return result5;
+}
+
+const result5 = titleCase("I'm a little tea pot"); 
+console.log(result5);  // Output: "I'm A Little Tea Pot"
+
+/* ************************************** Optimize version***************************** */
+function titleCase(str) {
+  return str /* this is an optimize versio to include all action after return */
+    .toLowerCase()
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+console.log(titleCase("I'm a little tea pot"));  // Output: "I'm A Little Tea Pot"

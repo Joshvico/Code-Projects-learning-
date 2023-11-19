@@ -180,3 +180,34 @@ function findElement(arr, func) {
 }
 
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+/* CHECKING TYPE OF DATA WITH "TYPEOF METHOD" */
+function booWho(bool) {
+  return typeof bool === "boolean";
+
+}
+
+console.log(booWho(false));
+
+/* TURNING EACH 1st LETTER OF WORD CAPITAL with MAP charat ()+toLowerCase +toUpperCase +slice() +join */
+
+function titleCase(str) {
+  const lowerCaseStr = str.toLowerCase();
+  const wordsArray = lowerCaseStr.split(" ");   const capitalizedWords = wordsArray.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  const result5 = capitalizedWords.join(" "); 
+  return result5;
+}
+
+const result5 = titleCase("I'm a little tea pot"); 
+console.log(result5);  // Output: "I'm A Little Tea Pot"
+
+/* ************************************** Optimize version***************************** */
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+console.log(titleCase("I'm a little tea pot"));  // Output: "I'm A Little Tea Pot"
