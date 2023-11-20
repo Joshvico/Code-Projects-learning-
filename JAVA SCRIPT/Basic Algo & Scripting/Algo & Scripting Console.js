@@ -211,3 +211,39 @@ function titleCase(str) {
 }
 
 console.log(titleCase("I'm a little tea pot"));  // Output: "I'm A Little Tea Pot"
+
+/* USING SLICE AND SPLICE METHOD TO INLCUDE ARRAY PART OF ARRAY INTO A COPY OF AN ARRAY */
+
+function frankenSplice(arr1, arr2, n) {
+  const newArr2 = arr2.slice();
+  newArr2.splice(n, 0, ...arr1); 
+  return newArr2;
+}
+console.log (frankenSplice([1, 2, 3], [4, 5, 6], 1));
+
+
+/* FILTERING "FALSY VALUES" (fals,null,0",undefined, NaN) ACCORDING TO NATURE IF VALUE */
+
+function bouncer(arr) {
+  let newArray = arr.filter(Boolean);
+  return newArray;
+}
+
+console.log(bouncer([7, "ate", "", false, 9])); /*[7, "ate", 9] */
+
+/*USING SORT TO DET:WHERE A NUMBER BELONGS TO IN A PASSED ARRAY */
+
+function getIndexToIns(arr, num) {
+  arr.sort((a, b) => a - b); /* sort is sued to sort in ascending order */
+
+  for (let i = 0; i < arr.length; i++) {
+    if (num <= arr[i]) { /* if nume is smaller or equal iterated arr.num (i) return position where it should go */
+      return i; /* this is how we return the index */
+    }
+  }
+
+  return arr.length; /* is case num entered is bigger it prints the whole array indicating that the number should be placed at the end */
+}
+
+console.log(getIndexToIns([40, 60], 50));
+

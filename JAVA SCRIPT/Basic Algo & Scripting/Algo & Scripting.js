@@ -207,3 +207,22 @@ function titleCase(str) {
 }
 
 console.log(titleCase("I'm a little tea pot"));  // Output: "I'm A Little Tea Pot"
+
+/* USING SLICE AND SPLICE METHOD TO INLCUDE ARRAY PART OF ARRAY INTO A COPY OF AN ARRAY */
+
+function frankenSplice(arr1, arr2, n) {
+  const newArr2 = arr2.slice(); /* Slice creates a copy that will be modified. the vaules in () are empty as we want to copy whole arrar */
+  newArr2.splice(n, 0, ...arr1); /* spread operator is needed to merge the new numbers inside the new Array otherwise it will included as a multilevel arrays [n,n[n,n,n]n,n,n]*/
+  return newArr2;
+}
+console.log (frankenSplice([1, 2, 3], [4, 5, 6], 1));
+
+
+/* FILTERING "FALSY VALUES" (fals,null,0",undefined, NaN) ACCORDING TO NATURE IF VALUE */
+
+function bouncer(arr) {
+  let newArray = arr.filter(Boolean); /* it turns all values in Booleans to be examened and then filtered to a newArray */
+  return newArray;
+}
+
+console.log(bouncer([7, "ate", "", false, 9])); /*[7, "ate", 9] */
