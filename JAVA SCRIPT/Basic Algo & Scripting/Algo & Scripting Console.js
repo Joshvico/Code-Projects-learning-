@@ -234,15 +234,15 @@ console.log(bouncer([7, "ate", "", false, 9])); /*[7, "ate", 9] */
 /*USING SORT TO DET:WHERE A NUMBER BELONGS TO IN A PASSED ARRAY */
 
 function getIndexToIns(arr, num) {
-  arr.sort((a, b) => a - b); /* sort is sued to sort in ascending order */
+  arr.sort((a, b) => a - b); 
 
   for (let i = 0; i < arr.length; i++) {
-    if (num <= arr[i]) { /* if nume is smaller or equal iterated arr.num (i) return position where it should go */
-      return i; /* this is how we return the index */
+    if (num <= arr[i]) {
+      return i; 
     }
   }
 
-  return arr.length; /* is case num entered is bigger it prints the whole array indicating that the number should be placed at the end */
+  return arr.length; 
 }
 
 console.log(getIndexToIns([40, 60], 50));
