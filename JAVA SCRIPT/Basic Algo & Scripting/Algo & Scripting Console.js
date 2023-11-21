@@ -247,3 +247,32 @@ function getIndexToIns(arr, num) {
 
 console.log(getIndexToIns([40, 60], 50));
 
+/* CHEKING IF 2 ELEMENTS IN SAME ARRAY HAVE SAME LETTERS OR PARTIALY  USING ******** INDEXOF and -1*/
+
+function mutation(arr) {
+  var str1 = arr[0].toLowerCase();
+  var str2 = arr[1].toLowerCase();
+
+  for (var i = 0; i < str2.length; i++) {
+    if (str1.indexOf(str2[i]) === -1) {
+      return false;
+    }
+  }
+
+  return true;
+}
+ console.log(mutation(["hello", "ello"]));
+
+ /* BREAKING ARRAY INSUBARRAY WITH SLICE METHOD AND FOR LOOP  */
+
+function chunkArrayInGroups(arr, size) {
+  let chunks = []
+  for(let i = 0; i < arr.length ; i+=size) {
+    var startIndex = i;
+    var subarr = arr.slice(startIndex, startIndex + size);
+    chunks.push(subarr);
+  }
+  return chunks;
+}
+
+console.log (chunkArrayInGroups(["a", "b", "c", "d","e","r","5","8"], 3));

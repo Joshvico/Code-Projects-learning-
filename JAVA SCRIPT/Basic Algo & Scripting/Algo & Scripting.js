@@ -243,3 +243,33 @@ function getIndexToIns(arr, num) {
 
 console.log(getIndexToIns([40, 60], 50));
 
+/* CHEKING IF 2 ELEMENTS IN SAME ARRAY HAVE SAME LETTERS OR PARTIALY  USING ******** INDEXOF and -1*/
+
+function mutation(arr) {
+  var str1 = arr[0].toLowerCase(); /* first transofrm both arr elements in lower case inside the funciton as mayus will be chelked as different */
+  var str2 = arr[1].toLowerCase();
+
+  for (var i = 0; i < str2.length; i++) { /* we run a loop that cheks length of str2 */
+    if (str1.indexOf(str2[i]) === -1) { /* the indexOf -1 is used as a false trigger.... it is runned like this as is more efficient 1st not matching letter the loops stops running */
+      return false;
+    }
+  }
+
+  return true; /* if no mismatch is found then it will run the whole element to return true */
+}
+
+console.log(mutation(["hello", "ello"])) /*  it will return true as ello is inside arr[0] */
+
+/* BREAKING ARRAY INSUBARRAY WITH SLICE METHOD AND FOR LOOP  */
+
+function chunkArrayInGroups(arr, size) {
+  let chunks = [] /* create a variable to store new array */
+  for(let i = 0; i < arr.length ; i+=size) { /* it will run thorugh the array and will be running through index +or equal size value */
+    var startIndex = i;
+    var subarr = arr.slice(startIndex, startIndex + size);
+    chunks.push(subarr);
+  }
+  return chunks;
+}
+
+console.log (chunkArrayInGroups(["a", "b", "c", "d","e","r","5","8"], 3));
