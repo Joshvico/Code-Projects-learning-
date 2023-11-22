@@ -81,5 +81,5 @@ let myHouse = new House(3); /* When new object is created with new operator is c
 myHouse instanceof House; /* this is used to check if that instance is using the named constructo, it will return true or false */
 
 console.log (myHouse); /* willl print 3 */
-console.log (myHouse instanceof House); /* this is the way to console.log the instance of */
+console.log (myHouse instanceof House); /* this is the way to console.log the instanceof */
 
