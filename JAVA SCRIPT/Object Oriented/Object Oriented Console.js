@@ -61,3 +61,5 @@ myHouse instanceof House;
 
 console.log (myHouse);
 console.log (myHouse instanceof House);
+
+/* OWN PROPERTY */
