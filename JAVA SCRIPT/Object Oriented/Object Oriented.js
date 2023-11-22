@@ -82,3 +82,4 @@ myHouse instanceof House; /* this is used to check if that instance is using the
 
 console.log (myHouse); /* willl print 3 */
 console.log (myHouse instanceof House); /* this is the way to console.log the instance of */
+
