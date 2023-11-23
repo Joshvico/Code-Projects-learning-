@@ -85,3 +85,106 @@ console.log (myHouse instanceof House); /* this is the way to console.log the in
 
 /* OWN PROPERTY */
 
+function Bird(name) {
+  this.name = name; /* name & numLegs are own properties as they will be print for every new instance under constructor named Bird */
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+let ownProps = [];
+/* we use a for in loop to check if property is found */
+for (let prop in canary) { /*we define a let with name prop that will be the conditions of hasown...*/
+  if(canary.hasOwnProperty(prop)) { /* it acceses canary recent created object to check and push this properties into the array ownProps */
+    ownProps.push(prop);
+  }
+}
+
+console.log(ownProps);
+
+/* PROTOTYPE of PROPERTIES TO REDUCE DUPLICAE CODE */
+
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype.numLegs = 4; /* notice that the protoype is living outside the funciton to have global scope */
+
+let beagle = new Dog("Snoopy"); /* new instance */
+
+console.log(beagle) /*  it will not show all the info as is impolicit and only visible when accesing the concret property */
+console.log (beagle.numLegs) /* it will print the property set for any instance we create */
+
+/* ITARATE OVER ALL PROPERTIES WITH FOR IN LOOP TO DEVIDE OWNPROP AND PROTOTYPE  */
+
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle2 = new Dog("Snoopy");
+
+let ownProps2 = [];
+let prototypeProps2 = [];
+/****************/
+for (let prop in beagle) { /*  We run a loop through new instance "Beagle" to check prop */
+  if(beagle.hasOwnProperty(prop)) { /* hasOwnproperty discriminates in between what is own so it will only account properties that are own / inside object */
+    ownProps.push(prop);
+  } else {
+    prototypeProps.push(prop); 
+  }
+}
+
+console.log(ownProps2);
+console.log(prototypeProps2);
+
+/* COSNTRUCTOR PROPERTY TO CHECK WHAT TYPE OF OBJECT */
+
+function Dog(name) {
+  this.name = name;
+}
+let streetDog = new Dog ("luna"); /*  I created this new instance to use the cosntructor property */
+
+function joinDogFraternity(candidate) {
+ if (candidate.constructor === Dog) {  /* keep in mind that constructor can be over wrtten to it is best practice to use instance of, check next to challenges */
+   return true;
+ } else {
+   return false;
+ }
+}
+console.log(joinDogFraternity(streetDog));
+
+/* CHANEG PROTOTYPE TO A NEW OBJECT INT HE OPTIMIZE WAY */
+
+function Dog(name) {
+  this.name = name;
+}
+
+let luna = new Dog("luna");
+
+Dog.prototype = { /*  this object contains the new protoypes properties that will in when creating a new instance */
+    numLegs: 4,
+eat: function () {
+  console.log("yummi");
+},
+  describe: function () {
+    console.log(`My name is ${this.name}`)
+}
+};
+/* console.log the prototipes is not clear yest, consolt it with chatGPT for now */
+
+/* AVOIDING OVERWRTTING ORIGN OBJ INSTANCES AND PROPTIPYES (from a new created obj) BY DEFINING " COSNTRUCTOR: xxxxx," */
+
+function Dog(nome) {
+  this.nome = nome;
+}
+
+Dog.prototype = {
+  constructor:Dog, /* !!!!!!! when creating prototypes inside new objects this keep the name of the original obj this prototypes are assigned !!!!! */
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.nome);
+  }
+};
