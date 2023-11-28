@@ -168,3 +168,13 @@ Dog.prototype = {
     console.log("My name is " + this.nome);
   }
 };
+
+/* WEHRE OBJ PROTOIPES COME FROM with "ISPROTOTYPEOF" */
+
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle3 = new Dog("Snoopy");
+
+Dog.prototype.isPrototypeOf(beagle3);

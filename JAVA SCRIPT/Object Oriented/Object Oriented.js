@@ -188,3 +188,52 @@ Dog.prototype = {
     console.log("My name is " + this.nome);
   }
 };
+
+/* WEHRE OBJ PROTOIPES COME FROM with "ISPROTOTYPEOF" */
+
+function Dog5(name) {
+  this.name = name;
+}
+
+let beagle3 = new Dog5("Snoopy");
+
+Dog5.prototype.isPrototypeOf(beagle3); /* this will return true as the KW is like a funciton that checks if it belogns to that obj */
+
+/* SUPERTYPE and SUBTYPE of PRTOTIPE */
+
+function Dog4(name) {
+  this.name = name;
+}
+
+let beagle5 = new Dog4("Snoopy");
+
+Dog4.prototype.isPrototypeOf(beagle5);  // yields true
+
+Object.prototype.isPrototypeOf(Dog4.prototype);
+
+/* DRY don't REPEAT YOURSELF CODING with describe Method  and integrating functions */
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() { 
+    console.log("nom nom nom");
+  }
+};
