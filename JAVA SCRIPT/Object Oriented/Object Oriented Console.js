@@ -178,3 +178,33 @@ function Dog(name) {
 let beagle3 = new Dog("Snoopy");
 
 Dog.prototype.isPrototypeOf(beagle3);
+
+/*  CREATING INHERITANCE WITH "OBJECT.CREATE()" instead OF CREATING RPOTOTYPE WITH "NEW" OPERATOR */
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+let duck2= Object.create(Animal.prototype); /* SUPERTYPE */
+let beagle7 = Object.create(Animal.prototype);/* SUPERTYPE */
+
+/* CREATING INSTANCE OF PARENT */
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create (Animal.prototype); /* this creates an instance of  "Aniaml"  */
+

@@ -237,3 +237,34 @@ Animal.prototype = {
     console.log("nom nom nom");
   }
 };
+
+/*  CREATING INHERITANCE WITH "OBJECT.CREATE()" instead OF CREATING RPOTOTYPE WITH "NEW" OPERATOR */
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+let duck2= Object.create(Animal.prototype);
+let beagle7 = Object.create(Animal.prototype);
+
+console.log (duck2);
+
+/* CREATING INSTANCE OF PARENT */
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+Dog.prototype = Object.create (Animal.prototype);
