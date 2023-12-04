@@ -319,3 +319,24 @@ Penguin.prototype.fly = function() {
 
 let penguin = new Penguin();
 console.log(penguin.fly());
+
+/* USING MIXIN TO ADD SAME BEHAVIOUR FROM NON RELATED OBJECT // Fly method for duck and for plane */
+
+let bird = {
+  name: "Donald",
+  numLegs: 2
+};
+
+let boat = {
+  name: "Warrior",
+  type: "race-boat"
+};
+
+let glideMixin = function(obj) { /* here is defined the mixin that created the glide method */
+  obj.glide = function() {
+    console.log("gliding, loco");
+  }
+};
+
+glideMixin(bird); /* This assignes the abilty to glide to the entered object */
+glideMixin(boat);
