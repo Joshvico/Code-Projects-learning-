@@ -208,3 +208,54 @@ function Dog() { }
 
 Dog.prototype = Object.create (Animal.prototype); /* this creates an instance of  "Aniaml"  */
 
+/* RESET INHERIT CONSTRUCTOR MANUALLY  */
+
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+let duck7 = new Bird();
+let beagle8 = new Dog();
+
+Bird.prototype.constructor = Bird;
+duck7.constructor
+
+Dog.prototype.constructor = Dog;
+beagle8.constructor
+
+/* ADDING METHODS (fly, eat, bark for) AND ASSIGNING TO CONSTURCTORS */
+
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+Dog.prototype.bark = function() {
+  console.log("Woof!"); /* This method will give dog a unique a behaviour that will only be print trhouhg Dog objt */
+};
+
+
+let beagle10 = new Dog();
+
+/* OVERWRITING ENHERIT METHODS TO ADD SEPECIFIC METHODS TO SPECIFIC OBJECST */
+
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+Penguin.prototype.fly = function() {
+  return "Alas, this is a flightless bird."; /* This mehtod overwrites fly Method only in Penguin so it returns the string put here  */
+};
+
+let penguin = new Penguin();
+console.log(penguin.fly());
