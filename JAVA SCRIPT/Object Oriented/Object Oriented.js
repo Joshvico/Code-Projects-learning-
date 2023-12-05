@@ -366,13 +366,13 @@ makeNest();
 
 /* Use an IIFE to Create a Module */
 
-let funModule = (function () { 
+let funModule = (function () {  /* we name the module ans start encapsulating the fucntion that will return and object with the inherit behaviours */
   return {
-isCuteMixin: function(obj) {
+isCuteMixin: function(obj) { /* the mixin shoudl be passed from let to a key value object that has the fucntion as it key value */
   obj.isCute = function() {
     return true;
   };
-},
+}, /* since we trun it into and object both / OBJ behaviours  are linked with a ","  */
 singMixin: function(obj) {
   obj.sing = function() {
     console.log("Singing to an awesome tune");
