@@ -280,3 +280,34 @@ let glideMixin = function(obj) {
 
 glideMixin(bird);
 glideMixin(boat);
+
+/* MAKING CLOSURE VARAIBLE (NON OVERWRITABLE) TO FIX VAR VALUES */
+function Bird() {
+  let weight = 15;  
+  this.getWeight = function(){
+    return weight;
+  };
+}
+
+/* CREATING IIFE( IMMEDIATELY INVOKE FUCNITON EXP) // ANONYMUS FUNCTION TO RUN INSTANTLY */
+(function () {
+  console.log("A cozy nest is ready");
+})
+(); /* this is the way to execute the anonymous function  */
+
+/* Use an IIFE to Create a Module */
+
+let funModule = (function () { 
+  return {
+isCuteMixin: function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+},
+singMixin: function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+    };
+    }
+  }
+}) ();

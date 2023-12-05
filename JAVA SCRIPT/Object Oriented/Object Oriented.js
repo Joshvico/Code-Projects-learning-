@@ -340,3 +340,43 @@ let glideMixin = function(obj) { /* here is defined the mixin that created the g
 
 glideMixin(bird); /* This assignes the abilty to glide to the entered object */
 glideMixin(boat);
+
+/* MAKING CLOSURE VARAIBLE (NON OVERWRITABLE) TO FIX VAR VALUES */
+function Bird() {
+  let weight = 15; /* by declaring inside de function the value is only accesible within the contaxt of the Funciton so it can not be access globally an therefore be changed for another value */
+  
+  this.getWeight = function(){
+    return weight;
+  };
+
+}
+
+/* CREATING IIFE( IMMEDIATELY INVOKE FUCNITON EXP) // ANONYMUS FUNCTION TO RUN INSTANTLY */
+ /* Classic concept */
+ function makeNest() {
+  console.log("A cozy nest is ready");
+}
+
+makeNest();
+/* *********** */
+(function () { /* it is not only enclosed in () but also anonymous it runs instantly without needing to call it  */
+  console.log("A cozy nest is ready");
+})
+(); /* this is the way to execute the anonymous function  */
+
+/* Use an IIFE to Create a Module */
+
+let funModule = (function () { 
+  return {
+isCuteMixin: function(obj) {
+  obj.isCute = function() {
+    return true;
+  };
+},
+singMixin: function(obj) {
+  obj.sing = function() {
+    console.log("Singing to an awesome tune");
+    };
+    }
+  }
+}) ();
