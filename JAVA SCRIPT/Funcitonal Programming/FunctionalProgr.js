@@ -19,3 +19,23 @@ const getTea = (numOfCups) => {
 
 const tea4TeamFCC = getTea(40); /* this store the returned value of the funciton */
 console.log(tea4TeamFCC); /* ["green Tea","green Tea","green Tea",... *40] */
+
+/* ASSIGNING DIEFFERENT VALUES FROM FUCNTIONS USGINT THE SAME FUCNTION (GREEN TEA & BLACK TEA) */
+
+const prepareGreenTea = () => 'greenTea';
+const prepareBlackTea = () => 'blackTea';
+
+const getTea2 = (prepareTea, numOfCups) => {
+  const teaCups = [];
+
+  for(let cups = 1; cups <= numOfCups; cups += 1) {
+    const teaCup = prepareTea();
+    teaCups.push(teaCup);
+  }
+  return teaCups;
+};
+
+const tea4GreenTeamFCC = getTea2(prepareGreenTea,27);
+const tea4BlackTeamFCC = getTea2(prepareBlackTea,13);
+
+console.log(tea4GreenTeamFCC,tea4BlackTeamFCC); /* prints 27 greenTeas and 13 black inside array */
