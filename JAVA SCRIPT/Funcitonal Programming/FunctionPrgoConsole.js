@@ -157,3 +157,19 @@ const finalTabs = socialWindow
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
 console.log(finalTabs.tabs);
+
+/* AVOIDING MUTATION BY CALL VAR fROM GLOBAL SCOPE */  /* + */ /* UNDERSTANDING FUCNTIONS WITH DEPENDENCY OF AGLOBAL VAR OR OBJECT*/
+
+let fixedValue = 4;
+
+function incrementer() {
+ return (fixedValue +1)
+ }
+
+ // The global variable
+let fixedValue2 = 4;
+
+function incrementer(variable2) {
+return (variable2 + 1);
+
+}

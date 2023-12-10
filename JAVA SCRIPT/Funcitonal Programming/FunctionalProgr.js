@@ -40,7 +40,9 @@ const tea4BlackTeamFCC = getTea2(prepareBlackTea,13);
 
 console.log(tea4GreenTeamFCC,tea4BlackTeamFCC); /* prints 27 greenTeas and 13 black inside array */
 
-/* UNDESTANDING THE OFBYONE ERROR AND THE USE OF IMPERATIVE CODE (METHODS) TO AVOID POTETNIAL MISTAKES*/
+
+
+/* UNDESTANDING THE "OFBYONE ERROR" AND THE USE OF IMPERATIVE CODE (METHODS) TO AVOID CHAGING VALUES/ MUTATE TO AVOID BUGS*/
 
 // tabs is an array of titles of each site open within the window
 const Window = function(tabs) {
@@ -85,3 +87,21 @@ const finalTabs = socialWindow
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
 console.log(finalTabs.tabs);
+
+
+/* AVOIDING MUTATION BY CALL VAR fROM GLOBAL SCOPE */  /* + */ /* UNDERSTANDING FUCNTIONS WITH DEPENDENCY OF AGLOBAL VAR OR OBJECT*/
+
+let fixedValue = 4;
+
+function incrementer() {
+ return (fixedValue +1) /* we increment the value fixedValue so we get 5 as outcome without altering the it */
+
+ }
+
+ // The global variable
+let fixedValue2 = 4;
+
+function incrementer(variable2) { /* since it depends on a global variable is important to ncluded in parameters which argument needs to be entered as it connects with the global var */
+return (variable2 + 1);
+
+}
