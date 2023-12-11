@@ -105,3 +105,30 @@ function incrementer(variable2) { /* since it depends on a global variable is im
 return (variable2 + 1);
 
 }
+
+/* CREATING NEW SHALLOW VARIABLES TO DON'T ALTER GLOBAL SCOPE VAR (check Documentation for more info) */
+
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+function add(list, bookName) { /* Adding this new parameter on this new code will allow us to reference the original list "bookList" that then will be completing the value of the shallow variable created below */
+  const updatedList = [...list]; /* we create a varaible with spread operator to spread the values of the "bookList" and retunr the argument passed */
+  updatedList.push(bookName);
+  return updatedList;
+}
+
+function remove(list, bookName) { /* notice that parameter is the same name as it only affects the funcitoin */
+  const updatedList = [...list]; /* same mechanics as before */
+  const bookIndex = updatedList.indexOf(bookName);
+  if (bookIndex >= 0) {
+    updatedList.splice(bookIndex, 1);
+  }
+  return updatedList; /* returning the list outside the if stament is key */
+}
+
+const updatedBookListAfterAdd = add(bookList, "A Brief History of Time"); /* Creating this variable that take as value the function creates a shallow copy that points at bookList but does not modify the ofiginal varaible */
+const updatedBookListAfterRemove = remove(bookList, "On The Electrodynamics of Moving Bodies");
+
+console.log(updatedBookListAfterAdd); /* IT will print the orginal plus added book without modifying the original content of the var */
+console.log(updatedBookListAfterRemove);
+console.log(bookList);
+

@@ -173,3 +173,29 @@ function incrementer(variable2) {
 return (variable2 + 1);
 
 }
+
+/* CREATING NEW SHALLOW VARIABLES TO DON'T ALTER GLOBAL SCOPE VAR (check Documentation for more info) */
+
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+function add(list, bookName) {
+  const updatedList = [...list];
+  updatedList.push(bookName);
+  return updatedList;
+}
+
+function remove(list, bookName) {
+  const updatedList = [...list];
+  const bookIndex = updatedList.indexOf(bookName);
+  if (bookIndex >= 0) {
+    updatedList.splice(bookIndex, 1);
+  }
+  return updatedList;
+}
+
+const updatedBookListAfterAdd = add(bookList, "A Brief History of Time");
+const updatedBookListAfterRemove = remove(bookList, "On The Electrodynamics of Moving Bodies");
+
+console.log(updatedBookListAfterAdd);/* IT will print the orginal plus added book without modifying the original content of the var */
+console.log(updatedBookListAfterRemove);
+console.log(bookList);
