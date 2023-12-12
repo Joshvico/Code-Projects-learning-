@@ -118,7 +118,7 @@ function add(list, bookName) { /* Adding this new parameter on this new code wil
 
 function remove(list, bookName) { /* notice that parameter is the same name as it only affects the funcitoin */
   const updatedList = [...list]; /* same mechanics as before */
-  const bookIndex = updatedList.indexOf(bookName);
+  const bookIndex = updatedList.indexOf(bookName); /* pending to know how this index part works*/
   if (bookIndex >= 0) {
     updatedList.splice(bookIndex, 1);
   }
