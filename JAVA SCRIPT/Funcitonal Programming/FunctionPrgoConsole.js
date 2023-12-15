@@ -324,3 +324,17 @@ for (let i = 0; i < watchList.length; i++) {
 
 const ratings = watchList.map(item => ({ title: item["Title"], rating: item["imdbRating"] })); 
 console.log(JSON.stringify(ratings)); /* it will print a new array with movie titles and reating */
+
+
+/* ITERATING TRHOUGH A CALL BACK FUCNTION */
+
+Array.prototype.myMap = function(callback) {
+  const newArray = [];
+  
+  for (let i = 0; i < this.length; i++) {
+  
+    newArray.push(callback(this[i], i, this));
+  }
+  
+  return newArray;
+};

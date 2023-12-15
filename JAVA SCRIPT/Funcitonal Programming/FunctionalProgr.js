@@ -257,3 +257,16 @@ for (let i = 0; i < watchList.length; i++) {
 const ratings = watchList.map(item => ({ title: item["Title"], rating: item["imdbRating"] })); /* In order to access the info we mapping with and map trhough it we use a callbakc function */
 
 console.log(JSON.stringify(ratings)); /* it will print a new array with movie titles and reating */
+
+/* ITERATING TRHOUGH A CALL BACK FUCNTION */
+
+Array.prototype.myMap = function(callback) {
+  const newArray = [];
+  // Loop through the original array
+  for (let i = 0; i < this.length; i++) {
+    // Apply the callback function to each element and push the result into the new array
+    newArray.push(callback(this[i], i, this));
+  }
+  // Return the new array
+  return newArray;
+};
