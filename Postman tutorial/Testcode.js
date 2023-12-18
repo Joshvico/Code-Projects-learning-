@@ -73,3 +73,13 @@ const response4 = pm.response.json(); /* to acces the body inside the fuctino we
 pm.test("Is in Stock", () => { 
     pm.expect(response4['current-stock']).to.be.above(0); /* this is an expectation that access body / obj property "current-stock" ;;mind the [];; to be above 0  */
 });
+
+/* SKYPING REQUEST WEHN RUNNING THE AUTOMATED TEST */
+postman.setNextRequest("List of Books"); /* function to skip certain parts while running a test */
+
+ /* FUNCTION TO STOP RUNNING THE AUTOMATED TEST */
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(204);
+});
+
+postman.setNextRequest(null); /* Stop the test in when running a test */
