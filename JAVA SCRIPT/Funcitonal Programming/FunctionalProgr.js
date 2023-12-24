@@ -414,6 +414,26 @@ console.log(filteredList3);
       }));
   }
   console.log(filterAndMapMovies1(watchList2));
+
+    /* CREAITNG A CALLBACK FUCNTION THAT ACTS LIKE "FILTER" WITHOUT USING "FILTER" */
   
+    Array.prototype.myFilter = function(callback) {
+      const newArray = [];
+      for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) { /* : This line checks if the current element this[i], its index i, and the original array this satisfy the condition specified  */
+          newArray.push(this[i]);
+        }
+      }
+      return newArray;
+    };
 
+/* CREATING A FUCNTION WITH SLICE METHOS // (SLICE (beginign of cut inclusided , end of the cut not included)) */
 
+function sliceArray(anim, beginSlice, endSlice) {
+let sliceArray = anim.slice(beginSlice,endSlice); 
+return sliceArray;
+
+}
+
+const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+console.log(sliceArray(inputAnim, 1, 3)); /* it will retunr "Dog" and "Tiger" */

@@ -480,4 +480,17 @@ console.log(filteredList3);
       }));
   }
   console.log(filterAndMapMovies1(watchList2));
+
+  /* CREAITNG A CALLBACK FUCNTION THAT ACTS LIKE "FILTER" WITHOUT USING "FILTER" */
+  
+  Array.prototype.myFilter = function(callback) {
+    const newArray = [];
+    for (let i = 0; i < this.length; i++) {
+      if (callback(this[i], i, this)) {
+        newArray.push(this[i]);
+      }
+    }
+    return newArray;
+  };
+  
   
