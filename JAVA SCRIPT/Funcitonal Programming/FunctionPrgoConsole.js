@@ -528,3 +528,16 @@ const first = [1, 2, 3];
 const second = [4, 5];
 console.log (nonMutatingConcat(first, second)); /* result is [1,2,3,4,5] */
 
+/* PUSH VS CONCAT for NON MUTATON METHODS (CONCAT DOES NOT MUTATE ORGIANL VARIABLES VALUES) */
+
+function nonMutatingPush(original, newItem) {
+  
+  return original.concat(newItem);
+  /* return original.push(newItem); it will mutate the values of the original vairbale passed in the fucntion */
+
+  
+}
+
+const first2 = [1, 2, 3];
+const second3 = [4, 5];
+nonMutatingPush(first, second);
