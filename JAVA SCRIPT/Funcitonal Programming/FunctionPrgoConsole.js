@@ -514,3 +514,17 @@ function nonMutatingSplice(cities) {
 }
 
 console.log(nonMutatingSplice(sinCity));  /* This will limit any array into a lenght of 3 cities */
+
+
+/* USIGN (Array x)".CONCAT" (Array y) METHOD to CONCATENATE 2 ARRAYS  */
+
+function nonMutatingConcat(original, attach) {
+
+  return (original).concat(attach)
+
+}
+
+const first = [1, 2, 3];
+const second = [4, 5];
+console.log (nonMutatingConcat(first, second)); /* result is [1,2,3,4,5] */
+
