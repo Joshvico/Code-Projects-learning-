@@ -493,4 +493,24 @@ console.log(filteredList3);
     return newArray;
   };
   
+/* CREATING A FUCNTION WITH SLICE METHOS // (SLICE (beginign of cut inclusided , end of the cut not included)) */
+
+function sliceArray(anim, beginSlice, endSlice) {
+  let sliceArray = anim.slice(beginSlice,endSlice); 
+  return sliceArray;
   
+  }
+  
+  const inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+  console.log(sliceArray(inputAnim, 1, 3)); /* it will retunr "Dog" and "Tiger" */
+
+  /* USIGN SLICE INSTEAD OF SPLICE IN A FUCNITON TO DON'T ALTER THE ORGINAL ARRAY */
+
+  let sinCity = ["Tokio","Japan", "Madrid", "tu puta amdre", "joperrens", "un Vladimir"]
+
+function nonMutatingSplice(cities) {
+
+  return cities.slice(0,3);
+}
+
+console.log(nonMutatingSplice(sinCity));  /* This will limit any array into a lenght of 3 cities */
