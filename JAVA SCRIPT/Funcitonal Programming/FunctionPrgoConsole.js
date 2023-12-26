@@ -689,3 +689,33 @@ function alphabeticalOrder(arr) {
 }  
 
 console.log (alphabeticalOrder(["a", "d", "c", "a", "z", "g"])); /* [ 'a', 'a', 'c', 'd', 'g', 'z' ] */
+
+/* PRACTISING SORT AND SLICE TO SORT WITHOUT MUTATING ORIGINAL ARRAYS */
+
+/* provided code with error for ex as I was not accounting arr argument keep in mind 
+
+ const globalArray = [5, 6, 3, 2, 9];
+
+function nonMutatingSort(arr) {
+
+  let newGlobalArray = globalArray.slice(0);
+  return newGlobalArray.sort(function(a, b) {
+    return a - b;
+  });
+
+}
+
+console.log(nonMutatingSort(globalArray));
+console.log(globalArray);
+ ***********************************************************/ 
+
+const globalArray = [5, 6, 3, 2, 9];
+
+function nonMutatingSort(arr) { 
+  return arr.slice().sort(function(a, b) {
+    return a - b; 
+  });
+}
+
+console.log(nonMutatingSort(globalArray)); /* [ 2, 3, 5, 6, 9 ] it will retunr this output without overwrtting the original */
+console.log(globalArray);
