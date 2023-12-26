@@ -601,3 +601,25 @@ function getRating(watchList5) {
 }
 
 console.log(getRating(watchList3)); /* it will retunr an average of 8.675 */
+
+/* EX TO COMBINE FILTER REDUCE OR MAP TO SOLVE COMPLEX PROBLEMS // FILTER ARRAY THE INTIGER POSITVE NUMBER + RETURN THE SQUARED VALUES // Filter - Number.asIntiger - Map */
+
+const squareList = arr => {
+  
+  let intArr = arr.filter(num => Number.isInteger(num) && num > 0); /* this filter the array passed in the function to pass to intiger and to be positive */
+  let finalArr = intArr.map(num => num * num); /* it takes filtered arrays and use MAP to trasnform each element of an array by multiplying by itself creating the square values */
+  return finalArr; 
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers); /* 5, 3 --> [25, 9] */
+
+/* USIGN SORT METHOD TO ORDER ARRAYELEMENT IN ALPHABETIC ORDER */
+
+function alphabeticalOrder(arr) {
+  return arr.sort(function(a, b) { /* it comperes 2 values and positions them accroding positions else-if conditions below  */
+    return a === b ? 0 : a < b ? -1 : 1; /* Terniary operator a concise form of if-else statmenet check notes */
+  });
+}  
+
+console.log (alphabeticalOrder(["a", "d", "c", "a", "z", "g"])); /* [ 'a', 'a', 'c', 'd', 'g', 'z' ] */

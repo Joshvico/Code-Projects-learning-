@@ -667,3 +667,25 @@ function getRating(watchList) {
 }
 
 console.log(getRating(watchList)); /* it will retunr an average of 8.675 */
+
+/* EX TO COMBINE FILTER REDUCE OR MAP TO SOLVE COMPLEX PROBLEMS // FILTER ARRAY THE INTIGER POSITVE NUMBER + RETURN THE SQUARED VALUES  */
+
+const squareList = arr => {
+  
+  let intArr = arr.filter(num => Number.isInteger(num) && num > 0); 
+  let finalArr = intArr.map(num => num * num); 
+  return finalArr; 
+};
+
+const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+console.log(squaredIntegers); /* 5, 3 --> [25, 9] */
+
+/* USIGN SORT METHOD TO ORDER ARRAYELEMENT IN ALPHABETIC ORDER */
+
+function alphabeticalOrder(arr) {
+  return arr.sort(function(a, b) {
+    return a === b ? 0 : a < b ? -1 : 1;
+  });
+}  
+
+console.log (alphabeticalOrder(["a", "d", "c", "a", "z", "g"])); /* [ 'a', 'a', 'c', 'd', 'g', 'z' ] */
