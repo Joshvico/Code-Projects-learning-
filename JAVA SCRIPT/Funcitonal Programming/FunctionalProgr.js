@@ -653,3 +653,21 @@ function nonMutatingSort(arr) {
 
 console.log(nonMutatingSort(globalArray)); /* [ 2, 3, 5, 6, 9 ] it will retunr this output without overwrtting the original */
 console.log(globalArray);
+
+/* USING SPLIT METOHD TO TURN STRING INTO ARRAYS + USING REGULAR EXPRESSIONS */
+
+function splitify(str) {
+  let splitifyer = str.split(/\W+/); /* one or more non-alphabetic characters (including punctuation)*/
+  return splitifyer;
+}
+
+console.log(splitify("Hello World,I-am code")); /* this is the output : [ 'Hello', 'World', 'I', 'am', 'code' ] */
+
+/* USING JOIN METHOD TO TURN ARRAY INTO STRING */
+
+function sentensify(str) {
+  let arrNew = str.split(/\W+/); 
+  return arrNew.join(" "); 
+}
+
+console.log(sentensify("May-the-force-be-with-you")); /* it returns a full string without "-" */

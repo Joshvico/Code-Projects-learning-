@@ -719,3 +719,21 @@ function nonMutatingSort(arr) {
 
 console.log(nonMutatingSort(globalArray)); /* [ 2, 3, 5, 6, 9 ] it will retunr this output without overwrtting the original */
 console.log(globalArray);
+
+/* USING SPLIT METOHD TO TURN STRING INTO ARRAYS + USING REGULAR EXPRESSIONS */
+
+function splitify(str) {
+  let splitifyer = str.split(/\W+/);
+  return splitifyer;
+}
+
+console.log(splitify("Hello World,I-am code")); /* this is the output : [ 'Hello', 'World', 'I', 'am', 'code' ] */
+
+
+/* USING JOIN METHOD TO TURN ARRAY INTO STRING */
+function sentensify(str) {
+  let arrNew = str.split(/\W+/); /* foirst we need to create Array by sppliting it into separte words */
+  return arrNew.join(" "); /* in the return statement you can also apply methods keep that in mind */
+}
+
+console.log(sentensify("May-the-force-be-with-you"));
