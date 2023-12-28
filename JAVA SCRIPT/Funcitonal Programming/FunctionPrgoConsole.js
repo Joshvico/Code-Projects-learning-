@@ -765,3 +765,22 @@ console.log(checkPositive([1, 2, 3, -4, 5])); /* it will return false */
 const checkPositive2 = arr2 => arr2.every(currentValue => currentValue > 0);
 
 console.log(checkPositive([1, 2, 3, -4, 5])); /* it will return false */
+
+/* "SOME METHOD" TO CHECK IF ONE OF ELEMENT'S ARRAYS PASSES THE TEST  */
+
+function checkPositive(arr) {
+return arr.some(number => number > 0); /* as every it need a vraible to store the value being examined */
+  
+}
+console.log(checkPositive([1, 2, 3, -4, 5])); /* it will return "true" as atleast one of the elements is bigger than 0 */
+
+/* ***************************************** ANOTHER WAY TO EXPRESS IT******************************* */
+function checkPositive2(arr) {
+
+return arr.some (function (number){
+return number > 0;
+});
+
+}
+
+console.log(checkPositive2([1, 2, 3, -4, 5]));
