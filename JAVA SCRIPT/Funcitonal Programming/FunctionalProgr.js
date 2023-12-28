@@ -671,3 +671,32 @@ function sentensify(str) {
 }
 
 console.log(sentensify("May-the-force-be-with-you")); /* it returns a full string without "-" */
+
+/* CREATING URL PARAMETER BY REPLACING SPACES FOR "-" **************************** SUPER INTERESTING*************************** */
+
+function urlSlug(title) { /* keep in mind that methods can be concatenated like belos */
+  return title
+    .toLowerCase()    // Convert to lowercase
+    .split(" ")       // Split the string into an array of words
+    .filter(word => word !== "") // Remove any empty strings (resulting from consecutive spaces) very important use!!!!!
+    .join("-");       // Join the words with hyphens ******************* KEEP IN MIND THAT JOIN CAN BE ADDING CHCRACTERS TO JOIN WORDS WITH
+}
+
+
+console.log(urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")); /* it will sonlo.log this a-mind-needs-books-like-a-sword-needs-a-whetstone*/
+
+/* "EVERY" METHOD TO DETERMENINE IF ALL ELEMENTS IN THE ARRAY PASS THE CONDITIONS  TRUE OR FALSE  */
+
+function checkPositive(arr) {
+  return arr.every(function(currentValue) { /* keep in mind that every applies with with a callback funciton as you need to set the conditions */
+    return currentValue > 0;
+  });
+}
+
+console.log(checkPositive([1, 2, 3, -4, 5])); /* it will return false */
+
+/* *************************************************************************A SIMPLIER WAY TO EXPRESS IT */
+
+const checkPositive2 = arr2 => arr2.every(currentValue => currentValue > 0); /* you need a variable in which to store the currentValue being evaluted to test the condition set */
+
+console.log(checkPositive([1, 2, 3, -4, 5])); /* it will return false */
