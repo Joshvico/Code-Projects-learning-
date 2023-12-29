@@ -719,3 +719,24 @@ function checkPositive(arr) {
   }
   
   console.log(checkPositive2([1, 2, 3, -4, 5]));
+
+  /* RECURRING  FUNNCITON (ARITY and CURRYING) */
+
+function add(x) {
+
+  return function (y) {
+   return function (z) {
+    return x+y+z;
+  }
+}
+
+}
+
+add(10)(20)(30); /* it will return 60 */
+
+
+/* ************************************************* easier way to express it same concept */
+
+const curriedFunction = x => y =>z =>x+y+z;
+
+console.log(curriedFunction(11)(22)(33)); /* result is 66 */

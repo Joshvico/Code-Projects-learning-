@@ -784,4 +784,44 @@ return number > 0;
 }
 
 console.log(checkPositive2([1, 2, 3, -4, 5])); 
-/*  */
+/* RECURRING  FUNNCITON (ARITY and CURRYING) */
+
+function add(x) { /* this fucniton takes 1 argument and the return another fucniton with another argument and so on and at the it takes all argument in one to process them */
+
+  return function (y) {
+   return function (z) {
+    return x+y+z;
+  }
+}
+
+}
+
+add(10)(20)(30); /* it will return 60 */
+
+/* ************************************************* easier way to express it same concept */
+
+const curriedFunction = x => y =>z =>x+y+z;
+
+console.log(curriedFunction(11)(22)(33)); /* result is 66 */
+
+/* *******************************************************************************REAL CASE EXMAPLE OF CURRYING FUCNTION */
+// Curried function to calculate pizza cost
+const calculatePizzaCost = size => crust => toppings => {
+  const baseCost = 10; // Base cost of a pizza
+  const sizeCost = size === 'large' ? 5 : 0;
+  const crustCost = crust === 'thick' ? 3 : 0;
+  const toppingsCost = toppings.length * 2;
+  
+  return baseCost + sizeCost + crustCost + toppingsCost;
+};
+
+// Usage
+const orderTotal = calculatePizzaCost('large')('thick')(['cheese', 'pepperoni']);
+console.log(orderTotal); // Output: 20 (10 + 5 + 3 + 2*2)
+
+// PARTIAL application for a large thick-crust pizza
+const largeThickPizza = calculatePizzaCost('large')('thick');
+
+// Usage
+const orderTotal1 = largeThickPizza(['cheese', 'pepperoni']);
+console.log(orderTotal); // Output: 20 (10 + 5 + 3 + 2*2)
