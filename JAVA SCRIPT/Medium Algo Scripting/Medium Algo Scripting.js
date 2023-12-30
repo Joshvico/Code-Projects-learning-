@@ -24,3 +24,42 @@ let total2 = 0
 }
 
 console.log(sumAll([1,4,6,8])); /* it will return 36 as the sum of all the number in btw 1 and 8 */
+
+/* USING INCLUDE METHOD TO COMPARE ARRAYS AVALUES AND FILTER THEM  2 POTENTIAL SOLUTIONS*/
+function diffArray(arr1, arr2) {
+  const newArr = [];
+  // Check elements in arr1 that are not in arr2
+  for (let i = 0; i < arr1.length; i++) {
+    if (!arr2.includes(arr1[i])) { /* this is the way we type inlcude. method..... see that the negative statement start in the beginning */
+      newArr.push(arr1[i]); /* you are accessing the current index inside the array and push it if it meets if statment */
+    }
+  }
+  // Check elements in arr2 that are not in arr1
+  for (let j = 0; j < arr2.length; j++) {
+    if (!arr1.includes(arr2[j])) {
+      newArr.push(arr2[j]);
+    }
+  }
+
+  return newArr;
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])); /* it will print 4 */
+
+/* ***************************************************************************** FCC Solution which uses "filter + concat" */
+
+function diffArray(arr1, arr2) {
+  return arr1 /* in order to concatenate you need first to return the array and the use "concat" method to "concat" */
+    .concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item)); /* || acts like "or" for the two true conditions   */
+}
+
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);  /* it will print 4 */
+
+/* USING "FILTER " + INCLUDES METHOD + SPREAD ARGUMENT TO ACCEPT MULTIPLE NUMBER OF NOT DEFINE ARGUMENTS */
+
+function destroyer(arr, ...x) { /* ...x (spread operator) allows me to not determeine an defined number of agrument that can be passed in th console */
+  return arr.filter(item => !x.includes(item)); /* here I accces the arr with filter method and then define the condition which to filter element that do not  match value from ...x agruments */
+}
+
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
