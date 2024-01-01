@@ -62,3 +62,48 @@ function destroyer(arr, ...x) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+/* USING FILTER AND EEVRY METHOD TO CHECK MATCHING KEY VALUE PAIRS IN OBJ */
+
+function whatIsInAName(collection, source) {
+  let coincidenceArr = [];
+
+  for (let i = 0; i < collection.length; i++) {
+    // Check if all key-value pairs in source are present in collection[i]
+    let isMatch = true;
+
+    for (let key in source) {
+      if (collection[i][key] !== source[key]) {
+        isMatch = false;
+        break; // Break the loop early if a mismatch is found
+      }
+    }
+
+    if (isMatch) {
+      coincidenceArr.push(collection[i]);
+    }
+  }
+
+  return coincidenceArr;
+}
+
+// Example usage:
+const collection = [
+  { first: "Romeo", last: "Montague" },
+  { first: "Mercutio", last: null },
+  { first: "Tybalt", last: "Capulet" }
+];
+const source = { last: "Capulet" };
+
+const result = whatIsInAName(collection, source);
+console.log(result); // Output: [ { first: 'Tybalt', last: 'Capulet' } ]
+
+/* ****************************** OTHER MODER EFFICIENT WAY**************** */
+
+function whatIsInAName(collection, source) {
+  return collection.filter(obj =>
+    Object.keys(source).every(key => obj[key] === source[key])
+  );
+}
+console.log(result); // Output: [ { first: 'Tybalt', last: 'Capulet' } ]
+

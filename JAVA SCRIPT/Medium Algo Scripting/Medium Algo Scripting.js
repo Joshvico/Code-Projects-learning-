@@ -63,3 +63,51 @@ function destroyer(arr, ...x) { /* ...x (spread operator) allows me to not deter
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+/* USING FILTER AND EEVRY METHOD TO CHECK MATCHING KEY VALUE PAIRS IN OBJ */
+
+function whatIsInAName(collection, source) {
+  let coincidenceArr = [];
+
+  for (let i = 0; i < collection.length; i++) {
+    let isMatch = true;
+    for (let key in source) { /* for in to check inside trying the false condition (best practise) as if will stop once finding a coincidence  */
+      if (collection[i][key] !== source[key]) {
+        isMatch = false;
+        break; // Break the loop early if a mismatch is found
+      }
+    }
+
+    if (isMatch) {
+      coincidenceArr.push(collection[i]);
+    }
+  }
+
+  return coincidenceArr;
+}
+
+// Example usage:
+/* const collection = [
+  { first: "Romeo", last: "Montague" },
+  { first: "Mercutio", last: null },
+  { first: "Tybalt", last: "Capulet" }
+];
+const source = { last: "Capulet" };
+
+const result = whatIsInAName(collection, source);
+console.log(result); // Output: [ { first: 'Tybalt', last: 'Capulet' } ] */
+
+/* ****************************** OTHER MODER EFFICIENT WAY****************  WITH OBJECT.KEYS METHOD FILER AND EVERY METHOD COMBINAED*****************/
+
+function whatIsInAName2(collection, source) {
+  return collection.filter(obj =>
+    Object.keys(source).every(key => obj[key] === source[key]) /* object.keys retunrs object values as an array and  */
+  );
+}
+console.log(whatIsInAName2([
+  { first: "Romeo", last: "Montague" },
+  { first: "Mercutio", last: null },
+  { first: "Tybalt", last: "Capulet" }
+],{ last: "Capulet" })); // Output: [ { first: 'Tybalt', last: 'Capulet' } ]
+
+
