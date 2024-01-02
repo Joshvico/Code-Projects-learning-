@@ -110,4 +110,44 @@ console.log(whatIsInAName2([
   { first: "Tybalt", last: "Capulet" }
 ],{ last: "Capulet" })); // Output: [ { first: 'Tybalt', last: 'Capulet' } ]
 
+/* COMBINING REGULAR EXPRESSIONS + STING AND ARRAY EMTHODS + REPLACE TO DIFFERECIATE IN BETWEEN LETTERS  */
 
+function spinalCase(str) {/* SpinalCase means everthing to lowercase */
+
+  return str
+    .split(/\s|_|(?=[A-Z])/) /* This will turn string into array and separating by spaces or _ or Capital letters if any ?= */
+    .join("-") /* join back and adding "-" */
+    .toLowerCase(); /* everything to lower case */
+}
+
+/* ************************* Addinn if statement to avoid all sting lowers case and no spaces************* */
+
+function spinalCase(str) {
+
+  if (str == /\s|_|(?=[A-Z])/) { /* if string does not have any capital, spaces, _ it will not be valid */
+    return "try again";
+  }
+  
+  return str
+      .split(/\s|_|(?=[A-Z])/)
+      .join("-")
+      .toLowerCase();
+  
+  }
+  console.log(spinalCase('This Is Spinal Tap'));
+
+  /* MOVING LETTERS AND GROUPS OF LETTERS AND COCANTING SUFIXES */
+
+  function translatePigLatin(str) {
+    let consonantRegex = /^[^aeiou]+/;  // matches one or more consecutive non-vowel characters at the beginning of the string.
+
+    let myConsonants = str.match(consonantRegex);// Check if a consonant cluster is found.
+    return myConsonants !== null
+      ? str
+          .replace(consonantRegex, "") // If a consonant cluster is found, remove it from the beginning of the string
+          .concat(myConsonants)
+          .concat("ay")// concatenate it to the end, and add "ay" at the very end.
+      : str.concat("way");
+  }
+  
+  console.log(translatePigLatin("clone")); /* it will print oneclay */

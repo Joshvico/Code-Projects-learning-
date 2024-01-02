@@ -107,3 +107,43 @@ function whatIsInAName(collection, source) {
 }
 console.log(result); // Output: [ { first: 'Tybalt', last: 'Capulet' } ]
 
+/* COMBINING REGULAR EXPRESSIONS + STING AND ARRAY EMTHODS + REPLACE TO DIFFERECIATE IN BETWEEN LETTERS  */
+
+function spinalCase(str) {/* SpinalCase means everthing to lowercase */
+
+  return str
+    .split(/\s|_|(?=[A-Z])/)
+    .join("-") 
+    .toLowerCase(); 
+}
+
+/* ************************* Addinn if statement to avoid all sting lowers case and no spaces************* */
+
+function spinalCase(str) {
+
+  if (str == /\s|_|(?=[A-Z])/) {
+    return "try again";
+  }
+  
+  return str
+      .split(/\s|_|(?=[A-Z])/)
+      .join("-")
+      .toLowerCase();
+  
+  }
+  console.log(spinalCase('This Is Spinal Tap'));
+    /* MOVING LETTERS AND GROUPS OF LETTERS AND COCANTING SUFIXES */
+
+    function translatePigLatin(str) {
+      let consonantRegex = /^[^aeiou]+/;
+      let myConsonants = str.match(consonantRegex);
+      return myConsonants !== null
+        ? str
+            .replace(consonantRegex, "")
+            .concat(myConsonants)
+            .concat("ay")
+        : str.concat("way");
+    }
+    
+    console.log(translatePigLatin("clone")); /* it will print oneclay */
+
