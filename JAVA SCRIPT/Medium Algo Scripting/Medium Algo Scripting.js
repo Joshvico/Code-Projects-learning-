@@ -151,3 +151,31 @@ function spinalCase(str) {
   }
   
   console.log(translatePigLatin("clone")); /* it will print oneclay */
+
+  /* REPLACING ONE WORD FOR ANTOHER + KEEP SAME FORMAT */
+
+  function myReplace(str, before, after) {
+    var beforeIndex = str.indexOf(before); /* finding the index of the string from BEFORE argument */
+    
+    if (str[beforeIndex] === str[beforeIndex].toUpperCase()) { /*  checking if first latter from BEFORE is UpperCase --> don't forget () on method */
+      
+      after = after.charAt(0).toUpperCase() + after.slice(1); /* charAt returns the character at specific index // Slice the rest of After string to form the complete word */
+    } else { /* method will not modify the original but bring a modified copy in order to modify the original we need slice (1) form 2nd character and the rest of the After string */
+      after = after.charAt(0).toLowerCase() + after.slice(1); /* as you can see you can concatenate metohd with + */
+    }
+    str = str.replace(before, after);    // Now replace the original str with the edited one.
+
+    return str;
+  }
+
+  /* **************************************************** Anotherway with different metohds + regularexp*********************** */
+  function myReplace2(str, before, after) {
+    // Check if first character of argument "before" is a capital or lowercase letter and change the first character of argument "after" to match the case
+    if (/^[A-Z]/.test(before)) { /* test is used in regex to check if conditons form regular are met */
+      after = after[0].toUpperCase() + after.substring(1) /* substring extracta a portino from index until margin defined with a 2nd argument */
+    } else {
+      after = after[0].toLowerCase() + after.substring(1)
+    }
+      return str.replace2(before, after);
+  }
+  

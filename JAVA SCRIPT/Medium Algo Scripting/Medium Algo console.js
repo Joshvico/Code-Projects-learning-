@@ -147,3 +147,29 @@ function spinalCase(str) {
     
     console.log(translatePigLatin("clone")); /* it will print oneclay */
 
+/* REPLACING ONE WORD FOR ANTOHER + KEEP SAME FORMAT */
+
+    function myReplace(str, before, after) {
+      var beforeIndex = str.indexOf(before);
+      
+      if (str[beforeIndex] === str[beforeIndex].toUpperCase()) {
+        after = after.charAt(0).toUpperCase() + after.slice(1);
+      } else {
+        after = after.charAt(0).toLowerCase() + after.slice(1);
+      }
+      str = str.replace(before, after);
+  
+      return str;
+  }
+  
+  /* **************************************************** Anotherway with different metohds + regularexp*********************** */
+
+  function myReplace2(str, before, after) {
+      if (/^[A-Z]/.test(before)) {
+          after = after[0].toUpperCase() + after.substring(1);
+      } else {
+          after = after[0].toLowerCase() + after.substring(1);
+      }
+      return str.replace2(before, after);
+  }
+  
