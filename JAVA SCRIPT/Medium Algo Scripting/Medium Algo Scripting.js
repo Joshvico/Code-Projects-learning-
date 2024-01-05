@@ -208,3 +208,4 @@ function spinalCase(str) {
   
   console.log(pairElement("GCG")); /* it will print [ [ 'G', 'C' ], [ 'C', 'G' ], [ 'G', 'C' ] ]   */
   
+  /* SEARCHING FRO MISSING LETTER IN THE ALPHABET */

@@ -204,5 +204,5 @@ function spinalCase(str) {
   
   console.log(pairElement("GCG"));
 
-  
+/* SEARCHING FRO MISSING LETTER IN THE ALPHABET */
   
