@@ -172,4 +172,37 @@ function spinalCase(str) {
       }
       return str.replace2(before, after);
   }
+ 
+ /* PARING DNA PAIRS IN A  2 DIMENSIONAL ARRAY TO MATCH THE PAIR PASTED IN ARGUMENT with SWITCH AND FOR LOOP*/
+
+  function pairElement(str) {
+    let pairs = [];
+  
+    for (let i = 0; i < str.length; i++) {
+      let currentBase = str[i];
+  
+      switch (currentBase) {
+        case "A":
+          pairs.push(["A", "T"]);
+          break;
+        case "T":
+          pairs.push(["T", "A"]);
+          break;
+        case "C":
+          pairs.push(["C", "G"]);
+          break;
+        case "G":
+          pairs.push(["G", "C"]);
+          break;
+        default:
+          break;
+      }
+    }
+  
+    return pairs;
+  }
+  
+  console.log(pairElement("GCG"));
+
+  
   
