@@ -241,3 +241,38 @@ fearNotLetter("abce"); /*  ti will retunr "d" */
   }
   
   console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); /* it will return unique values in the same order [ 1, 3, 2, 5, 4 ], those repeated (indexOf 1) are not pushed  */
+
+  /* USIGN SWITCH TO REPLACE SPECIAL CHARACTER INTO THEIR HMTL code VALUES */
+
+  function convertHTML(str) {
+    let result = "";
+  
+    for (let i = 0; i < str.length; i++) {
+      let currentChar = str[i]; 
+  
+      switch (currentChar) {
+        case "&":
+          result += "&amp;";  
+          break;
+        case "<":
+          result += "&lt;";
+          break;
+        case ">":
+          result += "&gt;";
+          break;
+        case "'":
+          result += "&apos;";
+          break;
+        case "\"":
+          result += "&quot;";
+          break;
+        default:
+          result += currentChar;
+          break;
+      }
+    }
+      return result;
+  }
+  
+  console.log(convertHTML('Dolce & Gabbana')); /*  it will return Dolce &amp; Gabbana */
+  

@@ -246,3 +246,49 @@ function spinalCase(str) {
   }
   
   console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); /* it will return unique values in the same order [ 1, 3, 2, 5, 4 ], those repeated (indexOf 1) are not pushed  */
+
+  /* USIGN SWITCH TO REPLACE SPECIAL CHARACTER INTO THEIR HMTL code VALUES */
+
+  function convertHTML(str) {
+    // Create an empty string to store the result
+    let result = "";
+  
+    // Iterate through each character in the input string
+    for (let i = 0; i < str.length; i++) {
+      // Get the current character
+      let currentChar = str[i]; /* spots current postion of the character itaret trhoug the loop */
+  
+      // Check the current character and convert it to HTML entity if needed
+      switch (currentChar) {
+        case "&":
+          // If the current character is '&', add '&amp;' to the result
+          result += "&amp;"; /******************************* this add to result whole characters one by one and when & is found replces it as an addition*/
+          break;
+        case "<":
+          // If the current character is '<', add '&lt;' to the result
+          result += "&lt;";
+          break;
+        case ">":
+          // If the current character is '>', add '&gt;' to the result
+          result += "&gt;";
+          break;
+        case "'":
+          // If the current character is "'", add '&apos;' to the result
+          result += "&apos;";
+          break;
+        case "\"":
+          // If the current character is '"', add '&quot;' to the result
+          result += "&quot;";
+          break;
+        default:
+          // If the current character is none of the specified, add it to the result as is
+          result += currentChar;
+          break;
+      }
+    }
+      return result;
+  }
+  
+  // Test the function with an example
+  console.log(convertHTML('Dolce & Gabbana')); /*  it will return Dolce &amp; Gabbana */
+  
