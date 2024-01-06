@@ -204,5 +204,40 @@ function spinalCase(str) {
   
   console.log(pairElement("GCG"));
 
-/* SEARCHING FRO MISSING LETTER IN THE ALPHABET */
+/* SEARCHING FRO MISSING LETTER IN THE ALPHABET  ".CharCodeAt Method" + For Loop ASCII code */
+function fearNotLetter(str) {
+  for (let i = 0; i < str.length; i++) {
+    /* code of current character */
+    const charCode = str.charCodeAt(i);
+
+    /* if code of current character is not equal to first character + no of iteration
+        then a letter was skipped */
+    if (charCode !== str.charCodeAt(0) + i) {
+      /* if current character skipped past a character find previous character and return */
+      return String.fromCharCode(charCode - 1);
+    }
+  }
+  return undefined;
+}
+
+// test here
+fearNotLetter("abce"); /*  ti will retunr "d" */  
+
+  /* SORTING ARRAYS TO RETUN UNICHE VALUES AND AVOID REPEATED with "IndexOF" and lopps (dimensional array), structure ...argument */
+  function uniteUnique(...arr) {
+    let arrayResult = [];
   
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+        const currentElement = arr[i][j];
+  
+        if (arrayResult.indexOf(currentElement) === -1) {
+          arrayResult.push(currentElement);
+        }
+      }
+    }
+  
+    return arrayResult;
+  }
+  
+  console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); /* it will return unique values in the same order [ 1, 3, 2, 5, 4 ], those repeated (indexOf 1) are not pushed  */
