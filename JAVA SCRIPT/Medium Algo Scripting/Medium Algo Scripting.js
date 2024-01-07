@@ -291,4 +291,83 @@ function spinalCase(str) {
   
   // Test the function with an example
   console.log(convertHTML('Dolce & Gabbana')); /*  it will return Dolce &amp; Gabbana */
+
+    /* SUMING ALL ODD NUMBRES FROM FIBONACCIO with WHILE LOOP  */
+    function sumFibs(num) {
+      let prev = 0;
+      let current = 1;
+      let sum = 0;
+    
+      while (current <= num) {
+        if (current % 2 !== 0) {
+          sum += current;
+        }
+    
+        const next = prev + current;
+        prev = current;
+        current = next;
+      }
+    
+      return sum;
+    }
+    
+    // Example: Call sumFibs with the argument 10
+    console.log(sumFibs(10)); // Output: 10  (1,1,3,5)
+    
+    /*Same fucntion as previous another way******************************************************** 2 */
+    function sumFibs2(num) {
+      let prevNumber = 0;
+      let currNumber = 1;
+      let result = 0;
+      while (currNumber <= num) {
+        if (currNumber % 2 !== 0) {
+          result += currNumber;
+        }
+        currNumber += prevNumber;
+        prevNumber = currNumber - prevNumber;
+      }
+    
+      return result;
+    }
   
+    console.log(sumFibs2(4)); // Output: 5 
+
+  /*Same as previous but with for loop*************************************************************************** 3 */
+
+function sumFibs3(num) {
+  let prev = 0;
+  let current = 1;
+  let sum = 0;
+
+  for (; current <= num;) { /* interesting line to keep in mind that you can initate a for loop without the 1st and rd argument as you have it previusly deifned with the variable above */
+    if (current % 2 !== 0) {
+      sum += current;
+    }
+
+    const next = prev + current;
+    prev = current;
+    current = next;
+  }
+
+  return sum;
+}
+
+// Example: Call sumFibs with the argument 10
+console.log(sumFibs(10)); // Output: 10
+  
+    /* CALCULATING THE FIBONACCI SEQUENCE */
+  
+    function generateFibonacciLoop(n) {
+      let fibonacciArray = [0, 1]; /* the fibonacci is incilized with the 2 first values of the Fibo seq. */
+    
+      for (let i = 2; i < n; i++) { /* we initialize i at value 2 beacsue we already have the first 2 numbers  */
+        fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2]; /* this calculates the next value by adding the previous first value (i -1) + the previous 2nd values (i -2) */
+      }
+    
+      return fibonacciArray;
+    }
+    
+    // Example: Generate the first 10 Fibonacci numbers
+    console.log(generateFibonacciLoop(10));/* [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]*/
+
+

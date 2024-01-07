@@ -276,3 +276,61 @@ fearNotLetter("abce"); /*  ti will retunr "d" */
   
   console.log(convertHTML('Dolce & Gabbana')); /*  it will return Dolce &amp; Gabbana */
   
+
+  /* SUMING ALL ODD NUMBRES FROM FIBONACCIO with WHILE LOOP  */
+  function sumFibs(num) {
+    let prev = 0;
+    let current = 1;
+    let sum = 0;
+  
+    while (current <= num) {
+      if (current % 2 !== 0) {
+        sum += current;
+      }
+  
+      const next = prev + current;
+      prev = current;
+      current = next;
+    }
+  
+    return sum;
+  }
+  
+  // Example: Call sumFibs with the argument 10
+  console.log(sumFibs(10)); // Output: 10  (1,1,3,5)
+  
+  /*Same fucntion as previous Another way  */
+  function sumFibs2(num) {
+    let prevNumber = 0;
+    let currNumber = 1;
+    let result = 0;
+    while (currNumber <= num) {
+      if (currNumber % 2 !== 0) {
+        result += currNumber;
+      }
+      currNumber += prevNumber;
+      prevNumber = currNumber - prevNumber;
+    }
+  
+    return result;
+  }
+
+  console.log(sumFibs2(4)); // Output: 5 
+
+
+   /* CALCULATING THE FIBONACCI SEQUENCE with WHILE LOOP */
+  
+    function generateFibonacciLoop(n) {
+      let fibonacciArray = [0, 1]; 
+    
+      for (let i = 2; i < n; i++) { 
+        fibonacciArray[i] = fibonacciArray[i - 1] + fibonacciArray[i - 2];
+      }
+    
+      return fibonacciArray;
+    }
+    
+    // Example: Generate the first 10 Fibonacci numbers
+    console.log(generateFibonacciLoop(10));/* [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]*/
+
+    /*Same as previous but with for loop */
