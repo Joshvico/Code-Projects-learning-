@@ -333,4 +333,61 @@ fearNotLetter("abce"); /*  ti will retunr "d" */
     // Example: Generate the first 10 Fibonacci numbers
     console.log(generateFibonacciLoop(10));/* [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]*/
 
-    /*Same as previous but with for loop */
+/* SUMMING ALL PRIME NUMBERS THAT COMPUES X NUMBER with Math.sqrt (math method) FOR LOOP and %== REMINDER */
+
+function sumPrimes(num) {
+  // Helper function to check if a number is prime
+  function isPrime(n) {
+    if (n <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  // Sum all prime numbers up to num
+  let sum = 0;
+  for (let i = 2; i <= num; i++) {
+    if (isPrime(i)) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+ // Sum of primes less than or equal to 10
+console.log(sumPrimes(10)); // Output: 17
+
+/* FINDING THE SMALLEST COMMON MULTIPLE WITH Math.max // Math.min  */
+function smallestCommons(arr) {
+  // Find the range of numbers in the array
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+
+  // Helper function to find the least common multiple of two numbers
+  function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+  }
+
+  // Helper function to find the greatest common divisor of two numbers
+  function gcd(a, b) {
+    while (b !== 0) {
+      let temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return a;
+  }
+
+  // Calculate the least common multiple for the entire range
+  let result = min;
+  for (let i = min + 1; i <= max; i++) {
+    result = lcm(result, i);
+  }
+
+  return result;
+}
+// Example usage:
+console.log(smallestCommons([1, 5])); // Output: 60
