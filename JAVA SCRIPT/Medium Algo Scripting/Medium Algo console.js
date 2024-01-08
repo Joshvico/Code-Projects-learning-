@@ -144,7 +144,14 @@ function spinalCase(str) {
             .concat("ay")
         : str.concat("way");
     }
-    
+    function dropElements(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) {
+    arr.shift(); // Remove the first element
+  }
+  return arr;
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) { return n >= 3; })); 
     console.log(translatePigLatin("clone")); /* it will print oneclay */
 
 /* REPLACING ONE WORD FOR ANTOHER + KEEP SAME FORMAT */
@@ -391,3 +398,14 @@ function smallestCommons(arr) {
 }
 // Example usage:
 console.log(smallestCommons([1, 5])); // Output: 60
+
+/* ELIMITATE VALUES FROM GIVEN ARR THAT DO NOT MEET CONDITIONS OF GIVEN FUNCTION */
+
+function dropElements(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) {
+    arr.shift(); // Remove the first element
+  }
+  return arr;
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) { return n >= 3; })); 

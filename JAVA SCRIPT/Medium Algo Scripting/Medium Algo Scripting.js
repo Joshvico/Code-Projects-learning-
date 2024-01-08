@@ -437,3 +437,14 @@ function smallestCommons(arr) {
 }
 // Example usage:
 console.log(smallestCommons([1, 5])); // Output: 60
+
+/* ELIMITATE VALUES FROM GIVEN ARR THAT DO NOT MEET CONDITIONS OF GIVEN FUNCTION */
+
+function dropElements(arr, func) {
+  while (arr.length > 0 && !func(arr[0])) { /* while (arr.length > 0 && !func(arr[0])): This means "while the array is not empty and the result of applying the function func to the first element of the array is false, continue the following block of code." */
+    arr.shift(); // Remove the first element
+  }
+  return arr;
+}
+
+console.log(dropElements([1, 2, 3, 4], function(n) { return n >= 3; })); 
