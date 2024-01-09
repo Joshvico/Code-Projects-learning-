@@ -409,3 +409,35 @@ function dropElements(arr, func) {
 }
 
 console.log(dropElements([1, 2, 3, 4], function(n) { return n >= 3; })); 
+
+/* FLATTENING DATA with "Array.isArray" MEthod a recursive function */
+function steamrollArray(arr) {
+  const flattenedArray = [];
+    for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+    
+      flattenedArray.push(...steamrollArray(arr[i]));
+    } else {
+      
+      flattenedArray.push(arr[i]);
+    }
+  }
+  return flattenedArray;
+};
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
+/* *********************************FLATTENING DATA WITH Array.isArray + Terniary function + recursive funciton */
+
+function steamrollArray(arr, flattenArr = []) {
+  for (let i = 0; i < arr.length; i++) {
+     if (Array.isArray(arr[i])) {
+        steamrollArray(arr[i], flattenArr);
+     } else {
+        flattenArr.push(arr[i]);
+     }
+  }
+  return flattenArr;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));

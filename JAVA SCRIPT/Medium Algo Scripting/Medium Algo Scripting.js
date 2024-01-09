@@ -448,3 +448,40 @@ function dropElements(arr, func) {
 }
 
 console.log(dropElements([1, 2, 3, 4], function(n) { return n >= 3; })); 
+
+/* FLATTENING Array with "Array.isArray" MEthod a recursive function */
+function steamrollArray(arr) {
+  const flattenedArray = [];
+  // Loop over array contents
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      // Recursively flatten entries that are arrays
+      //  and push into the flattenedArray
+      flattenedArray.push(...steamrollArray(arr[i])); /* to access as many array deeplebel as provided so it will not need to be har coded  */
+    } else {
+      // Copy contents that are not arrays
+      flattenedArray.push(arr[i]);
+    }
+  }
+  return flattenedArray;
+};
+
+// test here
+steamrollArray([1, [2], [3, [[4]]]]);
+
+/* *********************************FLATTENING Array DATA WITH Array.isArray + Terniary function + recursive funciton */
+
+function steamrollArray(arr, flattenArr = []) {
+  for (let i = 0; i < arr.length; i++) {
+     if (Array.isArray(arr[i])) {
+        steamrollArray(arr[i], flattenArr);
+     } else {
+        flattenArr.push(arr[i]);
+     }
+  }
+  return flattenArr;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+
