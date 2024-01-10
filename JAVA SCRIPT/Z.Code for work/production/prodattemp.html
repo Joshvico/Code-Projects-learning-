@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Object Property Extractor</h1>
+
+    <section>
+        <h2>Enter Objects:</h2>
+        <textarea id="objectsInput" rows="4" cols="50" placeholder="Enter objects in JSON format"></textarea>
+    </section>
+
+    <section>
+        <h2>Select Properties to Extract:</h2>
+        <input type="text" id="propertiesInput" placeholder="Enter property name (e.g., sourceID)">
+    </section>
+
+    <section>
+        <h2>Result:</h2>
+        <pre id="resultDisplay"></pre>
+    </section>
+
+    <button onclick="extractProperties()">Extract Properties</button>
+
+    <script>
+        function extractProperties() {
+            const objectsInput = document.getElementById('objectsInput').value;
+            const propertiesInput = document.getElementById('propertiesInput').value;
+
+            try {
+                const objects = JSON.parse(objectsInput);
+                const properties = propertiesInput.split(',').map(property => property.trim());
+
+                const result = objects.map(item => {
+                    let selectedData = {};
+                    properties.forEach(property => {
+                        selectedData[property] = item[property];
+                    });
+                    return selectedData;
+                });
+
+                document.getElementById('resultDisplay').innerText = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById('resultDisplay').innerText = 'Error: Invalid input format';
+            }
+        }
+    </script>
+</body>
+</html>

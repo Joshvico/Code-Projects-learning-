@@ -24,6 +24,26 @@ const sources = [
     url: "https://example.org/api/stats/ghi789"
   },
 ];
+
+function sourceInfoProvider(sources) {
+  const objId = sources.map(obj => obj.sourceID);
+  const objName = sources.map(obj => obj.name);
+  const objUrl = sources.map(obj => obj.url);
+
+  return {
+    sourceID: objId,
+    name: objName,
+    url: objUrl
+  };
+}
+
+// Example usage with your `sources` array
+console.log(sourceInfoProvider(sources));
+
+
+
+
+
 // Print the array of objects
 /* console.log(sources);
 
@@ -51,20 +71,4 @@ console.log (sourceInfoProvider(sources));
 
 // Example usage with your `sources` array
 console.log(sourceInfoProvider(sources)); */
-
-function sourceInfoProvider(sources) {
-  const objId = sources.map(obj => obj.sourceID);
-  const objName = sources.map(obj => obj.name);
-  const objUrl = sources.map(obj => obj.url);
-
-  return {
-    sourceID: objId,
-    name: objName,
-    url: objUrl
-  };
-}
-
-// Example usage with your `sources` array
-console.log(sourceInfoProvider(sources));
-
 
