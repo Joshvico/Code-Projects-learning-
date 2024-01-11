@@ -31,8 +31,24 @@
             const objectsInput = document.getElementById('objectsInput').value;
             const propertiesInput = document.getElementById('propertiesInput').value;
 
+            // Validate objectsInput
+            if (!objectsInput.trim()) {
+                document.getElementById('resultDisplay').innerText = 'Error: Please enter valid objects in JSON format';
+                return;
+            }
+
+            // Validate propertiesInput
+            if (!propertiesInput.trim()) {
+                document.getElementById('resultDisplay').innerText = 'Error: Please enter at least one property to extract';
+                return;
+            }
+
             try {
                 const objects = JSON.parse(objectsInput);
+                if (!Array.isArray(objects)) {
+                    throw new Error('Invalid input format. Must be an array of objects.');
+                }
+
                 const properties = propertiesInput.split(',').map(property => property.trim());
 
                 const result = objects.map(item => {
@@ -45,7 +61,7 @@
 
                 document.getElementById('resultDisplay').innerText = JSON.stringify(result, null, 2);
             } catch (error) {
-                document.getElementById('resultDisplay').innerText = 'Error: Invalid input format';
+                document.getElementById('resultDisplay').innerText = 'Error: ' + error.message;
             }
         }
     </script>

@@ -22,7 +22,7 @@ const sources = [
     lastUpdate: "2023-02-01", // Replace with an actual date
     type: "Type3",
     url: "https://example.org/api/stats/ghi789"
-  },
+  }
 ];
 
 function sourceInfoProvider(sources) {
