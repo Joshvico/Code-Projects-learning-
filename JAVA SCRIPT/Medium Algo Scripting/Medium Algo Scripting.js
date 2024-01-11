@@ -487,17 +487,20 @@ console.log(steamrollArray([1, [2], [3, [[4]]]]));
 /* TRUNING BINARY CODE INTO READBLE STRING */
 
 function binaryAgent(str) {
-  let splitString = str.split(" ") /* separation is important to split the binary code in small chunks */
-  let finalString = [];
+  var biString = str.split(" "); /* separation is important to split the binary code in small chunks */
+  var uniString = [];
 
-for (var i = 0; i < str.length; i++) {
-   finalString.push(String.fromCharCode(parseInt(splitString[i], 2)));/* once turned in decima String.fromCharCode() turns the string into it equivalent ins ASCII code --> parseInt(splitString[i], 2) turn evry chunk currently ierated in to decimal ASCII equivalent*/
- }
+  /*using the radix (or base) parameter in parseInt, we can convert the binary
+      number to a decimal number while simultaneously converting to a char*/
 
- // we then simply join the string
- return finalString.join("");
+  for (var i = 0; i < biString.length; i++) {
+    uniString.push(String.fromCharCode(parseInt(biString[i], 2))); /* once turned in decima String.fromCharCode() turns the string into it equivalent ins ASCII code --> parseInt(splitString[i], 2) turn evry chunk currently ierated in to decimal ASCII equivalent*/
+
+  }
+
+  // we then simply join the string
+  return uniString.join("");
 }
-
 console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
 
 
