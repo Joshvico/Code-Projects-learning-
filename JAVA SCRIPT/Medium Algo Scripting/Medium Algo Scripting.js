@@ -503,4 +503,22 @@ function binaryAgent(str) {
 }
 console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
 
+/* ACCESING AN OBJECT TO CHECK IF ALL RPOPERTIES VALUES ARE TRUE  with LOOP + ACCESING OBJ SINTAX*/
+function truthCheck(collection, pre) {
+  for (let i = 0; i < collection.length; i++) {
+    if (!collection[i][pre]) {
+      return false;  // If any value is falsy, return false
+    }
+  }
+  return true;  // If all values are truthy, return true
+}
 
+console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
+
+/* ************************************************** another way with .EVERY METHOD */
+function truthCheck2(collection, pre) {
+  // Is everyone being true?
+  return collection.every(obj => obj[pre]); /* acces every obj to see if all of properties are aligned with pre value either true or false */
+}
+
+console.log(truthCheck2([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
