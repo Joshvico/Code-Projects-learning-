@@ -522,3 +522,56 @@ function truthCheck2(collection, pre) {
 }
 
 console.log(truthCheck2([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
+
+/* CHECKING IF ARGUMENTS NEEDED ARE THERE TO EXEC FUNCITOIN --> Sum numbers with DESTRUCURING ASSIGMENT + NESTING 2 IF STATMENTS*/
+
+function addTogether() {
+  const [first, second] = arguments; /* Destructuring assigment */
+
+  if (typeof (first) === "number") { /* checking if first arg. is number with typeof method */ 
+    if (typeof (second) === "number") { /* when second also === number then sum both */
+      return first + second;
+    }
+    if (arguments.length === 1) { /* if arg is only 1 then retuning second (two add a second arg. to sum it) and call function */
+      return (second) => addTogether(first, second);
+    }
+  } /* all if statmenets could be set apart from each oftehr they are nested for make it clear for the logic */
+}
+
+console.log(addTogether(5)(7)); // Should print the steps and return 12
+console.log(addTogether(2, "3")); // Should print the steps and return undefined
+
+/* OOP FUCNTION with OBJECT CONSTRUSTO */
+const Person = function(first, last) {
+  let firstName = first;
+  let lastName  = last;
+
+  this.getFirstName = function() {
+    return firstName;
+  };
+
+  this.getLastName = function() {
+    return lastName;
+  };
+
+  this.getFullName = function() {
+    return this.getFirstName() + " " + this.getLastName();
+  };
+
+  this.setFirstName = function(first) {
+    return firstName = first;
+  };
+
+  this.setLastName = function(last) {
+    return lastName = last;
+  };
+
+  this.setFullName = function(first, last) {
+    this.setFirstName(first);
+    this.setLastName(last);
+    return this.getFullName();
+  };
+};
+
+const bob = new Person("Bob", "Ross");
+console.log(bob.getFullName());

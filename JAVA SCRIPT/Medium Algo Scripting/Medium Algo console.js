@@ -480,3 +480,55 @@ function truthCheck2(collection, pre) {
 }
 
 console.log(truthCheck2([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot"));
+
+/* CHECKING IF ARGUMENTS NEEDED ARE THERE TO EXEC FUNCITOIN --> Sum numbers with DESTRUCURING ASSIGMENT + NESTING 2 IF STATMENTS*/
+
+function addTogether() {
+  const [first, second] = arguments;
+
+  if (typeof (first) === "number") {
+    if (typeof (second) === "number") {
+      return first + second;
+    }
+    if (arguments.length === 1) {
+      return (second) => addTogether(first, second);
+    }
+  }
+}
+console.log(addTogether(5)(7)); // Should print the steps and return 12
+console.log(addTogether(2, "3")); // Should print the steps and return undefined
+
+/* OOP FUCNTION with OBJECT CONSTRUSTO */
+const Person = function(first, last) {
+  let firstName = first;
+  let lastName  = last;
+
+  this.getFirstName = function() {
+    return firstName;
+  };
+
+  this.getLastName = function() {
+    return lastName;
+  };
+
+  this.getFullName = function() {
+    return this.getFirstName() + " " + this.getLastName();
+  };
+
+  this.setFirstName = function(first) {
+    return firstName = first;
+  };
+
+  this.setLastName = function(last) {
+    return lastName = last;
+  };
+
+  this.setFullName = function(first, last) {
+    this.setFirstName(first);
+    this.setLastName(last);
+    return this.getFullName();
+  };
+};
+
+const bob = new Person("Bob", "Ross");
+console.log(bob.getFullName());
