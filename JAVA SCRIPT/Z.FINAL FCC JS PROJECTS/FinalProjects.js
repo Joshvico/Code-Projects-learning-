@@ -96,3 +96,27 @@ const encodedString = "GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.";
 const decodedString = rot13(encodedString);
 
 console.log(decodedString); // Output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
+
+/* VALIDATING PHONES NUMBERS with TEST METHOD  */
+
+
+function telephoneCheck(str) {
+  // Define the regular expression for a valid US phone number
+  const phoneRegex = /^(1\s?)?(\(\d{3}\)|\d{3})([\s\-]?)\d{3}([\s\-]?)\d{4}$/;
+
+  // Test the input string against the regex and return the result
+  return phoneRegex.test(str);
+}
+
+// Examples of usage:
+console.log(telephoneCheck("555-555-5555"));       // true
+console.log(telephoneCheck("(555)555-5555"));     // true
+console.log(telephoneCheck("(555) 555-5555"));    // true
+console.log(telephoneCheck("555 555 5555"));      // true
+console.log(telephoneCheck("5555555555"));        // true
+console.log(telephoneCheck("1 555 555 5555"));    // true
+console.log(telephoneCheck("800-692-7753"));      // true
+console.log(telephoneCheck("8oo-six427676;laskdjf")); // false
+
+
+
