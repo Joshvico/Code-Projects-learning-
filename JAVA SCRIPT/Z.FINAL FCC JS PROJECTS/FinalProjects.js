@@ -84,4 +84,15 @@ function convertToRoman(num) {
 console.log(convertToRoman(3));  // Output: "III"
 console.log(convertToRoman(4));  // Output: "IV"
 
-/*  */
+/* CAESARS CIPHER OR SHIFT CIPHER RUNI CODE OT 13  WITH **************String.fromCharCode() METHOD */
+
+function rot13(str) {
+  return str.replace(/[A-Z]/g, function (c) { /* It will only replace those characters that are letter and capital, so we don't need any excluded other characters or speacial  */
+    return String.fromCharCode(((c.charCodeAt(0) - 'A'.charCodeAt(0) + 13) % 26) + 'A'.charCodeAt(0)); /* String.fromCharCode turns coded letter into String equivalent following rot 13 */
+  });
+}
+
+const encodedString = "GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.";
+const decodedString = rot13(encodedString);
+
+console.log(decodedString); // Output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
