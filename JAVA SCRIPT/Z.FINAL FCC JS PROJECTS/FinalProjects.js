@@ -97,7 +97,7 @@ const decodedString = rot13(encodedString);
 
 console.log(decodedString); // Output: "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG."
 
-/* VALIDATING PHONES NUMBERS with TEST METHOD  */
+/* VALIDATING US PHONES NUMBERS with TEST METHOD  */
 
 
 function telephoneCheck(str) {
