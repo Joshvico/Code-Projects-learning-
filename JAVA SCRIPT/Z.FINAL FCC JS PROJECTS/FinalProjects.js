@@ -21,3 +21,67 @@ function palindrome(str) {
 }
 
 console.log(palindrome("race*car")); /* it will return "racecar" */
+
+/* ROMAN NUMBER CONVERTER (num to Roman) */
+
+function intToRoman(num) {
+  const romanNumerals = [
+    ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
+    ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+    ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+    ["", "M", "MM", "MMM"]
+  ];
+
+  let result = '';
+  let digit = 0;
+
+  while (num > 0) {
+    const currentDigit = num % 10;
+    result = romanNumerals[digit][currentDigit] + result;
+    digit++;
+    num = Math.floor(num / 10);
+  }
+
+  return result.toUpperCase(); /* keep in mind you can always implement mthods by the rturn too */
+}
+
+// Example usage
+console.log(intToRoman(3549)); // Output: "MMCMXLIX"
+
+
+/* ****************************************************Other way */
+function convertToRoman(num) {
+  const romanNumerals = {
+    "M": 1000,
+    "CM": 900,
+    "D": 500,
+    "CD": 400,
+    "C": 100,
+    "XC": 90,
+    "L": 50,
+    "XL": 40,
+    "X": 10,
+    "IX": 9,
+    "V": 5,
+    "IV": 4,
+    "I": 1
+  };
+
+  const sortedKeys = Object.keys(romanNumerals).sort((a, b) => romanNumerals[b] - romanNumerals[a]);
+
+  let roman = "";
+
+  for (let key of sortedKeys) {
+    while (num >= romanNumerals[key]) {
+      roman += key;
+      num -= romanNumerals[key];
+    }
+  }
+
+  return roman;
+}
+
+console.log(convertToRoman(3));  // Output: "III"
+console.log(convertToRoman(4));  // Output: "IV"
+
+/*  */
