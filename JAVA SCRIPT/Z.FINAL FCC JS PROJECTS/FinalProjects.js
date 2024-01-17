@@ -118,5 +118,72 @@ console.log(telephoneCheck("1 555 555 5555"));    // true
 console.log(telephoneCheck("800-692-7753"));      // true
 console.log(telephoneCheck("8oo-six427676;laskdjf")); // false
 
+/* CASHIER  FINAL PROJECT */
+function checkCashRegister(price, cash, cid) {
+  const currencyUnits = [
+    ["PENNY", 0.01],
+    ["NICKEL", 0.05],
+    ["DIME", 0.1],
+    ["QUARTER", 0.25],
+    ["ONE", 1],
+    ["FIVE", 5],
+    ["TEN", 10],
+    ["TWENTY", 20],
+    ["ONE HUNDRED", 100]
+  ];
+
+  let changeDue = cash - price;
+  let totalCid = 0;
+
+  for (let i = 0; i < cid.length; i++) {
+    totalCid += cid[i][1];
+  }
+  totalCid = totalCid.toFixed(2);
+
+  if (parseFloat(totalCid) < changeDue) {
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  } else if (parseFloat(totalCid) === changeDue) {
+    return { status: "CLOSED", change: cid };
+  } else {
+    let changeArray = [];
+
+    for (let i = currencyUnits.length - 1; i >= 0; i--) {
+      const unitName = currencyUnits[i][0];
+      const unitValue = currencyUnits[i][1];
+      const availableAmount = cid[i][1];
+      let numberOfUnits = (availableAmount / unitValue).toFixed(0);
+
+      if (numberOfUnits > 0) {
+        let returnedAmount = 0;
+
+        while (changeDue >= unitValue && numberOfUnits > 0) {
+          changeDue -= unitValue;
+          changeDue = changeDue.toFixed(2);
+          returnedAmount += unitValue;
+          numberOfUnits--;
+        }
+
+        if (returnedAmount > 0) {
+          changeArray.push([unitName, parseFloat(returnedAmount)]);
+        }
+      }
+    }
+
+    if (changeDue > 0) {
+      return { status: "INSUFFICIENT_FUNDS", change: [] };
+    } else {
+      return { status: "OPEN", change: changeArray };
+    }
+  }
+}
+
+// Test cases
+console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+
+
 
 
