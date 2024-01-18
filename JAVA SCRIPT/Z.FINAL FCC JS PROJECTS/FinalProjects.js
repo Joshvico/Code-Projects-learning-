@@ -185,5 +185,9 @@ console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME"
 console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
 
 
+function hoursToSec (minutes) {
+  let time =minutes*60; 
+  return time; 
+}
 
-
+console.log(hoursToSec(120));
