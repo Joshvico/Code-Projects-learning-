@@ -2,14 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important to define viewport as shown / not included when typping "!" -->
-    <link rel="stylesheet" href="./RolePlayGmae.css"> <!-- importatn security concept of rel=noopener security update corss windows rel=_"bank"  -->
+    <!-- important to define viewport as shown / not included when typing "!" -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- importatn security concept of rel=noopener security update corss windows rel=_"bank"  -->
+    <link rel="stylesheet" href="./RolePlayGmae.css">     <!-- rel=noopener security update cross windows rel="noopener" -->
     <title>RPG - Dragon Repeller</title>
   </head>
   <body>
     <div id="game">
       <div id="stats">
-        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span><!-- stron element is lke <b> for better practice bold or empasis is better strong -->
+        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span><!-- stron element is like <b> for better practice bold or emphasis is better strong -->
+
         <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
         <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
       </div>
@@ -23,8 +25,10 @@
         <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
       </div>
       <div id="text">
-        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town.
+        You are in the town square. Where do you want to go? Use the buttons above.
       </div>
     </div>
+    <script src="./RolePlayGmae.js"></script> <!-- this is how you link you HTML with JS file // important position of the html file as the reading the whole structure influence when the JS is put on -->
   </body>
 </html>
