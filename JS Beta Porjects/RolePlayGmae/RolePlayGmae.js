@@ -1,3 +1,4 @@
+// Player stats and variables
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -6,6 +7,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
+// DOM elements
 const button1 = document.querySelector('#button1');/* pending..... */
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -16,11 +18,13 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
+
+// Locations array
 const locations = [
   {
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
-    "button functions": [goStore, goCave, fightDragon], /* Array containing fucnitons */
+    "button functions": [goStore, goCave, fightDragon], /* Array containing functions */
     text: "You are in the town square. You see a sign that says \"Store\"."
   },
   {
@@ -28,40 +32,36 @@ const locations = [
     "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
     "button functions": [buyHealth, buyWeapon, goTown],
     text: "You enter the store."
+  },
+  {
+    name: "cave",
+    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button functions": [fightSlime, fightBeast, goTown],
+    text: "You enter the cave. You see some monsters."
   }
 ];
 
-// initialize buttons
-button1.onclick = goStore;/* onclick used to define what happens after clicking the element you asisgne the value of the funciton that makes action */
+// Initialize buttons
+button1.onclick = goStore;/* onclick used to define what happens after clicking the element you assign the value of the function that makes action */
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
+// Function to update UI based on the current location
 function update(location) {
 
 }
 
+// Functions for different locations
 function goTown() {
-  button1.innerText = "Go to store";/* this is text showing when clicking. it is link to the button*/
-  button2.innerText = "Go to cave";
-  button3.innerText = "Fight dragon";
-  button1.onclick = goStore;
-  button2.onclick = goCave;
-  button3.onclick = fightDragon;
-  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+  update(locations[0]);
 }
 
 function goStore() {
-  button1.innerText = "Buy 10 health (10 gold)";
-  button2.innerText = "Buy weapon (30 gold)";
-  button3.innerText = "Go to town square";
-  button1.onclick = buyHealth;
-  button2.onclick = buyWeapon;
-  button3.onclick = goTown;
-  text.innerText = "You enter the store.";
+  update(locations[1]);
 }
 
 function goCave() {
-  console.log("Going to cave.");
+  update(locations[2]);
 }
 
 function fightDragon() {
@@ -75,3 +75,8 @@ function buyHealth() {
 function buyWeapon() {
 
 }
+
+// Button text assignment
+button1.innerText = location["button text"][0];
+button2.innerText = location["button text"][1];
+button3.innerText = location["button text"][2];
