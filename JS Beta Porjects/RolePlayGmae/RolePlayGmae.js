@@ -92,6 +92,16 @@ function buyWeapon() {
   }
 }
 
+function sellWeapon() {
+  if (inventory.length > 1) {
+    gold += 15;
+    goldText.innerText = gold;
+    let currentWeapon = inventory.shift();
+    text.innerText = "You sold a " + currentWeapon + ".";
+
+  }
+}
+
 // Button text assignment
 button1.innerText = location["button text"][0];
 button2.innerText = location["button text"][1];
