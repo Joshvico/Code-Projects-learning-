@@ -107,19 +107,19 @@ function fightDragon() {
   console.log("Fighting dragon.");
 }
 
-function buyHealth() {
+function buyHealth() { /*  in this fucntion you can see the process of buying health and how every part of the trade is being done through assigment and statment */
   if (gold >= 10) {
     gold -= 10;
     health += 10;
-    goldText.innerText = gold;
-    healthText.innerText = health;
+    goldText.innerText = gold; /* updates with text by asigning new value after -10 de amount of gold that the palyer has */
+    healthText.innerText = health; /*  same as gold but updating healt increase */
   } else {
     text.innerText = "You do not have enough gold to buy health.";
   }
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) {
+  if (currentWeapon < weapons.length - 1) { /* if statment that wraps another if statmenet */
     if (gold >= 30) {
       gold -= 30;
       currentWeapon++;
@@ -128,10 +128,10 @@ function buyWeapon() {
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
-    } else {
+    } else { /* reminder else has no condition as is the false case so no condition need to be added */
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
-  } else {
+  } else { /*  this is the else from the wrapping if statment */
     text.innerText = "You already have the most powerful weapon!";
     button2.innerText = "Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
@@ -144,13 +144,35 @@ function sellWeapon() {
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
+    text.innerText += " In your inventory you have: " + inventory; /* using concat operator += to add reulst by the end of the strings */
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
 }
 
 // Button text assignment
-button1.innerText = locations[0]["button text"][0];
+button1.innerText = locations[0]["button text"][0]; /* this is how you acces an array inside a nested object in an array (2 level array acces via obj) */
 button2.innerText = locations[0]["button text"][1];
 button3.innerText = locations[0]["button text"][2];
+
+function fightSlime() {
+  fighting = 0;
+  goFight();
+}
+
+function fightBeast() {
+  fighting = 1; /* acessing monsters array/object trhouhg index value */
+  goFight();
+}
+
+function fightDragon() {
+  fighting = 2;
+  goFight(); /* calling a function */
+}
+
+function goFight() {
+  update(locations[3]);
+  monsterHealth = monsters[fighting].health;
+  monsterStats
+
+}
