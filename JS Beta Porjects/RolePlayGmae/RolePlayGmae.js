@@ -107,19 +107,19 @@ function fightDragon() {
   console.log("Fighting dragon.");
 }
 
-function buyHealth() { /*  in this fucntion you can see the process of buying health and how every part of the trade is being done through assigment and statment */
+function buyHealth() { /*  in this function you can see the process of buying health and how every part of the trade is being done through assignment and statement */
   if (gold >= 10) {
     gold -= 10;
     health += 10;
-    goldText.innerText = gold; /* updates with text by asigning new value after -10 de amount of gold that the palyer has */
-    healthText.innerText = health; /*  same as gold but updating healt increase */
+    goldText.innerText = gold; /* updates with text by assigning a new value after -10 de amount of gold that the player has */
+    healthText.innerText = health; /*  same as gold but updating health increase */
   } else {
     text.innerText = "You do not have enough gold to buy health.";
   }
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) { /* if statment that wraps another if statmenet */
+  if (currentWeapon < weapons.length - 1) { /* if statement that wraps another if statement */
     if (gold >= 30) {
       gold -= 30;
       currentWeapon++;
@@ -127,11 +127,11 @@ function buyWeapon() {
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
-      text.innerText += " In your inventory you have: " + inventory;
+      text.innerText += " In your inventory, you have: " + inventory;
     } else { /* reminder else has no condition as is the false case so no condition need to be added */
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
-  } else { /*  this is the else from the wrapping if statment */
+  } else { /*  this is the else from the wrapping if statement */
     text.innerText = "You already have the most powerful weapon!";
     button2.innerText = "Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
@@ -144,14 +144,14 @@ function sellWeapon() {
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory; /* using concat operator += to add reulst by the end of the strings */
+    text.innerText += " In your inventory, you have: " + inventory; /* using the concat operator += to add result by the end of the strings */
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
 }
 
 // Button text assignment
-button1.innerText = locations[0]["button text"][0]; /* this is how you acces an array inside a nested object in an array (2 level array acces via obj) */
+button1.innerText = locations[0]["button text"][0]; /* this is how you access an array inside a nested object in an array (2 level array access via obj) */
 button2.innerText = locations[0]["button text"][1];
 button3.innerText = locations[0]["button text"][2];
 
@@ -161,7 +161,7 @@ function fightSlime() {
 }
 
 function fightBeast() {
-  fighting = 1; /* acessing monsters array/object trhouhg index value */
+  fighting = 1; /* accessing monsters array/object through index value */
   goFight();
 }
 
@@ -173,6 +173,7 @@ function fightDragon() {
 function goFight() {
   update(locations[3]);
   monsterHealth = monsters[fighting].health;
-  monsterStats
-
+  monsterStats.style.display = "block";
+  monsterName.innerText = monsters[fighting].name;
+  monsterHealthText.innerText = monsterHealth;
 }
