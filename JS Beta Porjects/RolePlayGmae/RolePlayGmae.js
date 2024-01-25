@@ -173,7 +173,33 @@ function fightDragon() {
 function goFight() {
   update(locations[3]);
   monsterHealth = monsters[fighting].health;
-  monsterStats.style.display = "block";
+  monsterStats.style.display = "block"; /* you can maipulate CSS porpertis from the fucntion as in the CSS document the value is set to none */
   monsterName.innerText = monsters[fighting].name;
   monsterHealthText.innerText = monsterHealth;
+}
+
+function attack() {
+  text.innerText = "The " + monsters[fighting].name + " attacks.";
+  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
+  health -= monsters[fighting].level;
+  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1; /*  the one is added to make sure the value will never be 0 */ 
+  healthText.innerText = health;
+  monsterHealthText.innerText = monsterHealth;
+  if (health <= 0) {
+    lose();
+  } else if (monsterHealth <= 0) {
+    defeatMonster();
+  }
+}
+
+function dodge() {
+  text.innerText = "You dodge the attack from the " + monsters[fighting].name;
+}
+
+function defeatMonster() {
+  gold += Math.floor(monsters[fighting].level * 6.7); /* rounding up number */
+  xp += monsters[fighting].level; /* accesing current fightinf monster lever via  monsterobject */
+  goldText.innerText = gold;
+  xpText.innerText = xp;
+  
 }
