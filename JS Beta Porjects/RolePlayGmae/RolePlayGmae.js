@@ -214,7 +214,5 @@ function attack() {
   if (health <= 0) {
     lose();
   } 
-  
-  monsterHealth <= 0? winGame(fighting === 2) : defeatMonster();
-  
+    
 }
