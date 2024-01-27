@@ -1,4 +1,3 @@
-// Player stats and variables
 let xp = 0;
 let health = 100;
 let gold = 50;
@@ -7,7 +6,6 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-// DOM elements
 const button1 = document.querySelector('#button1');/* pending..... */
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
@@ -18,16 +16,12 @@ const goldText = document.querySelector("#goldText");
 const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
-
-// Weapons array
 const weapons = [
   { name: 'stick', power: 5 },
   { name: 'dagger', power: 30 },
   { name: 'claw hammer', power: 50 },
   { name: 'sword', power: 100 }
 ];
-
-// Monsters array
 const monsters = [
   {
     name: "slime",
@@ -45,8 +39,6 @@ const monsters = [
     health: 300
   }
 ]
-
-// Locations array
 const locations = [
   {
     name: "town square",
@@ -71,16 +63,41 @@ const locations = [
     "button text": ["Attack", "Dodge", "Run"],
     "button functions": [attack, dodge, goTown],
     text: "You are fighting a monster."
+  },
+  {
+    name: "kill monster",
+    "button text": ["Go to town square", "Go to town square", "Go to town square"],
+    "button functions": [goTown, goTown, easterEgg],
+    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+  },
+  
+  {
+    name: "lose",
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+    "button functions": [restart, restart, restart],
+    text: "You die. ☠️"
+  },
+  { 
+    name: "win", 
+    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
+    "button functions": [restart, restart, restart], 
+    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+  },
+  {
+    name: "easter egg",
+    "button text": ["2", "8", "Go to town square?"],
+    "button functions": [pickTwo, pickEight, goTown],
+    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
   }
 ];
 
-// Initialize buttons
+// initialize buttons
 button1.onclick = goStore;/* onclick used to define what happens after clicking the element you assign the value of the function that makes action */
 button2.onclick = goCave;
 button3.onclick = fightDragon;
-
 // Function to update UI based on the current location
 function update(location) {
+  monsterStats.style.display = "none";
   button1.innerText = location["button text"][0];
   button2.innerText = location["button text"][1];
   button3.innerText = location["button text"][2];
@@ -89,7 +106,6 @@ function update(location) {
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
 }
-
 // Functions for different locations
 function goTown() {
   update(locations[0]);
@@ -101,10 +117,6 @@ function goStore() {
 
 function goCave() {
   update(locations[2]);
-}
-
-function fightDragon() {
-  console.log("Fighting dragon.");
 }
 
 function buyHealth() { /*  in this function you can see the process of buying health and how every part of the trade is being done through assignment and statement */
@@ -119,7 +131,7 @@ function buyHealth() { /*  in this function you can see the process of buying he
 }
 
 function buyWeapon() {
-  if (currentWeapon < weapons.length - 1) { /* if statement that wraps another if statement */
+  if (currentWeapon < weapons.length - 1) {/* if statement that wraps another if statement */
     if (gold >= 30) {
       gold -= 30;
       currentWeapon++;
@@ -127,7 +139,7 @@ function buyWeapon() {
       let newWeapon = weapons[currentWeapon].name;
       text.innerText = "You now have a " + newWeapon + ".";
       inventory.push(newWeapon);
-      text.innerText += " In your inventory, you have: " + inventory;
+      text.innerText += " In your inventory you have: " + inventory;
     } else { /* reminder else has no condition as is the false case so no condition need to be added */
       text.innerText = "You do not have enough gold to buy a weapon.";
     }
@@ -144,7 +156,7 @@ function sellWeapon() {
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
     text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory, you have: " + inventory; /* using the concat operator += to add result by the end of the strings */
+    text.innerText += " In your inventory you have: " + inventory;
   } else {
     text.innerText = "Don't sell your only weapon!";
   }
@@ -160,14 +172,14 @@ function fightSlime() {
   goFight();
 }
 
-function fightBeast() {
-  fighting = 1; /* accessing monsters array/object through index value */
-  goFight();
+function fightBeast() { /* accessing monsters array/object through index value */
+  fighting = 1;
+  goFight(); /* calling a function goFight */
 }
 
 function fightDragon() {
   fighting = 2;
-  goFight(); /* calling a function */
+  goFight();
 }
 
 function goFight() {
@@ -181,15 +193,33 @@ function goFight() {
 function attack() {
   text.innerText = "The " + monsters[fighting].name + " attacks.";
   text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  health -= monsters[fighting].level;
-  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1; /*  the one is added to make sure the value will never be 0 */ 
+  health -= getMonsterAttackValue(monsters[fighting].level);
+  if (isMonsterHit()) {
+    monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;    
+  } else {
+    text.innerText += " You miss.";
+  }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
     lose();
   } else if (monsterHealth <= 0) {
-    defeatMonster();
+    fighting === 2 ? winGame() : defeatMonster();
   }
+  if (Math.random() <= .1 && inventory.length !== 1) {
+    text.innerText += " Your " + inventory.pop() + " breaks.";
+    currentWeapon--;
+  }
+}
+
+function getMonsterAttackValue(level) {
+  const hit = (level * 5) - (Math.floor(Math.random() * xp));
+  console.log(hit);
+  return hit > 0 ? hit : 0;
+}
+
+function isMonsterHit() {
+  return Math.random() > .2 || health < 20;
 }
 
 function dodge() {
@@ -198,21 +228,63 @@ function dodge() {
 
 function defeatMonster() {
   gold += Math.floor(monsters[fighting].level * 6.7); /* rounding up number */
-  xp += monsters[fighting].level; /* accesing current fightinf monster lever via  monsterobject */
+  xp += monsters[fighting].level;  /* accesing current fightinf monster lever via  monsterobject */
   goldText.innerText = gold;
   xpText.innerText = xp;
-  
+  update(locations[4]);
 }
 
-function attack() {
-  text.innerText = "The " + monsters[fighting].name + " attacks.";
-  text.innerText += " You attack it with your " + weapons[currentWeapon].name + ".";
-  health -= monsters[fighting].level;
-  monsterHealth -= weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+function lose() {
+  update(locations[5]);
+}
+
+function winGame() {
+  update(locations[6]);
+}
+
+function restart() {
+  xp = 0;
+  health = 100;
+  gold = 50;
+  currentWeapon = 0;
+  inventory = ["stick"];
+  goldText.innerText = gold;
   healthText.innerText = health;
-  monsterHealthText.innerText = monsterHealth;
-  if (health <= 0) {
-    lose();
-  } 
-    
+  xpText.innerText = xp;
+  goTown();
+}
+
+function easterEgg() {
+  update(locations[7]);
+}
+
+function pickTwo() {
+  pick(2);
+}
+
+function pickEight() {
+  pick(8);
+}
+
+function pick(guess) {
+  const numbers = [];
+  while (numbers.length < 10) {
+    numbers.push(Math.floor(Math.random() * 11));
+  }
+  text.innerText = "You picked " + guess + ". Here are the random numbers:\n";
+  for (let i = 0; i < 10; i++) {
+    text.innerText += numbers[i] + "\n";
+  }
+  if (numbers.includes(guess)) {
+    text.innerText += "Right! You win 20 gold!";
+    gold += 20;
+    goldText.innerText = gold;
+  } else {
+    text.innerText += "Wrong! You lose 10 health!";
+    health -= 10;
+    healthText.innerText = health;
+    if (health <= 0) {
+      lose();
+    }
+  }
 }
