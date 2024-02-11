@@ -55,7 +55,7 @@ const foskitos = food.find ((item) => item.type ==="foskito"); /* it will retunr
 
 /*  ***************************************************** FINDINDEX --> it is link find but returns index */
 
-Array.findIndex((element) => {
+array.findIndex((element) => {
   /* code */
   return /* a condition */
 })
@@ -73,4 +73,29 @@ const bannanaIndex = food.indexOf(banana, 3); /* it will look for first element 
 
 /*  ***************************************************** LASTINDEXOF --> same like before but starting form the end of the Array */
 
+array.lastIndexOf(element);
 
+array.lastIndexOf(element, startIndex); /* start index is the last form the array */
+
+const bannanalastIndex = food.indexOf(banana, 3); /* if not found it will retunr -1 */
+
+/* *****************************************************  SOME --> if atleast one of the elemtns satisfy a fucniton*/
+
+array.some((element) => {
+  /* code */
+  return /* a condition */
+})
+
+const isThereABanana = food.some((item) => item ==="banana"); /* once found it will stop to run the logic */
+const isThereWatermelon = food.some((item) => item ==="watermelon") /* it will return false if no watermelon is found */
+
+/* *****************************************************  EVERY --> check if all the elements of the array match confition */
+
+array.every((element) => {
+  /* code */
+  return /* a condition */
+})
+
+const allBananas = food.every((item) => item ==="banana"); /* it will retunr false as not all element are bannas  */
+
+/* *****************************************************  INCLUDES -->  */
