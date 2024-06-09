@@ -1,0 +1,99 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+/* Boarding pass container */
+.boarding-pass {
+  display: flex;
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Section styling */
+.boarding-pass__section {
+  flex: 1;
+  padding: 20px;
+}
+
+.boarding-pass__section--middle {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Name and QR code styling */
+.boarding-pass__name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.boarding-pass__qr-code {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cut line styling */
+.boarding-pass__cut-line {
+  width: 2px;
+  height: 100%;
+  background: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 5px,
+      #000 5px,
+      #000 10px
+  );
+}
+
+/* Middle decoration styling */
+.boarding-pass__middle-decor {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background-color: #f0f0f0;
+  border-radius: 0 50% 50% 0;
+  transform: translateX(-50%);
+}
+
+/* Info list styling */
+.boarding-pass__info-list {
+  list-style: none;
+}
+
+.boarding-pass__info-item {
+  margin-bottom: 5px;
+}
+
+/* Expand icon styling */
+.boarding-pass__expand-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
